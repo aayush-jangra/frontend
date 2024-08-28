@@ -1,3 +1,11 @@
+import { HomePage } from "./Pages/Home/HomePage";
+
 export const App = () => {
-  return <div>Hello</div>;
+  return (
+    <div className="bg-canvas min-h-screen flex justify-center p-16">
+      <div className="max-w-screen-md w-full">
+        <HomePage />
+      </div>
+    </div>
+  );
 };
