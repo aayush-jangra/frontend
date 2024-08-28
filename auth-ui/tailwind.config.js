@@ -20,6 +20,9 @@ module.exports = {
       borderWidth: {
         sm: "1.5px",
       },
+      backdropBlur: {
+        xs: "2px",
+      },
     },
   },
   plugins: [

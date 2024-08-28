@@ -1,4 +1,8 @@
+import { useAuthState } from "../Pages/Home/AuthProvider";
+
 export const CreatePost: React.FC = () => {
+  const { requireAuth } = useAuthState();
+
   return (
     <div className="flex flex-col px-5 py-6 border-2 rounded-lg bg-post gap-4 border-border-primary">
       <div className="text-text-primary">Create Post</div>
@@ -12,7 +16,10 @@ export const CreatePost: React.FC = () => {
           placeholder="How are you feeling today?"
         />
       </div>
-      <button className="py-3 px-10 text-white rounded bg-cta w-fit font-medium self-end">
+      <button
+        onClick={() => requireAuth(() => console.log("hello"))}
+        className="py-3 px-10 text-white rounded bg-cta w-fit font-medium self-end"
+      >
         Post
       </button>
     </div>

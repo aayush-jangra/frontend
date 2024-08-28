@@ -2,6 +2,7 @@ import { Post } from "../schema/posts.schema";
 import DotsHorizontal from "../Assets/Icons/dots-horizontal.svg";
 import ChatBubble from "../Assets/Icons/chat-bubble.svg";
 import DefaultAvatar from "../Assets/Icons/default-avatar.svg";
+import { useAuthState } from "../Pages/Home/AuthProvider";
 
 export const PostComponent: React.FC<Post> = ({
   id,
@@ -12,10 +13,11 @@ export const PostComponent: React.FC<Post> = ({
   comments,
   profileUrl,
 }) => {
+  const { requireAuth } = useAuthState();
   return (
     <div
-      key={id}
-      className="bg-post border-border-primary border-2 rounded-lg px-5 py-6 flex flex-col gap-5"
+      onClick={() => requireAuth(() => {})}
+      className="bg-post border-border-primary border-2 rounded-lg px-5 py-6 flex flex-col gap-5 cursor-pointer"
     >
       <div className="flex justify-between items-center">
         <div className="flex gap-4">

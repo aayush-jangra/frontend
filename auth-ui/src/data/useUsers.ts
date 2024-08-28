@@ -1,3 +1,4 @@
+import { useAuthState } from "../Pages/Home/AuthProvider";
 import { AuthErrorMsg } from "../schema/auth.schema";
 import { User } from "../schema/users.schema";
 
@@ -10,6 +11,8 @@ const users: User[] = [
 ];
 
 export const useUsers = () => {
+  const { isLoginModalOpen, closeLoginModal } = useAuthState();
+
   const isUserRegistered = (email: string) => {
     return users.some((user) => user.email === email);
   };
@@ -40,7 +43,9 @@ export const useUsers = () => {
     if (users.length !== 1) throw new Error(AuthErrorMsg.INVALID_PASSWORD);
 
     localStorage.setItem("user", users[0].username);
-    window.location.pathname = "/";
+
+    if (isLoginModalOpen) closeLoginModal();
+    else window.location.pathname = "/";
   };
 
   const registerUser = ({ username, email, password }: User) => {
