@@ -8,7 +8,7 @@ export const CreatePost: React.FC = () => {
         </div>
         <input
           type="text"
-          className="outline-0 bg-transparent flex-1 text-content placeholder:text-content"
+          className="outline-0 bg-transparent flex-1 text-text-primary placeholder:text-content"
           placeholder="How are you feeling today?"
         />
       </div>
