@@ -85,6 +85,7 @@ export const LoginComponent: React.FC<{ openRegisterTab: () => void }> = ({
               Login now
             </button>
             <button
+              type="button"
               onClick={openRegisterTab}
               className="font-medium text-sm text-text-tertiary self-start"
             >
