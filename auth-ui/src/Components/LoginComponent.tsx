@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { useUsers } from "../data/useUsers";
+import { TextInput } from "./TextInput";
+import { AuthErrorMsg } from "../schema/auth.schema";
 
 export const LoginComponent: React.FC<{ openRegisterTab: () => void }> = ({
   openRegisterTab,
 }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [isError, setError] = useState(false);
-  const { isValidUser } = useUsers();
+  const [errorMsg, setErrorMsg] = useState("");
+  const { loginUser } = useUsers();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setError(false);
+    setErrorMsg("");
     if (e.target.name === "username") {
       setUsername(e.target.value);
     } else if (e.target.name === "password") {
@@ -20,8 +22,10 @@ export const LoginComponent: React.FC<{ openRegisterTab: () => void }> = ({
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!isValidUser(username, password)) {
-      setError(true);
+    try {
+      loginUser(username, password);
+    } catch (error) {
+      setErrorMsg((error as Error).message);
     }
   };
 
@@ -36,25 +40,16 @@ export const LoginComponent: React.FC<{ openRegisterTab: () => void }> = ({
             Log into your account
           </div>
         </div>
-        {isError && (
-          <div className="-my-8 text-red-500 font-semibold text-lg text-center">
-            Invalid credentials
-          </div>
-        )}
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-          <div className="flex flex-col gap-2.5">
-            <div className="font-medium text-sm text-text-primary">
-              Email or Username
-            </div>
-            <input
-              value={username}
-              onChange={handleChange}
-              name="username"
-              type="text"
-              className="border-sm border-border-primary rounded bg-transparent text-text-primary placeholder:text-content p-3"
-              placeholder="Enter your email or username"
-            />
-          </div>
+          <TextInput
+            heading="Email or Username"
+            value={username}
+            onChange={handleChange}
+            name="username"
+            type="text"
+            errorMsg={errorMsg === AuthErrorMsg.DOES_NOT_EXIST ? errorMsg : ""}
+            placeholder="Enter your email or username"
+          />
           <div className="flex flex-col gap-2.5">
             <div className="flex w-full justify-between">
               <div className="font-medium text-sm text-text-primary">
@@ -68,12 +63,14 @@ export const LoginComponent: React.FC<{ openRegisterTab: () => void }> = ({
                 Forgot password?
               </button>
             </div>
-            <input
+            <TextInput
               type="password"
               value={password}
               onChange={handleChange}
               name="password"
-              className="border-sm border-border-primary rounded bg-transparent text-text-primary placeholder:text-content p-3"
+              errorMsg={
+                errorMsg === AuthErrorMsg.INVALID_PASSWORD ? errorMsg : ""
+              }
               placeholder="Enter your password"
             />
           </div>

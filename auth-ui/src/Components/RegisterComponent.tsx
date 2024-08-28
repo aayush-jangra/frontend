@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useUsers } from "../data/useUsers";
+import { TextInput } from "./TextInput";
+import { AuthErrorMsg } from "../schema/auth.schema";
 
 export const RegisterComponent: React.FC<{ openLoginTab: () => void }> = ({
   openLoginTab,
@@ -40,49 +42,37 @@ export const RegisterComponent: React.FC<{ openLoginTab: () => void }> = ({
             Create an account to continue
           </div>
         </div>
-        {errorMsg && (
-          <div className="-my-8 text-red-500 font-semibold text-lg text-center">
-            {errorMsg}
-          </div>
-        )}
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-          <div className="flex flex-col gap-2.5">
-            <div className="font-medium text-sm text-text-primary">Email</div>
-            <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={handleChange}
-              className="border-sm border-border-primary rounded bg-transparent text-text-primary placeholder:text-content p-3"
-              placeholder="Enter your email"
-            />
-          </div>
-          <div className="flex flex-col gap-2.5">
-            <div className="font-medium text-sm text-text-primary">
-              Username
-            </div>
-            <input
-              type="text"
-              name="username"
-              value={username}
-              onChange={handleChange}
-              className="border-sm border-border-primary rounded bg-transparent text-text-primary placeholder:text-content p-3"
-              placeholder="Choose a preferred username"
-            />
-          </div>
-          <div className="flex flex-col gap-2.5">
-            <div className="font-medium text-sm text-text-primary">
-              Password
-            </div>
-            <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={handleChange}
-              className="border-sm border-border-primary rounded bg-transparent text-text-primary placeholder:text-content p-3"
-              placeholder="Choose a strong password"
-            />
-          </div>
+          <TextInput
+            type="email"
+            name="email"
+            heading="Email"
+            value={email}
+            onChange={handleChange}
+            placeholder="Enter your email"
+            errorMsg={errorMsg === AuthErrorMsg.REGISTERED_USER ? errorMsg : ""}
+          />
+          <TextInput
+            type="text"
+            name="username"
+            heading="Username"
+            value={username}
+            onChange={handleChange}
+            placeholder="Choose a preferred username"
+            errorMsg={
+              errorMsg === AuthErrorMsg.UNAVAILABLE_USERNAME ? errorMsg : ""
+            }
+          />
+          <TextInput
+            type="password"
+            name="password"
+            heading="Password"
+            value={password}
+            onChange={handleChange}
+            className="border-sm border-border-primary rounded bg-transparent text-text-primary placeholder:text-content p-3"
+            placeholder="Choose a strong password"
+            errorMsg={errorMsg === AuthErrorMsg.WEAK_PASSWORD ? errorMsg : ""}
+          />
           <div className="flex flex-col gap-3">
             <button
               type="submit"
