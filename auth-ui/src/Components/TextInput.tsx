@@ -6,7 +6,7 @@ interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 export const TextInput = ({
   heading,
   errorMsg = "",
-  className: overrideClass,
+  className: customClass,
   ...props
 }: TextInputProps) => {
   return (
@@ -17,7 +17,7 @@ export const TextInput = ({
       <input
         className={`border-sm rounded bg-transparent text-text-primary placeholder:text-content p-3 ${
           errorMsg ? "border-red-500" : "border-border-primary"
-        } ${overrideClass}`}
+        } ${customClass}`}
         {...props}
       />
       {errorMsg && (

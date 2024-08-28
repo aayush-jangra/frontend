@@ -23,6 +23,9 @@ module.exports = {
       backdropBlur: {
         xs: "2px",
       },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui"],
+      },
     },
   },
   plugins: [

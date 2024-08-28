@@ -18,7 +18,7 @@ export const usePosts = () => {
       id: 2,
       username: "Marvin McKinney",
       createdAt: "8 mins ago",
-      emoji: "🤗",
+      emoji: "😯",
       comments: 12,
       edited: true,
       content:

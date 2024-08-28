@@ -5,7 +5,6 @@ import DefaultAvatar from "../Assets/Icons/default-avatar.svg";
 import { useAuthState } from "../Pages/Home/AuthProvider";
 
 export const PostComponent: React.FC<Post> = ({
-  id,
   username,
   createdAt,
   emoji,
@@ -36,7 +35,7 @@ export const PostComponent: React.FC<Post> = ({
       </div>
       <div className="flex flex-col gap-3">
         <div className="flex gap-4 p-4 bg-content-bg rounded-lg">
-          <div className="flex shrink-0 items-center justify-center rounded-full h-12 w-12 bg-post">
+          <div className="flex shrink-0 items-center justify-center rounded-full h-12 w-12 bg-post text-2xl">
             {emoji}
           </div>
           <div className="text-content">{content}</div>

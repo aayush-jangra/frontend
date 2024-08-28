@@ -1,18 +1,26 @@
+import { useState } from "react";
 import { useAuthState } from "../Pages/Home/AuthProvider";
+import { AutoResizeTextarea } from "./AutoResizeTextarea";
+import { EmojiSelector } from "./EmojiSelector";
 
 export const CreatePost: React.FC = () => {
   const { requireAuth } = useAuthState();
+  const [value, setValue] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setValue(e.target.value);
+  };
 
   return (
     <div className="flex flex-col px-5 py-6 border-2 rounded-lg bg-post gap-4 border-border-primary">
       <div className="text-text-primary">Create Post</div>
       <div className="bg-content-bg flex p-4 gap-4 rounded-lg">
         <div className="flex shrink-0 items-center justify-center rounded-full h-12 w-12 bg-post">
-          🤗
+          <EmojiSelector />
         </div>
-        <input
-          type="text"
-          className="outline-0 bg-transparent w-full text-text-primary placeholder:text-content"
+        <AutoResizeTextarea
+          value={value}
+          onChange={handleChange}
           placeholder="How are you feeling today?"
         />
       </div>
