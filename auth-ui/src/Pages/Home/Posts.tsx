@@ -9,7 +9,7 @@ export const Posts: React.FC = () => {
     <div className="flex flex-col gap-4">
       <CreatePost />
       {posts.map((post) => (
-        <PostComponent {...post} />
+        <PostComponent key={post.id} {...post} />
       ))}
     </div>
   );
