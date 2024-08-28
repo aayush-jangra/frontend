@@ -25,8 +25,8 @@ export const useUsers = () => {
     );
   };
 
-  const isValidUser = (usernameOrEmail: string, password: string) => {
-    return users.some(
+  const getUser = (usernameOrEmail: string, password: string) => {
+    return users.filter(
       (user) =>
         (user.email === usernameOrEmail || user.username === usernameOrEmail) &&
         user.password === password
@@ -36,8 +36,11 @@ export const useUsers = () => {
   const loginUser = (usernameOrEmail: string, password: string) => {
     if (!isValidUsernameOrEmail(usernameOrEmail))
       throw new Error(AuthErrorMsg.DOES_NOT_EXIST);
-    if (!isValidUser(usernameOrEmail, password))
-      throw new Error(AuthErrorMsg.INVALID_PASSWORD);
+    const users = getUser(usernameOrEmail, password);
+    if (users.length !== 1) throw new Error(AuthErrorMsg.INVALID_PASSWORD);
+
+    localStorage.setItem("user", users[0].username);
+    window.location.pathname = "/";
   };
 
   const registerUser = ({ username, email, password }: User) => {
@@ -47,6 +50,8 @@ export const useUsers = () => {
     if (password.length < 8) throw new Error(AuthErrorMsg.WEAK_PASSWORD);
 
     users.push({ username, email, password });
+
+    loginUser(username, password);
   };
 
   return { loginUser, registerUser };
