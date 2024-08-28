@@ -27,7 +27,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
         className="fixed inset-0 bg-black/50 backdrop-blur-xs"
         onClick={onClose}
       ></div>
-      <div className="relative z-10 max-w-md w-full">
+      <div className="relative z-10 max-w-md w-full m-4">
         <button
           className="absolute top-4 right-4 bg-canvas rounded-full h-8 w-8 text-white"
           onClick={onClose}

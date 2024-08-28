@@ -12,12 +12,12 @@ export const CreatePost: React.FC = () => {
         </div>
         <input
           type="text"
-          className="outline-0 bg-transparent flex-1 text-text-primary placeholder:text-content"
+          className="outline-0 bg-transparent w-full text-text-primary placeholder:text-content"
           placeholder="How are you feeling today?"
         />
       </div>
       <button
-        onClick={() => requireAuth(() => console.log("hello"))}
+        onClick={() => requireAuth(() => {})}
         className="py-3 px-10 text-white rounded bg-cta w-fit font-medium self-end"
       >
         Post

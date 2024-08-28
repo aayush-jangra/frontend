@@ -18,7 +18,7 @@ const Router: React.FC = () => {
 
 export const App = () => {
   return (
-    <div className="bg-canvas min-h-screen flex justify-center p-16">
+    <div className="bg-canvas min-h-screen flex justify-center p-8 md:p-16">
       <div className="max-w-screen-md w-full">
         <AuthProvider>
           <Router />
