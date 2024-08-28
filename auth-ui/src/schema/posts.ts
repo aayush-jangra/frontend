@@ -1,7 +1,7 @@
 export interface Post {
   id: number;
   username: string;
-  profileImage?: string;
+  profileUrl?: string;
   createdAt: string;
   emoji: string;
   comments: number;
