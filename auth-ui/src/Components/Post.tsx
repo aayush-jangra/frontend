@@ -1,4 +1,4 @@
-import { Post } from "../schema/posts";
+import { Post } from "../schema/posts.schema";
 import DotsHorizontal from "../Assets/Icons/dots-horizontal.svg";
 import ChatBubble from "../Assets/Icons/chat-bubble.svg";
 import DefaultAvatar from "../Assets/Icons/default-avatar.svg";

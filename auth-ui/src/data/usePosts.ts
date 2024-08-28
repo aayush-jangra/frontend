@@ -1,4 +1,4 @@
-import { Post } from "../schema/posts";
+import { Post } from "../schema/posts.schema";
 
 export const usePosts = () => {
   const posts: Post[] = [

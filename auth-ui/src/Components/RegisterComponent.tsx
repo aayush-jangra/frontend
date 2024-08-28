@@ -1,4 +1,6 @@
-export const RegisterComponent: React.FC = () => {
+export const RegisterComponent: React.FC<{ openLoginTab: () => void }> = ({
+  openLoginTab,
+}) => {
   return (
     <div className="border-gradient-bg w-full max-w-md">
       <div className="px-6 py-10 rounded-md bg-post flex flex-col gap-11">
@@ -12,7 +14,7 @@ export const RegisterComponent: React.FC = () => {
           <div className="flex flex-col gap-2.5">
             <div className="font-medium text-sm text-text-primary">Email</div>
             <input
-              type="text"
+              type="email"
               className="border-sm border-border-primary rounded bg-transparent text-text-primary placeholder:text-content p-3"
               placeholder="Enter your email"
             />
@@ -44,7 +46,11 @@ export const RegisterComponent: React.FC = () => {
             >
               Continue
             </button>
-            <button className="font-medium text-sm text-text-tertiary self-start">
+            <button
+              type="button"
+              onClick={openLoginTab}
+              className="font-medium text-sm text-text-tertiary self-start"
+            >
               Already have an account?{" "}
               <span className="text-text-primary">Login →</span>
             </button>
