@@ -41,5 +41,13 @@ module.exports = {
 
       addUtilities(newUtilities, ["responsive", "hover"]);
     },
+    function ({ addComponents }) {
+      addComponents({
+        // Removes default show/hide button from edge
+        ".custom-password-input::-ms-reveal": {
+          display: "none",
+        },
+      });
+    },
   ],
 };

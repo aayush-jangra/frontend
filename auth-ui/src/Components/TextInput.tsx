@@ -3,12 +3,12 @@ interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   errorMsg?: string;
 }
 
-export const TextInput = ({
+export const TextInput: React.FC<TextInputProps> = ({
   heading,
   errorMsg = "",
   className: customClass,
   ...props
-}: TextInputProps) => {
+}) => {
   return (
     <div className="flex flex-col gap-2.5">
       {heading && (

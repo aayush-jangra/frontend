@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useUsers } from "../data/useUsers";
 import { TextInput } from "./TextInput";
 import { AuthErrorMsg } from "../schema/auth.schema";
+import { PasswordInput } from "./PasswordInput";
 
 export const LoginComponent: React.FC<{ openRegisterTab: () => void }> = ({
   openRegisterTab,
@@ -51,20 +52,9 @@ export const LoginComponent: React.FC<{ openRegisterTab: () => void }> = ({
             placeholder="Enter your email or username"
           />
           <div className="flex flex-col gap-2.5">
-            <div className="flex w-full justify-between">
-              <div className="font-medium text-sm text-text-primary">
-                Password
-              </div>
-              <button
-                type="button"
-                onClick={() => {}}
-                className="font-medium text-xs text-text-primary"
-              >
-                Forgot password?
-              </button>
-            </div>
-            <TextInput
-              type="password"
+            <PasswordInput
+              heading="Password"
+              forgotPassword={() => {}}
               value={password}
               onChange={handleChange}
               name="password"
