@@ -40,18 +40,12 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
         }`}
       >
         <div
-          className="relative z-10 max-w-md w-full m-4"
+          className="relative max-w-md w-full m-4"
           onClick={(e) => {
             e.stopPropagation();
           }}
         >
-          <button
-            className="absolute top-4 right-4 bg-canvas rounded-full h-8 w-8 text-white"
-            onClick={onClose}
-          >
-            X
-          </button>
-          <div>{children}</div>
+          {children}
         </div>
       </div>
     </div>
