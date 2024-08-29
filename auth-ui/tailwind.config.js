@@ -26,6 +26,40 @@ module.exports = {
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui"],
       },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        fadeOut: {
+          "0%": { opacity: "1" },
+          "100%": { opacity: "0" },
+        },
+        modalLoadIn: {
+          "0%": { transform: "translateX(-1500px) skewX(30deg) scaleX(1.3)" },
+          "70%": { transform: "translateX(30px) skewX(0deg) scaleX(.9)" },
+          "100%": { transform: "translateX(0px) skewX(0deg) scaleX(1)" },
+        },
+        modalLoadOut: {
+          "0%": { transform: "translateX(0px) skewX(0deg) scaleX(1)" },
+          "30%": { transform: "translateX(-30px) skewX(-5deg) scaleX(.9)" },
+          "100%": { transform: "translateX(1500px) skewX(30deg) scaleX(1.3)" },
+        },
+        quickScaleDown: {
+          "0%": { transform: "scale(1)" },
+          "100%": { transform: "scale(0)" },
+        },
+      },
+      animation: {
+        fadeIn: "fadeIn 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards",
+        fadeOut:
+          "fadeOut 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards",
+        modalLoadIn:
+          "modalLoadIn 0.3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards",
+        modalLoadOut:
+          "modalLoadOut 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards",
+        quickScaleDown: "quickScaleDown 0s 0.5s linear forwards",
+      },
     },
   },
   plugins: [
