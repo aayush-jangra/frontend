@@ -7,7 +7,7 @@ interface ModalProps {
 }
 
 export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
-  let firstLoad = useRef(true);
+  const firstLoad = useRef(true);
 
   useEffect(() => {
     firstLoad.current = false;

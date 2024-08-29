@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useUsers } from "../data/useUsers";
 import { TextInput } from "./TextInput";
 import { AuthErrorMsg } from "../schema/auth.schema";
+import { PasswordInput } from "./PasswordInput";
 
 export const RegisterComponent: React.FC<{ openLoginTab: () => void }> = ({
   openLoginTab,
@@ -63,13 +64,11 @@ export const RegisterComponent: React.FC<{ openLoginTab: () => void }> = ({
               errorMsg === AuthErrorMsg.UNAVAILABLE_USERNAME ? errorMsg : ""
             }
           />
-          <TextInput
-            type="password"
+          <PasswordInput
             name="password"
             heading="Password"
             value={password}
             onChange={handleChange}
-            className="border-sm border-border-primary rounded bg-transparent text-text-primary placeholder:text-content p-3"
             placeholder="Choose a strong password"
             errorMsg={errorMsg === AuthErrorMsg.WEAK_PASSWORD ? errorMsg : ""}
           />

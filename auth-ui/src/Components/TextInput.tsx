@@ -7,6 +7,7 @@ export const TextInput: React.FC<TextInputProps> = ({
   heading,
   errorMsg = "",
   className: customClass,
+  required = true,
   ...props
 }) => {
   return (
@@ -15,6 +16,7 @@ export const TextInput: React.FC<TextInputProps> = ({
         <div className="font-medium text-sm text-text-primary">{heading}</div>
       )}
       <input
+        required={required}
         className={`border-sm rounded bg-transparent text-text-primary placeholder:text-content p-3 ${
           errorMsg ? "border-red-500" : "border-border-primary"
         } ${customClass}`}

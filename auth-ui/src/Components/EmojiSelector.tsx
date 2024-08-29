@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { emojis } from "../schema/constant.schema";
 
 export const EmojiSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const firstLoad = useRef(true);
   const [selectedEmoji, setSelectedEmoji] = useState("💬");
 
-  const toggleDropdown = () => setIsOpen(!isOpen);
+  const toggleDropdown = () => {
+    firstLoad.current = false;
+    setIsOpen(!isOpen);
+  };
 
   const selectEmoji = (emoji: string) => {
     setSelectedEmoji(emoji);
@@ -14,14 +18,21 @@ export const EmojiSelector = () => {
 
   return (
     <>
-      {isOpen && (
+      <div
+        className={`fixed inset-0 ${
+          isOpen ? "scale-100" : "animate-quickScaleDown"
+        }
+        ${firstLoad.current ? "scale-0" : ""}`}
+      >
         <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-xs"
+          className={`fixed inset-0 bg-black/50 backdrop-blur-xs ${
+            isOpen ? "animate-fadeIn" : "animate-fadeOut"
+          }`}
           onClick={() => {
             setIsOpen(false);
           }}
         ></div>
-      )}
+      </div>
       <div className="relative inline-block">
         <button
           onClick={toggleDropdown}
@@ -29,19 +40,22 @@ export const EmojiSelector = () => {
         >
           {selectedEmoji}
         </button>
-        {isOpen && (
-          <div className="absolute z-10 mt-3 w-64 border-primary border bg-post rounded-lg shadow-lg p-4 grid grid-cols-6 gap-2">
-            {emojis.map((emoji) => (
-              <button
-                key={emoji}
-                onClick={() => selectEmoji(emoji)}
-                className="text-2xl hover:bg-white rounded flex items-center justify-center"
-              >
-                {emoji}
-              </button>
-            ))}
-          </div>
-        )}
+        <div
+          className={`absolute z-10 mt-3 w-64 border-primary border bg-post rounded-lg shadow-lg p-4 grid grid-cols-6 gap-2 ${
+            isOpen ? "animate-fadeIn" : "animate-fadeOut"
+          }
+          ${firstLoad.current ? "scale-0" : ""}`}
+        >
+          {emojis.map((emoji) => (
+            <button
+              key={emoji}
+              onClick={() => selectEmoji(emoji)}
+              className="text-2xl hover:bg-white rounded flex items-center justify-center"
+            >
+              {emoji}
+            </button>
+          ))}
+        </div>
       </div>
     </>
   );

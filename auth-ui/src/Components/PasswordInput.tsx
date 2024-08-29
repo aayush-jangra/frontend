@@ -13,6 +13,7 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
   forgotPassword,
   errorMsg,
   className: customClass,
+  required = true,
   ...props
 }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -38,6 +39,7 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
         } ${customClass}`}
       >
         <input
+          required={required}
           type={`${showPassword ? "text" : "password"}`}
           autoComplete="off"
           className="custom-password-input w-full bg-transparent text-text-primary placeholder:text-content p-3 outline-none"
