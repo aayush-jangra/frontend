@@ -57,11 +57,21 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
               }`}
             ></div>
           </div>
-          <img className="p-3 cursor-pointer" src={Eye} />
+          <img
+            alt={showPassword ? "Hide Password" : "Show Password"}
+            className="p-3 cursor-pointer"
+            src={Eye}
+          />
         </button>
       </div>
       {errorMsg && (
-        <div className="-mt-2 text-red-500 text-sm italic">{errorMsg}</div>
+        <div
+          role="alert"
+          aria-label={errorMsg}
+          className="-mt-2 text-red-500 text-sm italic"
+        >
+          {errorMsg}
+        </div>
       )}
     </div>
   );

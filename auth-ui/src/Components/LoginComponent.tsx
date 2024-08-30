@@ -33,7 +33,7 @@ export const LoginComponent: React.FC<{ openRegisterTab: () => void }> = ({
   return (
     <div className="border-gradient-bg w-full max-w-md">
       <div className="px-6 py-10 rounded-md bg-post flex flex-col gap-11">
-        <div className="flex flex-col gap-2 items-center">
+        <div tabIndex={0} className="flex flex-col gap-2 items-center">
           <div className="font-medium text-sm text-text-tertiary">
             WELCOME BACK
           </div>
@@ -41,7 +41,12 @@ export const LoginComponent: React.FC<{ openRegisterTab: () => void }> = ({
             Log into your account
           </div>
         </div>
-        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+        <form
+          tabIndex={0}
+          aria-label="Login Form"
+          className="flex flex-col gap-4"
+          onSubmit={handleSubmit}
+        >
           <TextInput
             heading="Email or Username"
             value={username}

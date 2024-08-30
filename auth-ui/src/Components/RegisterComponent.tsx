@@ -37,13 +37,22 @@ export const RegisterComponent: React.FC<{ openLoginTab: () => void }> = ({
   return (
     <div className="border-gradient-bg w-full max-w-md">
       <div className="px-6 py-10 rounded-md bg-post flex flex-col gap-11">
-        <div className="flex flex-col gap-2 items-center">
+        <div
+          role="contentinfo"
+          tabIndex={0}
+          className="flex flex-col gap-2 items-center"
+        >
           <div className="font-medium text-sm text-text-tertiary">SIGN UP</div>
           <div className="font-semibold text-white text-lg">
             Create an account to continue
           </div>
         </div>
-        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+        <form
+          tabIndex={0}
+          aria-label="Register Form"
+          className="flex flex-col gap-4"
+          onSubmit={handleSubmit}
+        >
           <TextInput
             type="email"
             name="email"

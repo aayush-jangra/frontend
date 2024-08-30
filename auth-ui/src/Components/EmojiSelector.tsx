@@ -35,14 +35,16 @@ export const EmojiSelector = () => {
       </div>
       <div className="relative inline-block">
         <button
+          aria-label={`Emoji Selector. Selected emoji: ${selectedEmoji}`}
           onClick={toggleDropdown}
           className="rounded-full h-12 w-12 bg-post text-2xl"
         >
           {selectedEmoji}
         </button>
         <div
+          tabIndex={1}
           className={`absolute z-10 mt-3 w-64 border-primary border bg-post rounded-lg shadow-lg p-4 grid grid-cols-6 gap-2 ${
-            isOpen ? "animate-fadeIn" : "animate-fadeOut"
+            isOpen ? "animate-fadeIn" : "animate-fadeOut hidden"
           }
           ${firstLoad.current ? "scale-0" : ""}`}
         >

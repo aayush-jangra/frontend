@@ -29,7 +29,7 @@ export const LoginPage: React.FC<{ isModal?: boolean }> = ({
 
   return (
     <div className="flex flex-col h-full items-center gap-12 w-full">
-      {!isModal && <img src={Logo} />}
+      {!isModal && <img alt="App logo" src={Logo} />}
       <div
         className={`w-full flex justify-center ${
           playCloseAnimation ? "scale-0" : "scale-100"
@@ -37,6 +37,7 @@ export const LoginPage: React.FC<{ isModal?: boolean }> = ({
       >
         {isModal && (
           <button
+            aria-label="Close modal"
             className="z-50 absolute top-4 right-4 bg-canvas rounded-full h-8 w-8 text-white"
             onClick={closeLoginModal}
           >

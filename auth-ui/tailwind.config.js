@@ -46,8 +46,8 @@ module.exports = {
           "100%": { transform: "translateX(1500px) skewX(30deg) scaleX(1.3)" },
         },
         quickScaleDown: {
-          "0%": { transform: "scale(1)" },
-          "100%": { transform: "scale(0)" },
+          "0%": { transform: "scale(1)", display: "block" },
+          "100%": { transform: "scale(0)", display: "none" },
         },
       },
       animation: {

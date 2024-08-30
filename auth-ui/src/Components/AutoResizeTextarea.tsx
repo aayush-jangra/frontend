@@ -10,6 +10,7 @@ export const AutoResizeTextarea: React.FC<AutoResizeTextareaProps> = ({
   value,
   onChange,
   className: customClass,
+  placeholder,
   ...props
 }) => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -23,10 +24,12 @@ export const AutoResizeTextarea: React.FC<AutoResizeTextareaProps> = ({
 
   return (
     <textarea
+      aria-label={placeholder}
+      placeholder={placeholder}
       ref={textareaRef}
       value={value}
       onChange={onChange}
-      className={`resize-none outline-0 max-h-64 bg-transparent w-full text-text-primary placeholder:text-content mt-3 -mb-3 ${customClass}`}
+      className={`resize-none outline-0 max-h-64 bg-transparent w-full text-text-primary placeholder:text-content mt-3 sm:-mb-3 ${customClass}`}
       {...props}
     />
   );
