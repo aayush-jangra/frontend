@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useUsers } from "../data/useUsers";
-import { TextInput } from "./TextInput";
-import { AuthErrorMsg } from "../schema/auth.schema";
-import { PasswordInput } from "./PasswordInput";
+import { useUsers } from "../../data/useUsers";
+import { TextInput } from "../../Components/TextInput";
+import { AuthErrorMsg } from "../../schema/auth.schema";
+import { PasswordInput } from "../../Components/PasswordInput";
 
 export const RegisterComponent: React.FC<{ openLoginTab: () => void }> = ({
   openLoginTab,
@@ -12,6 +12,13 @@ export const RegisterComponent: React.FC<{ openLoginTab: () => void }> = ({
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const { registerUser } = useUsers();
+
+  const resetFields = () => {
+    setUsername("");
+    setEmail("");
+    setPassword("");
+    setErrorMsg("");
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setErrorMsg("");
@@ -29,6 +36,7 @@ export const RegisterComponent: React.FC<{ openLoginTab: () => void }> = ({
 
     try {
       registerUser({ username, email, password });
+      resetFields();
     } catch (error) {
       setErrorMsg((error as Error).message);
     }

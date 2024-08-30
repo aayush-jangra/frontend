@@ -12,6 +12,12 @@ export const LoginComponent: React.FC<{ openRegisterTab: () => void }> = ({
   const [errorMsg, setErrorMsg] = useState("");
   const { loginUser } = useUsers();
 
+  const resetFields = () => {
+    setUsername("");
+    setPassword("");
+    setErrorMsg("");
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setErrorMsg("");
     if (e.target.name === "username") {
@@ -25,6 +31,7 @@ export const LoginComponent: React.FC<{ openRegisterTab: () => void }> = ({
     e.preventDefault();
     try {
       loginUser(username, password);
+      resetFields();
     } catch (error) {
       setErrorMsg((error as Error).message);
     }

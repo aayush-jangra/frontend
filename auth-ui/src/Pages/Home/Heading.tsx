@@ -1,5 +1,7 @@
+import { useAuthState } from "./AuthProvider";
+
 export const Heading: React.FC = () => {
-  const username = localStorage.getItem("user");
+  const { username } = useAuthState();
 
   return (
     <div tabIndex={0} className="flex flex-col gap-3">
