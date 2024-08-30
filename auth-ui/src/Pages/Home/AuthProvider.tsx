@@ -1,8 +1,12 @@
 import { useState, createContext, useContext } from "react";
 
 interface AuthContextProps {
+  username: string | null;
   isLoginModalOpen: boolean;
+  isUserLoggedIn: boolean;
   closeLoginModal(): void;
+  loginUser(username: string): void;
+  logoutUser(): void;
   requireAuth(callback: () => void): void;
 }
 
@@ -11,14 +15,28 @@ const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
+  const user = localStorage.getItem("user");
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(!!user);
+  const [username, setUsername] = useState<string | null>(user);
 
   const closeLoginModal = () => setIsLoginModalOpen(false);
 
-  const requireAuth = (callback: () => void) => {
-    const username = localStorage.getItem("user");
+  const loginUser = (username: string) => {
+    localStorage.setItem("user", username);
+    setUsername(username);
+    setIsUserLoggedIn(true);
+    setIsLoginModalOpen(false);
+  };
 
-    if (username) {
+  const logoutUser = () => {
+    localStorage.removeItem("user");
+    setIsUserLoggedIn(false);
+    setUsername(null);
+  };
+
+  const requireAuth = (callback: () => void) => {
+    if (isUserLoggedIn) {
       callback();
     } else {
       setIsLoginModalOpen(true);
@@ -27,7 +45,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 
   return (
     <AuthContext.Provider
-      value={{ isLoginModalOpen, closeLoginModal, requireAuth }}
+      value={{
+        username,
+        isLoginModalOpen,
+        isUserLoggedIn,
+        closeLoginModal,
+        loginUser,
+        logoutUser,
+        requireAuth,
+      }}
     >
       {children}
     </AuthContext.Provider>

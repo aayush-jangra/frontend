@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { useUsers } from "../data/useUsers";
-import { TextInput } from "./TextInput";
-import { AuthErrorMsg } from "../schema/auth.schema";
+import { useUsers } from "../../data/useUsers";
+import { TextInput } from "../../Components/TextInput";
+import { AuthErrorMsg } from "../../schema/auth.schema";
+import { PasswordInput } from "../../Components/PasswordInput";
 
 export const RegisterComponent: React.FC<{ openLoginTab: () => void }> = ({
   openLoginTab,
@@ -11,6 +12,13 @@ export const RegisterComponent: React.FC<{ openLoginTab: () => void }> = ({
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const { registerUser } = useUsers();
+
+  const resetFields = () => {
+    setUsername("");
+    setEmail("");
+    setPassword("");
+    setErrorMsg("");
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setErrorMsg("");
@@ -28,6 +36,7 @@ export const RegisterComponent: React.FC<{ openLoginTab: () => void }> = ({
 
     try {
       registerUser({ username, email, password });
+      resetFields();
     } catch (error) {
       setErrorMsg((error as Error).message);
     }
@@ -36,13 +45,22 @@ export const RegisterComponent: React.FC<{ openLoginTab: () => void }> = ({
   return (
     <div className="border-gradient-bg w-full max-w-md">
       <div className="px-6 py-10 rounded-md bg-post flex flex-col gap-11">
-        <div className="flex flex-col gap-2 items-center">
+        <div
+          role="contentinfo"
+          tabIndex={0}
+          className="flex flex-col gap-2 items-center"
+        >
           <div className="font-medium text-sm text-text-tertiary">SIGN UP</div>
           <div className="font-semibold text-white text-lg">
             Create an account to continue
           </div>
         </div>
-        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+        <form
+          tabIndex={0}
+          aria-label="Register Form"
+          className="flex flex-col gap-4"
+          onSubmit={handleSubmit}
+        >
           <TextInput
             type="email"
             name="email"
@@ -63,13 +81,11 @@ export const RegisterComponent: React.FC<{ openLoginTab: () => void }> = ({
               errorMsg === AuthErrorMsg.UNAVAILABLE_USERNAME ? errorMsg : ""
             }
           />
-          <TextInput
-            type="password"
+          <PasswordInput
             name="password"
             heading="Password"
             value={password}
             onChange={handleChange}
-            className="border-sm border-border-primary rounded bg-transparent text-text-primary placeholder:text-content p-3"
             placeholder="Choose a strong password"
             errorMsg={errorMsg === AuthErrorMsg.WEAK_PASSWORD ? errorMsg : ""}
           />

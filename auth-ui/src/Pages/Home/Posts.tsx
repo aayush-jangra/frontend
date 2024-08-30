@@ -1,6 +1,6 @@
-import { CreatePost } from "../../Components/CreatePost";
 import { PostComponent } from "../../Components/Post";
 import { usePosts } from "../../data/usePosts";
+import { CreatePost } from "./CreatePost";
 
 export const Posts: React.FC = () => {
   const { posts } = usePosts();

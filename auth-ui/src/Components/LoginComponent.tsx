@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useUsers } from "../data/useUsers";
 import { TextInput } from "./TextInput";
 import { AuthErrorMsg } from "../schema/auth.schema";
+import { PasswordInput } from "./PasswordInput";
 
 export const LoginComponent: React.FC<{ openRegisterTab: () => void }> = ({
   openRegisterTab,
@@ -10,6 +11,12 @@ export const LoginComponent: React.FC<{ openRegisterTab: () => void }> = ({
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const { loginUser } = useUsers();
+
+  const resetFields = () => {
+    setUsername("");
+    setPassword("");
+    setErrorMsg("");
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setErrorMsg("");
@@ -24,6 +31,7 @@ export const LoginComponent: React.FC<{ openRegisterTab: () => void }> = ({
     e.preventDefault();
     try {
       loginUser(username, password);
+      resetFields();
     } catch (error) {
       setErrorMsg((error as Error).message);
     }
@@ -32,7 +40,7 @@ export const LoginComponent: React.FC<{ openRegisterTab: () => void }> = ({
   return (
     <div className="border-gradient-bg w-full max-w-md">
       <div className="px-6 py-10 rounded-md bg-post flex flex-col gap-11">
-        <div className="flex flex-col gap-2 items-center">
+        <div tabIndex={0} className="flex flex-col gap-2 items-center">
           <div className="font-medium text-sm text-text-tertiary">
             WELCOME BACK
           </div>
@@ -40,7 +48,12 @@ export const LoginComponent: React.FC<{ openRegisterTab: () => void }> = ({
             Log into your account
           </div>
         </div>
-        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+        <form
+          tabIndex={0}
+          aria-label="Login Form"
+          className="flex flex-col gap-4"
+          onSubmit={handleSubmit}
+        >
           <TextInput
             heading="Email or Username"
             value={username}
@@ -51,20 +64,9 @@ export const LoginComponent: React.FC<{ openRegisterTab: () => void }> = ({
             placeholder="Enter your email or username"
           />
           <div className="flex flex-col gap-2.5">
-            <div className="flex w-full justify-between">
-              <div className="font-medium text-sm text-text-primary">
-                Password
-              </div>
-              <button
-                type="button"
-                onClick={() => {}}
-                className="font-medium text-xs text-text-primary"
-              >
-                Forgot password?
-              </button>
-            </div>
-            <TextInput
-              type="password"
+            <PasswordInput
+              heading="Password"
+              forgotPassword={() => {}}
               value={password}
               onChange={handleChange}
               name="password"

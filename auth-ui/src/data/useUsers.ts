@@ -1,5 +1,6 @@
 import { useAuthState } from "../Pages/Home/AuthProvider";
 import { AuthErrorMsg } from "../schema/auth.schema";
+import { Routes } from "../schema/routes.schema";
 import { User } from "../schema/users.schema";
 
 const users: User[] = [
@@ -11,7 +12,7 @@ const users: User[] = [
 ];
 
 export const useUsers = () => {
-  const { isLoginModalOpen, closeLoginModal } = useAuthState();
+  const { loginUser: logUser } = useAuthState();
 
   const isUserRegistered = (email: string) => {
     return users.some((user) => user.email === email);
@@ -29,7 +30,7 @@ export const useUsers = () => {
   };
 
   const getUser = (usernameOrEmail: string, password: string) => {
-    return users.filter(
+    return users.find(
       (user) =>
         (user.email === usernameOrEmail || user.username === usernameOrEmail) &&
         user.password === password
@@ -39,13 +40,13 @@ export const useUsers = () => {
   const loginUser = (usernameOrEmail: string, password: string) => {
     if (!isValidUsernameOrEmail(usernameOrEmail))
       throw new Error(AuthErrorMsg.DOES_NOT_EXIST);
-    const users = getUser(usernameOrEmail, password);
-    if (users.length !== 1) throw new Error(AuthErrorMsg.INVALID_PASSWORD);
+    const user = getUser(usernameOrEmail, password);
+    if (!user) throw new Error(AuthErrorMsg.INVALID_PASSWORD);
 
-    localStorage.setItem("user", users[0].username);
+    logUser(user.username);
 
-    if (isLoginModalOpen) closeLoginModal();
-    else window.location.pathname = "/";
+    if (window.location.pathname === Routes.LOGIN)
+      window.location.pathname = Routes.HOME;
   };
 
   const registerUser = ({ username, email, password }: User) => {
