@@ -1,6 +1,6 @@
 import { Heading } from "./Heading";
 import { Posts } from "./Posts";
-import Modal from "../../components/Modal";
+import { Modal } from "../../components/Modal";
 import { useAuthState } from "../../providers/AuthProvider";
 import { Logout } from "./Logout";
 import { LoginPage } from "../LoginPage/LoginPage";

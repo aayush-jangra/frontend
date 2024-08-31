@@ -4,6 +4,10 @@ import { useAuthState } from "../../providers/AuthProvider";
 import { RegisterComponent } from "./RegisterComponent";
 import { LoginComponent } from "./LoginComponent";
 
+/**
+ * LoginPage component that renders either the login or registration form based on the state.
+ * Handles animations and modal functionality if applicable.
+ */
 export const LoginPage: React.FC<{ isModal?: boolean }> = ({
   isModal = false,
 }) => {
@@ -11,20 +15,28 @@ export const LoginPage: React.FC<{ isModal?: boolean }> = ({
   const [existingUser, setExistingUser] = useState(true);
   const [playCloseAnimation, setPlayCloseAnimation] = useState(false);
 
+  /**
+   * Switches to the registration tab with an animation.
+   * Sets a timeout to reset animation state and change to registration view.
+   */
   const openRegisterTab = () => {
     setPlayCloseAnimation(true);
     setTimeout(() => {
       setPlayCloseAnimation(false);
       setExistingUser(false);
-    }, 300);
+    }, 300); // Duration matches the animation time
   };
 
+  /**
+   * Switches to the login tab with an animation.
+   * Sets a timeout to reset animation state and change to login view.
+   */
   const openLoginTab = () => {
     setPlayCloseAnimation(true);
     setTimeout(() => {
       setPlayCloseAnimation(false);
       setExistingUser(true);
-    }, 300);
+    }, 300); // Duration matches the animation time
   };
 
   return (
