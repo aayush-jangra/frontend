@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Eye from "../assets/icons/eye.svg";
+import Eye from "../resources/icons/eye.svg";
 
 interface PasswordInputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {

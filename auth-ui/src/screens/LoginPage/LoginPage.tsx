@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Logo from "../../assets/icons/logo.svg";
+import Logo from "../../resources/icons/logo.svg";
 import { useAuthState } from "../../providers/AuthProvider";
 import { RegisterComponent } from "./RegisterComponent";
 import { LoginComponent } from "./LoginComponent";
