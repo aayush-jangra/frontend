@@ -1,7 +1,7 @@
 import { Post } from "../schema/posts.schema";
-import DotsHorizontal from "../assets/icons/dots-horizontal.svg";
-import ChatBubble from "../assets/icons/chat-bubble.svg";
-import DefaultAvatar from "../assets/icons/default-avatar.svg";
+import DotsHorizontal from "../resources/icons/dots-horizontal.svg";
+import ChatBubble from "../resources/icons/chat-bubble.svg";
+import DefaultAvatar from "../resources/icons/default-avatar.svg";
 import { useAuthState } from "../providers/AuthProvider";
 
 /**
