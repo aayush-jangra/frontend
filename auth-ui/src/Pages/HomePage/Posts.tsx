@@ -1,4 +1,4 @@
-import { PostComponent } from "../../Components/Post";
+import { PostComponent } from "../../components/Post";
 import { usePosts } from "../../data/usePosts";
 import { CreatePost } from "./CreatePost";
 

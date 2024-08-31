@@ -1,8 +1,8 @@
 import { Post } from "../schema/posts.schema";
-import DotsHorizontal from "../Assets/Icons/dots-horizontal.svg";
-import ChatBubble from "../Assets/Icons/chat-bubble.svg";
-import DefaultAvatar from "../Assets/Icons/default-avatar.svg";
-import { useAuthState } from "../Pages/Home/AuthProvider";
+import DotsHorizontal from "../assets/icons/dots-horizontal.svg";
+import ChatBubble from "../assets/icons/chat-bubble.svg";
+import DefaultAvatar from "../assets/icons/default-avatar.svg";
+import { useAuthState } from "../providers/AuthProvider";
 
 export const PostComponent: React.FC<Post> = ({
   username,

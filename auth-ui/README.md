@@ -7,6 +7,7 @@ A user-friendly authentication UI built using [React](https://reactjs.org/) and 
 - 🔒 **Authentication Pages:** Includes login and registration pages with a clean, modern design.
 - 🌐 **Navigation:** Seamless navigation between authentication and home pages.
 - 📱 **Responsive Design:** Fully responsive UI that looks great on all devices.
+- ♿ **Accessibility:** Ensures an inclusive experience with screen reader support and keyboard navigation.
 
 ## Tech Stack
 

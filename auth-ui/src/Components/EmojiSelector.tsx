@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { emojis } from "../schema/constant.schema";
+import { emojis } from "../constants/emojis";
 
 export const EmojiSelector = () => {
   const [isOpen, setIsOpen] = useState(false);

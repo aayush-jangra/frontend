@@ -1,4 +1,4 @@
-import { useAuthState } from "../Pages/Home/AuthProvider";
+import { useAuthState } from "../providers/AuthProvider";
 import { AuthErrorMsg } from "../schema/auth.schema";
 import { Routes } from "../schema/routes.schema";
 import { User } from "../schema/users.schema";

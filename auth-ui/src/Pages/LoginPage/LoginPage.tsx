@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Logo from "../../Assets/Icons/logo.svg";
-import { LoginComponent } from "../../Components/LoginComponent";
-import { useAuthState } from "../Home/AuthProvider";
+import Logo from "../../assets/icons/logo.svg";
+import { useAuthState } from "../../providers/AuthProvider";
 import { RegisterComponent } from "./RegisterComponent";
+import { LoginComponent } from "./LoginComponent";
 
 export const LoginPage: React.FC<{ isModal?: boolean }> = ({
   isModal = false,

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useUsers } from "../data/useUsers";
-import { TextInput } from "./TextInput";
-import { AuthErrorMsg } from "../schema/auth.schema";
-import { PasswordInput } from "./PasswordInput";
+import { useUsers } from "../../data/useUsers";
+import { TextInput } from "../../components/TextInput";
+import { AuthErrorMsg } from "../../schema/auth.schema";
+import { PasswordInput } from "../../components/PasswordInput";
 
 export const LoginComponent: React.FC<{ openRegisterTab: () => void }> = ({
   openRegisterTab,

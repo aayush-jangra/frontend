@@ -1,7 +1,7 @@
-import { AuthProvider } from "./Pages/Home/AuthProvider";
-import { HomePage } from "./Pages/Home/HomePage";
-import { LoginPage } from "./Pages/Login/LoginPage";
+import { AuthProvider } from "./providers/AuthProvider";
+import { HomePage } from "./pages/HomePage/HomePage";
 import { Routes } from "./schema/routes.schema";
+import { LoginPage } from "./pages/LoginPage/LoginPage";
 
 /** Created custom router instead of React Router since it's a very small app */
 const Router: React.FC = () => {

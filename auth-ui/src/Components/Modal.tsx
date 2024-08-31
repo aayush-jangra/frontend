@@ -87,6 +87,9 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
           onClick={(e) => {
             e.stopPropagation();
           }}
+          role="dialog"
+          aria-label="Authentication modal"
+          tabIndex={0}
         >
           {children}
         </div>
