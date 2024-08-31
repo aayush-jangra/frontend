@@ -1,5 +1,5 @@
-import { useAuthState } from "./AuthProvider";
-import LogoutIcon from "../../Assets/Icons/logout.svg";
+import { useAuthState } from "../../providers/AuthProvider";
+import LogoutIcon from "../../assets/icons/logout.svg";
 
 export const Logout = () => {
   const { isUserLoggedIn, logoutUser } = useAuthState();

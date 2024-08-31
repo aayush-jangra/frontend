@@ -1,4 +1,4 @@
-import { useAuthState } from "./AuthProvider";
+import { useAuthState } from "../../providers/AuthProvider";
 
 export const Heading: React.FC = () => {
   const { username } = useAuthState();

@@ -1,9 +1,9 @@
 import { Heading } from "./Heading";
 import { Posts } from "./Posts";
-import Modal from "../../Components/Modal";
-import { LoginPage } from "../Login/LoginPage";
-import { useAuthState } from "./AuthProvider";
+import { Modal } from "../../components/Modal";
+import { useAuthState } from "../../providers/AuthProvider";
 import { Logout } from "./Logout";
+import { LoginPage } from "../LoginPage/LoginPage";
 
 export const HomePage: React.FC = () => {
   const { isLoginModalOpen, closeLoginModal } = useAuthState();

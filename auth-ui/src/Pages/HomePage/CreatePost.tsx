@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useAuthState } from "./AuthProvider";
-import { EmojiSelector } from "../../Components/EmojiSelector";
-import { AutoResizeTextarea } from "../../Components/AutoResizeTextarea";
+import { useAuthState } from "../../providers/AuthProvider";
+import { EmojiSelector } from "../../components/EmojiSelector";
+import { AutoResizeTextarea } from "../../components/AutoResizeTextarea";
 
 export const CreatePost: React.FC = () => {
   const { requireAuth } = useAuthState();

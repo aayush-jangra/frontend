@@ -1,9 +1,15 @@
 import { Post } from "../schema/posts.schema";
-import DotsHorizontal from "../Assets/Icons/dots-horizontal.svg";
-import ChatBubble from "../Assets/Icons/chat-bubble.svg";
-import DefaultAvatar from "../Assets/Icons/default-avatar.svg";
-import { useAuthState } from "../Pages/Home/AuthProvider";
+import DotsHorizontal from "../assets/icons/dots-horizontal.svg";
+import ChatBubble from "../assets/icons/chat-bubble.svg";
+import DefaultAvatar from "../assets/icons/default-avatar.svg";
+import { useAuthState } from "../providers/AuthProvider";
 
+/**
+ * PostComponent
+ *
+ * This component renders a post with the user's profile, content, emoji, and comments count.
+ * It also includes buttons for viewing more options and interacting with the post (e.g., leaving a comment).
+ */
 export const PostComponent: React.FC<Post> = ({
   username,
   createdAt,
@@ -13,11 +19,12 @@ export const PostComponent: React.FC<Post> = ({
   profileUrl,
 }) => {
   const { requireAuth } = useAuthState();
+
   return (
     <div
       tabIndex={0}
       aria-label={`Post by ${username}`}
-      onClick={() => requireAuth(() => {})}
+      onClick={() => requireAuth(() => {})} // Requires authentication when the post is clicked
       className="bg-post border-border-primary border-2 rounded-lg px-5 py-6 flex flex-col gap-5 cursor-pointer"
     >
       <div className="flex justify-between items-center">
