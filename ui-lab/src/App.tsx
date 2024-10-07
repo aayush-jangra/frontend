@@ -1,14 +1,28 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { HomePage } from "./Pages/HomePage";
+import { Routes } from "./routes";
+
+const FullScreenWrapper = ({
+  background = "",
+  children,
+}: {
+  background?: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <div className={`h-screen w-screen p-2 ${background}`}>{children}</div>
+  );
+};
 
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/",
-      element: <div>Home page</div>,
-    },
-    {
-      path: "test",
-      element: <div>Test page</div>,
+      path: Routes.HOME,
+      element: (
+        <FullScreenWrapper background="bg-sky-50">
+          <HomePage />
+        </FullScreenWrapper>
+      ),
     },
   ]);
 
