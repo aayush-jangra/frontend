@@ -1,6 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage } from "./Pages/HomePage";
 import { Routes } from "./routes";
+import { GridBoard } from "./Pages/GridBoard/GridBoard";
+import { GridBoardWrapper } from "./Pages/GridBoard/GridBoardWrapper";
 
 const FullScreenWrapper = ({
   background = "",
@@ -21,6 +23,16 @@ function App() {
       element: (
         <FullScreenWrapper background="bg-sky-50">
           <HomePage />
+        </FullScreenWrapper>
+      ),
+    },
+    {
+      path: Routes.GRID_BOARD,
+      element: (
+        <FullScreenWrapper background="bg-sky-50">
+          <GridBoardWrapper>
+            <GridBoard />
+          </GridBoardWrapper>
         </FullScreenWrapper>
       ),
     },
