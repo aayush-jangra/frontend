@@ -45,7 +45,7 @@ export const GridBoard = () => {
             {boxes.map((gridBoxInfo) => {
               return (
                 <div
-                  className="min-w-28 min-h-28"
+                  className="min-w-40 min-h-40"
                   key={gridBoxInfo.id}
                   style={{ gridArea: gridBoxInfo.id }}
                 >
@@ -60,7 +60,7 @@ export const GridBoard = () => {
                 return (
                   <div
                     key={`${rowIndex}-${colIndex}`}
-                    className="relative min-w-28 min-h-28 group bg-gray-300 text-3xl flex items-center justify-center p-4 rounded-2xl cursor-pointer hover:bg-gray-600 transition-all duration-500"
+                    className="relative min-w-40 min-h-40 group bg-gray-300 text-3xl flex items-center justify-center p-4 rounded-2xl cursor-pointer hover:bg-gray-600 transition-all duration-500"
                     onClick={() => addBox(rowIndex, colIndex)}
                   >
                     <div className="bg-gray-200 rounded-full w-[24px] h-[24px] flex items-center justify-center group-hover:scale-[2] transition-all duration-500">

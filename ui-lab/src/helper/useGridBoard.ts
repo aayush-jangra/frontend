@@ -40,6 +40,7 @@ export const useGridBoard = () => {
       const newV = [...prev];
       newV.push({
         id: newDivId,
+        name: "",
         bgColor,
         shadowColor,
         start: [row, col],

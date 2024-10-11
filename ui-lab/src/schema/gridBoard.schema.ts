@@ -1,5 +1,6 @@
 export interface GridBoxInfo {
   id: string;
+  name: string;
   bgColor: string;
   shadowColor: string;
   start: [number, number];
