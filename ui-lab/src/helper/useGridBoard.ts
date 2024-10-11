@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { BoxColors, Direction, GridBoxInfo } from "../schema/gridBoard.schema";
+import {
+  BoxColors,
+  Direction,
+  GridBoxInfo,
+  GridBoxType,
+} from "../schema/gridBoard.schema";
 
 export const useGridBoard = () => {
   const defaultMap = [
@@ -45,6 +50,7 @@ export const useGridBoard = () => {
         shadowColor,
         start: [row, col],
         end: [row, col],
+        type: GridBoxType.TEXTAREA,
       });
       return newV;
     });
@@ -73,6 +79,20 @@ export const useGridBoard = () => {
       }
 
       return newV;
+    });
+  }
+
+  function updateBoxInfo(id: string, newValues: Partial<GridBoxInfo>) {
+    setBoxes((prev) => {
+      const newV = [...prev];
+
+      return newV.map((item) => {
+        if (item.id === id) {
+          return { ...item, ...newValues };
+        }
+
+        return item;
+      });
     });
   }
 
@@ -228,6 +248,7 @@ export const useGridBoard = () => {
     getTemplateArea,
     addBox,
     removeBox,
+    updateBoxInfo,
     extendBox,
     canExtendBox,
     extendBoard,

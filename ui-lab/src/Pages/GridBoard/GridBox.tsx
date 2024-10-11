@@ -1,6 +1,8 @@
 import { useGridContext } from "./GridBoardWrapper";
-import { GridBoxInfo } from "../../schema/gridBoard.schema";
+import { GridBoxInfo, GridBoxType } from "../../schema/gridBoard.schema";
 import { CheckList } from "./CheckList";
+import { BoxTypeSwitcher } from "./BoxTypeSwitcher";
+import { BoxColorSwitcher } from "./BoxColorSwitcher";
 
 export const GridBox = ({
   id,
@@ -9,6 +11,7 @@ export const GridBox = ({
   shadowColor,
   start,
   end,
+  type,
 }: GridBoxInfo) => {
   const { canExtendBox, extendBox, removeBox } = useGridContext();
   return (
@@ -57,6 +60,8 @@ export const GridBox = ({
             maxLength={50}
           />
           <div className="flex h-full bg-transparent border border-slate-800 rounded-full px-1 items-center">
+            <BoxColorSwitcher id={id} />
+            <BoxTypeSwitcher id={id} />
             <button
               onClick={() => removeBox(id)}
               type="button"
@@ -69,13 +74,17 @@ export const GridBox = ({
         {/* Box Content */}
         <div className="flex flex-col h-full">
           <div className="font-thin font-serif italic text-text-secondary text-sm">
-            Textarea
+            {type}
           </div>
           <div className="w-full h-full rounded-xl p-2 bg-slate-100/75">
-            {/* <textarea
-              className={`w-full resize-none bg-transparent outline-none`}
-            /> */}
-            <CheckList end={end} />
+            {type === GridBoxType.TEXTAREA && (
+              <textarea
+                className={`w-full resize-none bg-transparent outline-none h-full`}
+              />
+            )}
+            {type === GridBoxType.CHECKLIST && (
+              <CheckList end={end} start={start} />
+            )}
           </div>
         </div>
       </div>

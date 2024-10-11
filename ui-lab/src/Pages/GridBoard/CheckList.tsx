@@ -1,7 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { Checkbox } from "../../Components/Checkbox";
 
-export const CheckList = ({ end }: { end: [number, number] }) => {
+export const CheckList = ({
+  end,
+  start,
+}: {
+  end: [number, number];
+  start: [number, number];
+}) => {
   const [checkList, setCheckList] = useState<
     { checked: boolean; content: string }[]
   >([]);
@@ -38,11 +44,19 @@ export const CheckList = ({ end }: { end: [number, number] }) => {
     });
   };
 
+  const removeCheck = (index: number) => {
+    setCheckList((prev) => {
+      const newV = [...prev];
+
+      return newV.filter((_, ind) => ind !== index);
+    });
+  };
+
   useEffect(() => {
     if (ref.current) {
       setMaxHeight(ref.current.clientHeight - 40);
     }
-  }, [ref.current?.clientHeight, end]);
+  }, [ref.current?.clientHeight, end, start]);
 
   return (
     <div className="flex flex-col gap-2 h-full" ref={ref}>
@@ -52,12 +66,17 @@ export const CheckList = ({ end }: { end: [number, number] }) => {
       >
         {checkList.map(({ content, checked }, index) => {
           return (
-            <div className="border-b border-slate-800/50" key={index}>
-              <Checkbox
-                content={content}
-                checked={checked}
-                onChange={() => handleCheck(index)}
-              />
+            <div className="flex border-b border-slate-800/50" key={index}>
+              <div className="flex-1">
+                <Checkbox
+                  content={content}
+                  checked={checked}
+                  onChange={() => handleCheck(index)}
+                />
+              </div>
+              <button type="button" onClick={() => removeCheck(index)}>
+                D
+              </button>
             </div>
           );
         })}

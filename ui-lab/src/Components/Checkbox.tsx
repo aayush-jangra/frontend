@@ -24,7 +24,7 @@ export const Checkbox = ({
         <div className="relative">
           {content}
           <div
-            className={`absolute w-full border border-black top-1/2 transition-all duration-500 ${
+            className={`absolute w-full border border-black top-1/2 transition-all duration-500 translate-y-[1px] ${
               checked ? "scale-100" : "scale-0"
             }`}
           ></div>
