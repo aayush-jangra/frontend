@@ -1,4 +1,5 @@
-import { GridBox } from "../../Components/GridBox";
+import { GridBox } from "./GridBox";
+import { Tooltip } from "../../Components/Tooltip";
 import { useGridContext } from "./GridBoardWrapper";
 import "./styles.css";
 
@@ -12,14 +13,26 @@ export const GridBoard = () => {
   return (
     <div className="flex gap-4 h-full">
       <div className="bg-sky-50 border p-4 rounded border-teal-500 shadow-container shadow-teal-500 flex flex-col items-center justify-around w-1/12 min-w-16">
-        <button
-          onClick={() => extendBoard("right")}
-          className="bg-slate-700 rounded-full w-10 h-10 text-white flex items-center justify-center shadow hover:shadow-box-focus shadow-black hover:shadow-black transition-shadow duration-500 cursor-pointer"
-        >{`->`}</button>
-        <button
-          onClick={() => extendBoard("down")}
-          className="bg-slate-700 rounded-full w-10 h-10 text-white flex items-center justify-center shadow hover:shadow-box-focus shadow-black hover:shadow-black transition-shadow duration-500 cursor-pointer rotate-90"
-        >{`->`}</button>
+        <Tooltip
+          theme="dark"
+          direction="right"
+          content="Extend board horizontally"
+        >
+          <button
+            onClick={() => extendBoard("right")}
+            className="bg-slate-700 rounded-full w-10 h-10 text-white flex items-center justify-center shadow hover:shadow-box-focus shadow-black hover:shadow-black transition-shadow duration-500 cursor-pointer"
+          >{`->`}</button>
+        </Tooltip>
+        <Tooltip
+          theme="dark"
+          direction="right"
+          content="Extend board vertically"
+        >
+          <button
+            onClick={() => extendBoard("down")}
+            className="bg-slate-700 rounded-full w-10 h-10 text-white flex items-center justify-center shadow hover:shadow-box-focus shadow-black hover:shadow-black transition-shadow duration-500 cursor-pointer rotate-90"
+          >{`->`}</button>
+        </Tooltip>
       </div>
       <div className="w-11/12 min-w-board bg-sky-50 border border-blue-500 p-4 rounded-md shadow-container shadow-sky-500 box-border">
         <div className="overflow-scroll hide-scrollbar h-full max-w-full">

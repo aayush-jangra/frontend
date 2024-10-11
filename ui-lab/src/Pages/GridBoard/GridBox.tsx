@@ -1,5 +1,5 @@
-import { useGridContext } from "../Pages/GridBoard/GridBoardWrapper";
-import { GridBoxInfo } from "../schema/gridBoard.schema";
+import { useGridContext } from "./GridBoardWrapper";
+import { GridBoxInfo } from "../../schema/gridBoard.schema";
 
 export const GridBox = ({
   id,
