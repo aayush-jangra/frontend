@@ -26,20 +26,23 @@ export const BoxColors = [
   { bgColor: "bg-rose-300", shadowColor: "hover:shadow-rose-900" },
 ];
 
+export type Direction = "left" | "right" | "up" | "down";
+
 export interface GridBoardContextProps {
   boxes: GridBoxInfo[];
   board: string[][];
-  getArea: () => string;
+  getTemplateArea: () => string;
   addBox: (row: number, col: number) => void;
   extendBox: (
     id: string,
-    direction: "left" | "right" | "up" | "down",
+    direction: Direction,
     start: [number, number],
     end: [number, number]
   ) => void;
   canExtendBox: (
-    direction: "left" | "right" | "up" | "down",
+    direction: Direction,
     start: [number, number],
     end: [number, number]
   ) => boolean;
+  extendBoard: (direction: Direction) => void;
 }

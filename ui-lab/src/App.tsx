@@ -29,7 +29,7 @@ function App() {
     {
       path: Routes.GRID_BOARD,
       element: (
-        <FullScreenWrapper background="bg-sky-50">
+        <FullScreenWrapper background="bg-slate-700">
           <GridBoardWrapper>
             <GridBoard />
           </GridBoardWrapper>

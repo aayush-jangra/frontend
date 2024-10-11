@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BoxColors, GridBoxInfo } from "../schema/gridBoard.schema";
+import { BoxColors, Direction, GridBoxInfo } from "../schema/gridBoard.schema";
 
 export const useGridBoard = () => {
   const defaultMap = [
@@ -13,7 +13,7 @@ export const useGridBoard = () => {
   const [boxes, setBoxes] = useState<GridBoxInfo[]>([]);
   const [board, setBoard] = useState(defaultMap);
 
-  function getArea() {
+  function getTemplateArea() {
     let val = "";
     board.forEach((row) => {
       const str = row.join(" ");
@@ -48,9 +48,27 @@ export const useGridBoard = () => {
     });
   }
 
+  function extendBoard(direction: Direction) {
+    if (direction === "right") {
+      setBoard((prev) => {
+        const newV = prev.map((row) => [...row]);
+        newV.forEach((row) => row.push("."));
+
+        return newV;
+      });
+    } else if (direction === "down") {
+      setBoard((prev) => {
+        const newV = prev.map((row) => [...row]);
+        newV.push(Array(prev[0].length).fill("."));
+
+        return newV;
+      });
+    }
+  }
+
   function extendBox(
     id: string,
-    direction: "left" | "right" | "up" | "down",
+    direction: Direction,
     start: [number, number],
     end: [number, number]
   ) {
@@ -124,7 +142,7 @@ export const useGridBoard = () => {
   }
 
   function canExtendBox(
-    direction: "left" | "right" | "up" | "down",
+    direction: Direction,
     start: [number, number],
     end: [number, number]
   ) {
@@ -176,5 +194,13 @@ export const useGridBoard = () => {
     return true;
   }
 
-  return { boxes, board, getArea, addBox, extendBox, canExtendBox };
+  return {
+    boxes,
+    board,
+    getTemplateArea,
+    addBox,
+    extendBox,
+    canExtendBox,
+    extendBoard,
+  };
 };
