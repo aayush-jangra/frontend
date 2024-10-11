@@ -33,6 +33,7 @@ export interface GridBoardContextProps {
   board: string[][];
   getTemplateArea: () => string;
   addBox: (row: number, col: number) => void;
+  removeBox: (id: string) => void;
   extendBox: (
     id: string,
     direction: Direction,

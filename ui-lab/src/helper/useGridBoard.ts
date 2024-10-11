@@ -13,6 +13,14 @@ export const useGridBoard = () => {
   const [boxes, setBoxes] = useState<GridBoxInfo[]>([]);
   const [board, setBoard] = useState(defaultMap);
 
+  function getDivId() {
+    if (boxes.length === 0) return "box-1";
+
+    const lastId = boxes[boxes.length - 1].id.split("-")[1];
+
+    return `box-${parseInt(lastId) + 1}`;
+  }
+
   function getTemplateArea() {
     let val = "";
     board.forEach((row) => {
@@ -24,7 +32,7 @@ export const useGridBoard = () => {
   }
 
   function addBox(row: number, col: number) {
-    const newDivId = `box-${boxes.length}`;
+    const newDivId = getDivId();
     const { bgColor, shadowColor } =
       BoxColors[Math.floor(Math.random() * BoxColors.length)];
 
@@ -43,6 +51,25 @@ export const useGridBoard = () => {
     setBoard((prev) => {
       const newV = prev.map((row) => [...row]);
       newV[row][col] = newDivId;
+
+      return newV;
+    });
+  }
+
+  function removeBox(id: string) {
+    setBoxes((prev) => {
+      const newV = [...prev];
+
+      return newV.filter((box) => box.id !== id);
+    });
+
+    setBoard((prev) => {
+      const newV = prev.map((row) => [...row]);
+      for (let i = 0; i < newV.length; i++) {
+        for (let j = 0; j < newV[i].length; j++) {
+          if (newV[i][j] === id) newV[i][j] = ".";
+        }
+      }
 
       return newV;
     });
@@ -199,6 +226,7 @@ export const useGridBoard = () => {
     board,
     getTemplateArea,
     addBox,
+    removeBox,
     extendBox,
     canExtendBox,
     extendBoard,

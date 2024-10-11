@@ -20,13 +20,13 @@ export const Tooltip: React.FC<TooltipProps> = ({
       ? "bg-white border-black text-primary"
       : "bg-slate-800 border-white text-white";
 
-  let posClass = "top-0 left-1/2 -translate-y-full -translate-x-1/2 -mt-2";
+  let posClass = "-top-2 left-1/2 -translate-y-full -translate-x-1/2";
   if (direction === "bottom") {
-    posClass = "bottom-0 left-1/2 translate-y-full -translate-x-1/2 -mb-2";
+    posClass = "-bottom-2 left-1/2 translate-y-full -translate-x-1/2";
   } else if (direction === "left") {
-    posClass = "top-1/2 left-0 -translate-y-1/2 -translate-x-full -ml-2";
+    posClass = "top-1/2 -left-2 -translate-y-1/2 -translate-x-full";
   } else if (direction === "right") {
-    posClass = "top-1/2 right-0 -translate-y-1/2 translate-x-full -mr-2";
+    posClass = "top-1/2 -right-2 -translate-y-1/2 translate-x-full";
   }
 
   return (

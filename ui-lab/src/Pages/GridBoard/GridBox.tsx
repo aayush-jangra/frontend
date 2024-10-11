@@ -8,7 +8,7 @@ export const GridBox = ({
   start,
   end,
 }: GridBoxInfo) => {
-  const { canExtendBox, extendBox } = useGridContext();
+  const { canExtendBox, extendBox, removeBox } = useGridContext();
   return (
     <div
       className={`group relative ${bgColor} rounded h-full w-full p-2 shadow-lg hover:shadow-box-focus transition-all duration-500 ${shadowColor}`}
@@ -16,32 +16,43 @@ export const GridBox = ({
       {/* Extend Right =>  */}
       {canExtendBox("right", start, end) && (
         <button
+          type="button"
           onClick={() => extendBox(id, "right", start, end)}
-          className={`z-10 hidden group-hover:flex absolute top-1/2 right-0 ${bgColor} -translate-y-1/2 translate-x-full rounded-r-full w-6 h-12 items-center justify-center cursor-pointer`}
+          className={`z-10 hidden group-hover:flex absolute top-1/2 right-0 ${bgColor} -translate-y-1/2 translate-x-full rounded-r-full w-6 h-12 items-center justify-center`}
         >{`>`}</button>
       )}
       {/* Extend Left =>  */}
       {canExtendBox("left", start, end) && (
         <button
+          type="button"
           onClick={() => extendBox(id, "left", start, end)}
-          className={`z-10 hidden group-hover:flex absolute top-1/2 left-0 ${bgColor} -translate-y-1/2 -translate-x-full rounded-l-full w-6 h-12 items-center justify-center cursor-pointer`}
+          className={`z-10 hidden group-hover:flex absolute top-1/2 left-0 ${bgColor} -translate-y-1/2 -translate-x-full rounded-l-full w-6 h-12 items-center justify-center`}
         >{`<`}</button>
       )}
       {/* Extend Up =>  */}
       {canExtendBox("up", start, end) && (
         <button
+          type="button"
           onClick={() => extendBox(id, "up", start, end)}
-          className={`z-10 hidden group-hover:flex absolute right-1/2 top-0 ${bgColor} -translate-y-3/4 translate-x-1/2 rounded-l-full w-6 h-12 items-center justify-center cursor-pointer rotate-90`}
+          className={`z-10 hidden group-hover:flex absolute right-1/2 top-0 ${bgColor} -translate-y-3/4 translate-x-1/2 rounded-l-full w-6 h-12 items-center justify-center rotate-90`}
         >{`<`}</button>
       )}
       {/* Extend Down =>  */}
       {canExtendBox("down", start, end) && (
         <button
+          type="button"
           onClick={() => extendBox(id, "down", start, end)}
-          className={`z-10 hidden group-hover:flex absolute right-1/2 bottom-0 ${bgColor} translate-y-3/4 translate-x-1/2 rounded-r-full w-6 h-12 items-center justify-center cursor-pointer rotate-90`}
+          className={`z-10 hidden group-hover:flex absolute right-1/2 bottom-0 ${bgColor} translate-y-3/4 translate-x-1/2 rounded-r-full w-6 h-12 items-center justify-center rotate-90`}
         >{`>`}</button>
       )}
-      <div>Hello</div>
+      <button
+        onClick={() => removeBox(id)}
+        type="button"
+        className="absolute top-3 right-3 hover:bg-gray-600 rounded-full w-6 h-6 text-center hover:text-white transition-all duration-500"
+      >
+        X
+      </button>
+      <div>{id}</div>
     </div>
   );
 };
