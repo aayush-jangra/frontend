@@ -1,5 +1,6 @@
 import { useGridContext } from "./GridBoardWrapper";
 import { GridBoxInfo } from "../../schema/gridBoard.schema";
+import { CheckList } from "./CheckList";
 
 export const GridBox = ({
   id,
@@ -46,22 +47,36 @@ export const GridBox = ({
           className={`z-10 hidden group-hover:flex absolute right-1/2 bottom-0 ${bgColor} translate-y-3/4 translate-x-1/2 rounded-r-full w-6 h-12 items-center justify-center rotate-90`}
         >{`>`}</button>
       )}
-      <div className="flex gap-8 items-center justify-between max-w-full h-8">
-        <input
-          className="w-4/5 rounded-full h-full bg-slate-800/40 border-slate-800 border px-4 text-white placeholder:text-white/70"
-          type="text"
-          defaultValue={name}
-          placeholder="Name"
-          maxLength={50}
-        />
-        <div className="flex h-full bg-transparent border border-slate-800 rounded-full px-1 items-center">
-          <button
-            onClick={() => removeBox(id)}
-            type="button"
-            className="hover:bg-slate-800/40 hover:border-slate-800 rounded-full w-6 h-6 text-center hover:text-white transition-all duration-500"
-          >
-            X
-          </button>
+      <div className="flex flex-col gap-4 h-full">
+        <div className="flex gap-8 items-center justify-between max-w-full h-8">
+          <input
+            className="w-4/5 rounded-full h-full bg-slate-800/40 border-slate-800 border px-4 text-white placeholder:text-white/70"
+            type="text"
+            defaultValue={name}
+            placeholder="Name"
+            maxLength={50}
+          />
+          <div className="flex h-full bg-transparent border border-slate-800 rounded-full px-1 items-center">
+            <button
+              onClick={() => removeBox(id)}
+              type="button"
+              className="hover:bg-slate-800/40 hover:border-slate-800 rounded-full w-6 h-6 text-center hover:text-white transition-all duration-500"
+            >
+              X
+            </button>
+          </div>
+        </div>
+        {/* Box Content */}
+        <div className="flex flex-col h-full">
+          <div className="font-thin font-serif italic text-text-secondary text-sm">
+            Textarea
+          </div>
+          <div className="w-full h-full rounded-xl p-2 bg-slate-100/75">
+            {/* <textarea
+              className={`w-full resize-none bg-transparent outline-none`}
+            /> */}
+            <CheckList end={end} />
+          </div>
         </div>
       </div>
     </div>
