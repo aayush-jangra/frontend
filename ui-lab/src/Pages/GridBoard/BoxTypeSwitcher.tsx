@@ -2,6 +2,7 @@ import { useState } from "react";
 import { GridBoxType } from "../../schema/gridBoard.schema";
 import { useGridContext } from "./GridBoardWrapper";
 import { Menu } from "../../Components/Menu";
+import { IconButton } from "../../Components/IconButton";
 
 export const BoxTypeSwitcher = ({ id }: { id: string }) => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -22,13 +23,7 @@ export const BoxTypeSwitcher = ({ id }: { id: string }) => {
         onChange={handleChange}
         onClose={() => setOpenMenu(false)}
       >
-        <button
-          onClick={() => setOpenMenu((prev) => !prev)}
-          type="button"
-          className="hover:bg-slate-800/40 hover:border-slate-800 rounded-full w-6 h-6 text-center hover:text-white transition-all duration-500"
-        >
-          P
-        </button>
+        <IconButton onClick={() => setOpenMenu((prev) => !prev)}>P</IconButton>
       </Menu>
     </div>
   );

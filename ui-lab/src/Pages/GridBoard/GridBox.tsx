@@ -3,6 +3,7 @@ import { GridBoxInfo, GridBoxType } from "../../schema/gridBoard.schema";
 import { CheckList } from "./CheckList";
 import { BoxTypeSwitcher } from "./BoxTypeSwitcher";
 import { BoxColorSwitcher } from "./BoxColorSwitcher";
+import { IconButton } from "../../Components/IconButton";
 
 export const GridBox = ({
   id,
@@ -23,7 +24,7 @@ export const GridBox = ({
         <button
           type="button"
           onClick={() => extendBox(id, "right", start, end)}
-          className={`z-10 hidden group-hover:flex absolute top-1/2 right-0 ${bgColor} -translate-y-1/2 translate-x-full rounded-r-full w-6 h-12 items-center justify-center`}
+          className={`z-10 transition-all duration-500 hidden group-hover:flex absolute top-1/2 right-0 ${bgColor} -translate-y-1/2 translate-x-full rounded-r-full w-6 h-12 items-center justify-center`}
         >{`>`}</button>
       )}
       {/* Extend Left =>  */}
@@ -31,7 +32,7 @@ export const GridBox = ({
         <button
           type="button"
           onClick={() => extendBox(id, "left", start, end)}
-          className={`z-10 hidden group-hover:flex absolute top-1/2 left-0 ${bgColor} -translate-y-1/2 -translate-x-full rounded-l-full w-6 h-12 items-center justify-center`}
+          className={`z-10 transition-all duration-500 hidden group-hover:flex absolute top-1/2 left-0 ${bgColor} -translate-y-1/2 -translate-x-full rounded-l-full w-6 h-12 items-center justify-center`}
         >{`<`}</button>
       )}
       {/* Extend Up =>  */}
@@ -39,7 +40,7 @@ export const GridBox = ({
         <button
           type="button"
           onClick={() => extendBox(id, "up", start, end)}
-          className={`z-10 hidden group-hover:flex absolute right-1/2 top-0 ${bgColor} -translate-y-3/4 translate-x-1/2 rounded-l-full w-6 h-12 items-center justify-center rotate-90`}
+          className={`z-10 transition-all duration-500 hidden group-hover:flex absolute right-1/2 top-0 ${bgColor} -translate-y-3/4 translate-x-1/2 rounded-l-full w-6 h-12 items-center justify-center rotate-90`}
         >{`<`}</button>
       )}
       {/* Extend Down =>  */}
@@ -47,7 +48,7 @@ export const GridBox = ({
         <button
           type="button"
           onClick={() => extendBox(id, "down", start, end)}
-          className={`z-10 hidden group-hover:flex absolute right-1/2 bottom-0 ${bgColor} translate-y-3/4 translate-x-1/2 rounded-r-full w-6 h-12 items-center justify-center rotate-90`}
+          className={`z-10 transition-all duration-500 hidden group-hover:flex absolute right-1/2 bottom-0 ${bgColor} translate-y-3/4 translate-x-1/2 rounded-r-full w-6 h-12 items-center justify-center rotate-90`}
         >{`>`}</button>
       )}
       <div className="flex flex-col gap-4 h-full">
@@ -62,13 +63,7 @@ export const GridBox = ({
           <div className="flex h-full bg-transparent border border-slate-800 rounded-full px-1 items-center">
             <BoxColorSwitcher id={id} />
             <BoxTypeSwitcher id={id} />
-            <button
-              onClick={() => removeBox(id)}
-              type="button"
-              className="hover:bg-slate-800/40 hover:border-slate-800 rounded-full w-6 h-6 text-center hover:text-white transition-all duration-500"
-            >
-              X
-            </button>
+            <IconButton onClick={() => removeBox(id)}>X</IconButton>
           </div>
         </div>
         {/* Box Content */}

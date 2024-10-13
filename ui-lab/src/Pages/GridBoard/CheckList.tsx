@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Checkbox } from "../../Components/Checkbox";
+import { IconButton } from "../../Components/IconButton";
 
 export const CheckList = ({
   end,
@@ -52,6 +53,14 @@ export const CheckList = ({
     });
   };
 
+  const removeAllChecked = () => {
+    setCheckList((prev) => {
+      const newV = [...prev];
+
+      return newV.filter((v) => !v.checked);
+    });
+  };
+
   useEffect(() => {
     if (ref.current) {
       setMaxHeight(ref.current.clientHeight - 40);
@@ -74,22 +83,23 @@ export const CheckList = ({
                   onChange={() => handleCheck(index)}
                 />
               </div>
-              <button type="button" onClick={() => removeCheck(index)}>
-                D
-              </button>
+              <IconButton onClick={() => removeCheck(index)}>D</IconButton>
             </div>
           );
         })}
       </div>
-      <input
-        className="w-full rounded-full bg-slate-800/10 border-slate-800 border px-4 placeholder:text-text-subtitle"
-        type="text"
-        placeholder="Add task"
-        maxLength={200}
-        value={inputValue}
-        onChange={handleChange}
-        onKeyDown={handleEnter}
-      />
+      <div className="flex gap-2">
+        <input
+          className="w-full rounded-full bg-slate-800/10 border-slate-800 border px-4 placeholder:text-text-subtitle"
+          type="text"
+          placeholder="Add item"
+          maxLength={200}
+          value={inputValue}
+          onChange={handleChange}
+          onKeyDown={handleEnter}
+        />
+        <IconButton onClick={removeAllChecked}>D</IconButton>
+      </div>
     </div>
   );
 };
