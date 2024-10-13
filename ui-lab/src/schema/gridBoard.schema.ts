@@ -11,6 +11,7 @@ export interface GridBoxInfo {
 export enum GridBoxType {
   TEXTAREA = "Textarea",
   CHECKLIST = "Checklist",
+  STOPWATCH = "Stopwatch",
 }
 
 export const BoxColors = [

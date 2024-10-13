@@ -1,9 +1,10 @@
 import { useGridContext } from "./GridBoardWrapper";
 import { GridBoxInfo, GridBoxType } from "../../schema/gridBoard.schema";
-import { CheckList } from "./CheckList";
+import { CheckList } from "./Boxes/CheckList";
 import { BoxTypeSwitcher } from "./BoxTypeSwitcher";
 import { BoxColorSwitcher } from "./BoxColorSwitcher";
 import { IconButton } from "../../Components/IconButton";
+import { Stopwatch } from "./Boxes/Stopwatch";
 
 export const GridBox = ({
   id,
@@ -80,6 +81,7 @@ export const GridBox = ({
             {type === GridBoxType.CHECKLIST && (
               <CheckList end={end} start={start} />
             )}
+            {type === GridBoxType.STOPWATCH && <Stopwatch />}
           </div>
         </div>
       </div>

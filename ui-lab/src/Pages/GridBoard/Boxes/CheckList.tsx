@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { Checkbox } from "../../Components/Checkbox";
-import { IconButton } from "../../Components/IconButton";
+import { Checkbox } from "../../../Components/Checkbox";
+import { IconButton } from "../../../Components/IconButton";
 
 export const CheckList = ({
   end,
