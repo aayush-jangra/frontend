@@ -62,13 +62,15 @@ export const GridBoard = () => {
                 return (
                   <div
                     key={`${rowIndex}-${colIndex}`}
-                    className="relative w-64 h-52 group bg-gray-300 text-3xl flex items-center justify-center p-4 rounded-2xl cursor-pointer hover:bg-gray-600 transition-all duration-500"
+                    className="relative w-64 h-52 group text-3xl flex items-center justify-center p-4 rounded-2xl cursor-pointer transition-all duration-500"
                     onClick={() => addBox(rowIndex, colIndex)}
                   >
-                    <div className="bg-gray-200 rounded-full w-[24px] h-[24px] flex items-center justify-center group-hover:scale-[2] transition-all duration-500">
-                      <div className="absolute w-[12px] h-[2px] bg-black rounded"></div>
-                      <div className="absolute w-[12px] h-[2px] bg-black rotate-90 rounded"></div>
-                    </div>
+                    {/* <div className="bg-gray-200 rounded-full w-[24px] h-[24px] flex items-center justify-center group-hover:scale-[2] transition-all duration-500">
+                      <div className="group-hover:scale-50 scale-0 transition-all duration-500 flex items-center justify-center">
+                        P
+                      </div>
+                    </div> */}
+                    <div className="bg-gray-200 rounded-lg w-6 h-6 group-hover:w-32 group-hover:h-32 group-hover:animate-bgColorCycle transition-all duration-300"></div>
                   </div>
                 );
               });

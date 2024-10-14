@@ -5,6 +5,7 @@ import { BoxTypeSwitcher } from "./BoxTypeSwitcher";
 import { BoxColorSwitcher } from "./BoxColorSwitcher";
 import { IconButton } from "../../Components/IconButton";
 import { Stopwatch } from "./Boxes/Stopwatch";
+import { useEffect, useRef, useState } from "react";
 
 export const GridBox = ({
   id,
@@ -16,6 +17,15 @@ export const GridBox = ({
   type,
 }: GridBoxInfo) => {
   const { canExtendBox, extendBox, removeBox } = useGridContext();
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [maxHeight, setMaxHeight] = useState(80);
+
+  useEffect(() => {
+    if (ref.current) {
+      setMaxHeight(ref.current.clientHeight - 24);
+    }
+  }, [ref.current?.clientHeight, end, start]);
+
   return (
     <div
       className={`group relative ${bgColor} rounded-2xl h-full w-full p-2 shadow-lg hover:shadow-box-focus transition-all duration-500 ${shadowColor}`}
@@ -68,19 +78,20 @@ export const GridBox = ({
           </div>
         </div>
         {/* Box Content */}
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col h-full" ref={ref}>
           <div className="font-thin font-serif italic text-text-secondary text-sm">
             {type}
           </div>
-          <div className="w-full h-full rounded-xl p-2 bg-slate-100/75">
+          <div
+            className="w-full h-full rounded-xl p-2 bg-slate-100/75"
+            style={{ maxHeight }}
+          >
             {type === GridBoxType.TEXTAREA && (
               <textarea
                 className={`w-full resize-none bg-transparent outline-none h-full`}
               />
             )}
-            {type === GridBoxType.CHECKLIST && (
-              <CheckList end={end} start={start} />
-            )}
+            {type === GridBoxType.CHECKLIST && <CheckList />}
             {type === GridBoxType.STOPWATCH && <Stopwatch />}
           </div>
         </div>

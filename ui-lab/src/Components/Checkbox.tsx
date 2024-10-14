@@ -12,7 +12,7 @@ export const Checkbox = ({
       <button
         onClick={() => onChange?.()}
         type="button"
-        className="w-4 h-4 border border-slate-800/75 rounded-md relative p-[1px] flex items-center justify-center"
+        className="min-w-4 w-4 min-h-4 h-4 border border-slate-800/75 rounded-md relative p-[1px] flex items-center justify-center"
       >
         <div
           className={`h-full w-full bg-green-500 rounded-lg transition-all duration-500 ${
@@ -21,13 +21,8 @@ export const Checkbox = ({
         ></div>
       </button>
       {content && (
-        <div className="relative">
+        <div className={checked ? "line-through text-text-subtitle" : ""}>
           {content}
-          <div
-            className={`absolute w-full border border-black top-1/2 transition-all duration-500 translate-y-[1px] ${
-              checked ? "scale-100" : "scale-0"
-            }`}
-          ></div>
         </div>
       )}
     </div>

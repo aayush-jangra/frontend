@@ -1,22 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Checkbox } from "../../../Components/Checkbox";
 import { IconButton } from "../../../Components/IconButton";
+import { Tooltip } from "../../../Components/Tooltip";
 
-export const CheckList = ({
-  end,
-  start,
-}: {
-  end: [number, number];
-  start: [number, number];
-}) => {
+export const CheckList = () => {
   const [checkList, setCheckList] = useState<
     { checked: boolean; content: string }[]
   >([]);
   const [inputValue, setInputValue] = useState<string>("");
-
-  const [maxHeight, setMaxHeight] = useState(80);
-
-  const ref = useRef<HTMLDivElement | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -25,8 +16,8 @@ export const CheckList = ({
   const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && !e.shiftKey && inputValue) {
       setCheckList((prev) => [
-        ...prev,
         { content: inputValue, checked: false },
+        ...prev,
       ]);
       setInputValue("");
     }
@@ -61,21 +52,15 @@ export const CheckList = ({
     });
   };
 
-  useEffect(() => {
-    if (ref.current) {
-      setMaxHeight(ref.current.clientHeight - 40);
-    }
-  }, [ref.current?.clientHeight, end, start]);
-
   return (
-    <div className="flex flex-col gap-2 h-full" ref={ref}>
-      <div
-        className="overflow-auto flex-1 flex flex-col gap-1"
-        style={{ maxHeight }}
-      >
+    <div className="flex flex-col gap-2 h-full">
+      <div className="overflow-auto flex-1 flex flex-col gap-1">
         {checkList.map(({ content, checked }, index) => {
           return (
-            <div className="flex border-b border-slate-800/50" key={index}>
+            <div
+              className="flex border-b border-slate-800/50 items-center"
+              key={index}
+            >
               <div className="flex-1">
                 <Checkbox
                   content={content}
@@ -98,7 +83,9 @@ export const CheckList = ({
           onChange={handleChange}
           onKeyDown={handleEnter}
         />
-        <IconButton onClick={removeAllChecked}>D</IconButton>
+        <Tooltip content="Delete checked">
+          <IconButton onClick={removeAllChecked}>D</IconButton>
+        </Tooltip>
       </div>
     </div>
   );
