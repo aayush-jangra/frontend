@@ -6,6 +6,7 @@ import { BoxColorSwitcher } from "./BoxColorSwitcher";
 import { IconButton } from "../../Components/IconButton";
 import { Stopwatch } from "./Boxes/Stopwatch";
 import { useEffect, useRef, useState } from "react";
+import { Timer } from "./Boxes/Timer";
 
 export const GridBox = ({
   id,
@@ -93,6 +94,7 @@ export const GridBox = ({
             )}
             {type === GridBoxType.CHECKLIST && <CheckList />}
             {type === GridBoxType.STOPWATCH && <Stopwatch />}
+            {type === GridBoxType.TIMER && <Timer />}
           </div>
         </div>
       </div>

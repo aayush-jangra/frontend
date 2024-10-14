@@ -23,7 +23,7 @@ export const BoxTypeSwitcher = ({ id }: { id: string }) => {
         onChange={handleChange}
         onClose={() => setOpenMenu(false)}
       >
-        <IconButton onClick={() => setOpenMenu((prev) => !prev)}>P</IconButton>
+        <IconButton onClick={() => setOpenMenu((prev) => !prev)}>T</IconButton>
       </Menu>
     </div>
   );

@@ -1,21 +1,16 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-
-interface StopwatchTime {
-  hour: number;
-  min: number;
-  sec: number;
-}
+import { CustomTime } from "../../../schema/gridBoard.schema";
+import { formatTime } from "../../../utils/formatTime";
 
 export const Stopwatch = () => {
   const [started, setStarted] = useState(false);
-  const [time, setTime] = useState<StopwatchTime>({ hour: 0, min: 0, sec: 0 });
-  const [laps, setLaps] = useState<StopwatchTime[]>([]);
+  const [time, setTime] = useState<CustomTime>({ hour: 0, min: 0, sec: 0 });
+  const [laps, setLaps] = useState<CustomTime[]>([]);
   const initialTime = useRef<number | null>(null);
   const elapsedTime = useRef<number>(0);
   const intervalId = useRef<NodeJS.Timeout | null>(null);
 
   const calculateTime = useCallback(() => {
-    console.log("called");
     if (!initialTime.current) return;
 
     const diff = Math.floor((Date.now() - initialTime.current) / 1000);
@@ -75,7 +70,7 @@ export const Stopwatch = () => {
     <div className="overflow-auto h-full flex flex-col gap-4">
       <div className="bg-white/75 rounded-lg p-2 flex flex-col gap-2">
         <div className="flex items-center justify-center bg-gray-100 rounded-lg text-3xl p-2">
-          {time.hour}:{time.min}:{time.sec}
+          {formatTime({ ...time }).time}
         </div>
         <div className="flex items-center justify-around font-semibold">
           <button
@@ -103,10 +98,10 @@ export const Stopwatch = () => {
         </div>
       </div>
       <div className="ml-4">
-        {laps.map((time) => {
+        {laps.map((lap) => {
           return (
             <div className="italic font-semibold text-text-subtitle">
-              {time.hour}:{time.min}:{time.sec}
+              {formatTime({ ...lap }).time}
             </div>
           );
         })}

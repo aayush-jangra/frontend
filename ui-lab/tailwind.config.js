@@ -35,9 +35,14 @@ module.exports = {
           "94.08%": { backgroundColor: "rgb(254, 202, 202)" }, // bg-rose-300
           "100%": { backgroundColor: "rgb(252, 165, 165)" }, // bg-red-300 (loop back)
         },
+        snackbarOpening: {
+          "0%": { transform: "translateX(200%)" },
+          "100%": { transform: "translateX(0)" },
+        },
       },
       animation: {
         bgColorCycle: "bgColorCycle 10s linear infinite",
+        snackbarOpening: "snackbarOpening 0.3s cubic-bezier(0.2, 1, 0.3, 1)",
       },
     },
   },

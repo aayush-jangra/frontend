@@ -26,7 +26,7 @@ export const Menu = ({
             <button
               onClick={() => onChange?.(item.id)}
               type="button"
-              className="hover:bg-slate-800 px-4 py-2 rounded-full"
+              className="hover:bg-slate-800 px-4 py-2 rounded-full w-full text-left"
               key={item.id}
             >
               {item.content}

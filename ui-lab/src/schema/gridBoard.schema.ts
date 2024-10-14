@@ -12,6 +12,7 @@ export enum GridBoxType {
   TEXTAREA = "Textarea",
   CHECKLIST = "Checklist",
   STOPWATCH = "Stopwatch",
+  TIMER = "Timer",
 }
 
 export const BoxColors = [
@@ -115,4 +116,10 @@ export interface GridBoardContextProps {
     end: [number, number]
   ) => boolean;
   extendBoard: (direction: Direction) => void;
+}
+
+export interface CustomTime {
+  hour: number;
+  min: number;
+  sec: number;
 }
