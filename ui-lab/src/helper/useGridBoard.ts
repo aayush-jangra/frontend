@@ -1,10 +1,10 @@
 import { useState } from "react";
 import {
-  BoxColors,
   Direction,
   GridBoxInfo,
   GridBoxType,
 } from "../schema/gridBoard.schema";
+import { BoxColors } from "../schema/colors.schema";
 
 export const useGridBoard = () => {
   const defaultMap = [

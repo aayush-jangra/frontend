@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useGridContext } from "./GridBoardWrapper";
 import { Menu } from "../../Components/Menu";
-import { BoxColors } from "../../schema/gridBoard.schema";
 import { IconButton } from "../../Components/IconButton";
+import { BoxColors } from "../../schema/colors.schema";
 
 export const BoxColorSwitcher = ({ id }: { id: string }) => {
   const [openMenu, setOpenMenu] = useState(false);

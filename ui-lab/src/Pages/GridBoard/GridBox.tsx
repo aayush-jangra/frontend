@@ -7,6 +7,7 @@ import { IconButton } from "../../Components/IconButton";
 import { Stopwatch } from "./Boxes/Stopwatch";
 import { useEffect, useRef, useState } from "react";
 import { Timer } from "./Boxes/Timer";
+import { Tracker } from "./Boxes/Tracker";
 
 export const GridBox = ({
   id,
@@ -95,6 +96,7 @@ export const GridBox = ({
             {type === GridBoxType.CHECKLIST && <CheckList />}
             {type === GridBoxType.STOPWATCH && <Stopwatch />}
             {type === GridBoxType.TIMER && <Timer />}
+            {type === GridBoxType.TRACKER && <Tracker />}
           </div>
         </div>
       </div>

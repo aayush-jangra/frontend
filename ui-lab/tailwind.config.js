@@ -11,6 +11,7 @@ module.exports = {
       },
       boxShadow: {
         "box-focus": "0px 16px 50px",
+        "elevated-button": "3px 3px 8px gray",
         container:
           "inset 2px 2px 6px rgba(0,0,0,0.5), inset -2px -2px 6px rgba(0,0,0,0.5)",
       },
