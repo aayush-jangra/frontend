@@ -53,7 +53,7 @@ export const CheckList = () => {
   };
 
   return (
-    <div className="flex flex-col gap-2 h-full">
+    <div className="flex flex-col gap-2 h-full p-2">
       <div className="overflow-auto flex-1 flex flex-col gap-1">
         {checkList.map(({ content, checked }, index) => {
           return (

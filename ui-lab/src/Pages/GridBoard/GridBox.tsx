@@ -85,12 +85,12 @@ export const GridBox = ({
             {type}
           </div>
           <div
-            className="w-full h-full rounded-xl p-2 bg-slate-100/75"
+            className="w-full h-full rounded-xl bg-slate-100/75"
             style={{ maxHeight }}
           >
             {type === GridBoxType.TEXTAREA && (
               <textarea
-                className={`w-full resize-none bg-transparent outline-none h-full`}
+                className={`w-full resize-none bg-transparent outline-none h-full p-2`}
               />
             )}
             {type === GridBoxType.CHECKLIST && <CheckList />}

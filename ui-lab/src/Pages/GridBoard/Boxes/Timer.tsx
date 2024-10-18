@@ -114,88 +114,90 @@ export const Timer = () => {
   }, []);
 
   return (
-    <div className="bg-white/75 rounded-lg p-2 flex flex-col gap-2 overflow-auto h-full">
-      <div className="flex items-center justify-center bg-gray-100 rounded-lg text-3xl p-2">
-        {timerEndTime.current === null ? (
-          (() => {
-            const { hour, min, sec } = formatTime({ ...timerTime });
-            return (
-              <div className="flex gap-1 items-center">
-                <div className="flex flex-col items-center justify-center">
-                  <button
-                    onClick={() => changeTimer("inc", "hour")}
-                    className="rounded-full h-4 w-4 bg-gray-300 hover:bg-gray-600"
-                  ></button>
-                  {hour}
-                  <button
-                    onClick={() => changeTimer("dec", "hour")}
-                    className="rounded-full h-4 w-4 bg-gray-300 hover:bg-gray-600"
-                  ></button>
+    <div className="overflow-auto h-full p-2">
+      <div className="bg-white/75 rounded-lg p-2 flex flex-col gap-2">
+        <div className="flex items-center justify-center bg-gray-100 rounded-lg text-3xl p-2">
+          {timerEndTime.current === null ? (
+            (() => {
+              const { hour, min, sec } = formatTime({ ...timerTime });
+              return (
+                <div className="flex gap-1 items-center">
+                  <div className="flex flex-col items-center justify-center">
+                    <button
+                      onClick={() => changeTimer("inc", "hour")}
+                      className="rounded-full h-4 w-4 bg-gray-300 hover:bg-gray-600"
+                    ></button>
+                    {hour}
+                    <button
+                      onClick={() => changeTimer("dec", "hour")}
+                      className="rounded-full h-4 w-4 bg-gray-300 hover:bg-gray-600"
+                    ></button>
+                  </div>
+                  :
+                  <div className="flex flex-col items-center justify-center">
+                    <button
+                      onClick={() => changeTimer("inc", "min")}
+                      className="rounded-full h-4 w-4 bg-gray-300 hover:bg-gray-600"
+                    ></button>
+                    {min}
+                    <button
+                      onClick={() => changeTimer("dec", "min")}
+                      className="rounded-full h-4 w-4 bg-gray-300 hover:bg-gray-600"
+                    ></button>
+                  </div>
+                  :
+                  <div className="flex flex-col items-center justify-center">
+                    <button
+                      onClick={() => changeTimer("inc", "sec")}
+                      className="rounded-full h-4 w-4 bg-gray-300 hover:bg-gray-600"
+                    ></button>
+                    {sec}
+                    <button
+                      onClick={() => changeTimer("dec", "sec")}
+                      className="rounded-full h-4 w-4 bg-gray-300 hover:bg-gray-600"
+                    ></button>
+                  </div>
                 </div>
-                :
-                <div className="flex flex-col items-center justify-center">
-                  <button
-                    onClick={() => changeTimer("inc", "min")}
-                    className="rounded-full h-4 w-4 bg-gray-300 hover:bg-gray-600"
-                  ></button>
-                  {min}
-                  <button
-                    onClick={() => changeTimer("dec", "min")}
-                    className="rounded-full h-4 w-4 bg-gray-300 hover:bg-gray-600"
-                  ></button>
-                </div>
-                :
-                <div className="flex flex-col items-center justify-center">
-                  <button
-                    onClick={() => changeTimer("inc", "sec")}
-                    className="rounded-full h-4 w-4 bg-gray-300 hover:bg-gray-600"
-                  ></button>
-                  {sec}
-                  <button
-                    onClick={() => changeTimer("dec", "sec")}
-                    className="rounded-full h-4 w-4 bg-gray-300 hover:bg-gray-600"
-                  ></button>
-                </div>
-              </div>
-            );
-          })()
-        ) : (
-          <>{formatTime({ ...time }).time}</>
-        )}
-      </div>
-      <div className="flex items-center justify-around font-semibold">
-        {!completed && (
-          <button
-            type="button"
-            className={`${
-              started
-                ? "bg-red-400 hover:bg-red-600"
-                : "bg-blue-400 hover:bg-blue-600"
-            } py-1 px-2 rounded-lg w-full max-w-20 transition-all duration-500`}
-            onClick={
-              started
-                ? stopTimer
+              );
+            })()
+          ) : (
+            <>{formatTime({ ...time }).time}</>
+          )}
+        </div>
+        <div className="flex items-center justify-around font-semibold">
+          {!completed && (
+            <button
+              type="button"
+              className={`${
+                started
+                  ? "bg-red-400 hover:bg-red-600"
+                  : "bg-blue-400 hover:bg-blue-600"
+              } py-1 px-2 rounded-lg w-full max-w-20 transition-all duration-500`}
+              onClick={
+                started
+                  ? stopTimer
+                  : timerEndTime.current !== null
+                  ? resumeTimer
+                  : startTimer
+              }
+            >
+              {started
+                ? "Pause"
                 : timerEndTime.current !== null
-                ? resumeTimer
-                : startTimer
-            }
-          >
-            {started
-              ? "Pause"
-              : timerEndTime.current !== null
-              ? "Resume"
-              : "Start"}
-          </button>
-        )}
-        {timerEndTime.current !== null && (
-          <button
-            type="button"
-            className="border-blue-800 hover:bg-blue-200 border py-1 px-2 rounded-lg w-full max-w-20 transition-all duration-500"
-            onClick={resetTimer}
-          >
-            Reset
-          </button>
-        )}
+                ? "Resume"
+                : "Start"}
+            </button>
+          )}
+          {timerEndTime.current !== null && (
+            <button
+              type="button"
+              className="border-blue-800 hover:bg-blue-200 border py-1 px-2 rounded-lg w-full max-w-20 transition-all duration-500"
+              onClick={resetTimer}
+            >
+              Reset
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

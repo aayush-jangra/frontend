@@ -67,7 +67,7 @@ export const Stopwatch = () => {
   }, []);
 
   return (
-    <div className="overflow-auto h-full flex flex-col gap-4">
+    <div className="overflow-auto h-full flex flex-col gap-4 p-2">
       <div className="bg-white/75 rounded-lg p-2 flex flex-col gap-2">
         <div className="flex items-center justify-center bg-gray-100 rounded-lg text-3xl p-2">
           {formatTime({ ...time }).time}

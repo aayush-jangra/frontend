@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { TrackerColors } from "../../../schema/colors.schema";
+import { InputModal } from "../../../Components/InputModal";
 
 interface TrackerContainer {
   id: number;
@@ -18,6 +19,8 @@ export const Tracker = () => {
   const [containers, setContainers] = useState<TrackerContainer[]>([]);
   const [items, setItems] = useState<TrackerItem[]>([]);
   const [draggedItem, setDraggedItem] = useState<TrackerItem | null>(null);
+  const [containerInputOpen, setContainerInputOpen] = useState(false);
+  const [itemInputOpen, setItemInputOpen] = useState<number>(0);
 
   function addContainer(title: string) {
     setContainers((prev) => {
@@ -29,12 +32,34 @@ export const Tracker = () => {
     });
   }
 
+  function deleteContainer(containerId: number) {
+    setContainers((prev) => {
+      setItems((prevItems) => {
+        return [...prevItems].filter(
+          ({ containerId: contId }) => contId !== containerId
+        );
+      });
+      return [...prev].filter(({ id }) => id !== containerId);
+    });
+  }
+
   function addItem(containerId: number, content: string) {
     setItems((prev) => {
       const id = prev.length === 0 ? 1 : prev[prev.length - 1].id + 1;
 
       return [...prev, { id, containerId, content, bgColor: "bg-red-200" }];
     });
+  }
+
+  function deleteItem() {
+    if (draggedItem) {
+      const item = draggedItem;
+      setItems((prev) => {
+        return [...prev].filter(({ id }) => id !== item.id);
+      });
+
+      setDraggedItem(null);
+    }
   }
 
   function moveItem(containerId: number) {
@@ -54,7 +79,30 @@ export const Tracker = () => {
   }
 
   return (
-    <div className="h-full w-full overflow-auto">
+    <div className="relative h-full w-full overflow-auto p-2">
+      <InputModal
+        isOpen={containerInputOpen}
+        title="Enter category name"
+        onClose={() => {
+          setContainerInputOpen(false);
+        }}
+        onSubmit={(content) => {
+          addContainer(content);
+        }}
+        maxLen={20}
+      />
+      <InputModal
+        isOpen={itemInputOpen !== 0}
+        title="Enter item content"
+        onClose={() => {
+          setItemInputOpen(0);
+        }}
+        onSubmit={(content) => {
+          addItem(itemInputOpen, content);
+        }}
+        maxLen={200}
+        isTextArea
+      />
       <div className="flex flex-wrap gap-4 pb-1">
         {containers.map((cont) => {
           return (
@@ -71,10 +119,21 @@ export const Tracker = () => {
                 <div className="flex-1 bg-white mt-1 h-[1px]"></div>
                 <button
                   type="button"
-                  onClick={() => addItem(cont.id, "Hello kitty")}
+                  onClick={() => {
+                    setItemInputOpen(cont.id);
+                  }}
                   className="bg-white rounded-full text-black h-4 w-4 flex items-center justify-center"
                 >
                   +
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    deleteContainer(cont.id);
+                  }}
+                  className="bg-white rounded-full text-black h-4 w-4 flex items-center justify-center"
+                >
+                  x
                 </button>
               </div>
               <div className="p-2 flex flex-wrap gap-2">
@@ -102,10 +161,23 @@ export const Tracker = () => {
       <button
         type="button"
         className="absolute bottom-6 right-4 bg-white shadow-elevated-button rounded-full h-6 w-6 flex items-center justify-center"
-        onClick={() => addContainer("hello")}
+        onClick={() => {
+          setContainerInputOpen(true);
+        }}
       >
         +
       </button>
+      {draggedItem && (
+        <div
+          onDrop={deleteItem}
+          onDragOver={(e) => {
+            e.preventDefault();
+          }}
+          className="absolute bg-gradient-to-b from-transparent to-red-500 bottom-0 left-0 w-full h-12 flex items-start justify-center text-2xl rounded-b-xl"
+        >
+          D
+        </div>
+      )}
     </div>
   );
 };
