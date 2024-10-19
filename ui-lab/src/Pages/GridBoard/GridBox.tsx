@@ -8,6 +8,7 @@ import { Stopwatch } from "./Boxes/Stopwatch";
 import { useEffect, useRef, useState } from "react";
 import { Timer } from "./Boxes/Timer";
 import { Tracker } from "./Boxes/Tracker";
+import { Budget } from "./Boxes/Budget";
 
 export const GridBox = ({
   id,
@@ -27,6 +28,8 @@ export const GridBox = ({
       setMaxHeight(ref.current.clientHeight - 24);
     }
   }, [ref.current?.clientHeight, end, start]);
+
+  const height = end[0] - start[0] + 1;
 
   return (
     <div
@@ -97,6 +100,7 @@ export const GridBox = ({
             {type === GridBoxType.STOPWATCH && <Stopwatch />}
             {type === GridBoxType.TIMER && <Timer />}
             {type === GridBoxType.TRACKER && <Tracker />}
+            {type === GridBoxType.BUDGET && <Budget height={height} />}
           </div>
         </div>
       </div>

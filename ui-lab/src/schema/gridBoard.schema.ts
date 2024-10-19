@@ -14,6 +14,7 @@ export enum GridBoxType {
   STOPWATCH = "Stopwatch",
   TIMER = "Timer",
   TRACKER = "Tracker",
+  BUDGET = "Budget",
 }
 
 export type Direction = "left" | "right" | "up" | "down";
