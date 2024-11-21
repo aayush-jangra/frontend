@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import { Timer } from "./Boxes/Timer";
 import { Tracker } from "./Boxes/Tracker";
 import { Budget } from "./Boxes/Budget";
+import { ColorToolbox } from "./Boxes/ColorToolbox";
 
 export const GridBox = ({
   id,
@@ -101,6 +102,7 @@ export const GridBox = ({
             {type === GridBoxType.TIMER && <Timer />}
             {type === GridBoxType.TRACKER && <Tracker />}
             {type === GridBoxType.BUDGET && <Budget height={height} />}
+            {type === GridBoxType.COLOR_TOOLBOX && <ColorToolbox />}
           </div>
         </div>
       </div>

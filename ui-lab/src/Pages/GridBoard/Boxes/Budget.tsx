@@ -128,6 +128,7 @@ export const Budget = ({ height }: { height: number }) => {
       <div className="flex flex-col gap-2 p-2">
         {transactions.map((item) => (
           <div
+            key={item.id}
             className={`border-2 p-2 rounded-lg flex flex-col gap-1 ${
               item.isIncome
                 ? "bg-green-300 border-green-700"
