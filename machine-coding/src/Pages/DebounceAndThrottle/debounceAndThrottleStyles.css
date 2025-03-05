@@ -1,0 +1,74 @@
+.dt-page-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.container {
+  padding: 12px 24px;
+  border: 1px solid;
+  border-radius: 16px;
+  width: 40%;
+  min-width: 400px;
+  height: fit-content;
+}
+
+.search-label {
+  font-size: 24px;
+  gap: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 4px 8px;
+  font-size: 20px;
+  border-radius: 16px;
+}
+
+.searched-container {
+  border: 1px dashed;
+  padding: 8px;
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  margin: 8px;
+}
+
+.searched-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.searched-value {
+  border: 1px solid;
+  border-radius: 16px;
+  min-width: fit-content;
+  flex: 1;
+  text-align: center;
+  padding: 2px 4px;
+  background-color: lightgray;
+}
+
+.throttle-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.throttle-button {
+  background-color: black;
+  border: 1px solid;
+  border-radius: 16px;
+  padding: 8px 16px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.throttle-button:active {
+  background: gray;
+}

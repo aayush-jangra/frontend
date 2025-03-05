@@ -67,3 +67,7 @@
 .header-home:hover {
   box-shadow: 4px 4px white, -1px -1px 8px white;
 }
+
+.header-children {
+  padding: 36px;
+}

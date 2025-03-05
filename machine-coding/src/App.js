@@ -1,4 +1,5 @@
-import { Header } from "./components/Header";
+import { HeaderWrapper } from "./components/Header";
+import { DebounceAndThrottle } from "./Pages/DebounceAndThrottle/DebounceAndThrottle";
 import { Homepage } from "./Pages/Homepage/Homepage";
 import { ToastPage } from "./Pages/Toast/ToastPage";
 import { ToastProvider } from "./Pages/Toast/ToastProvider";
@@ -18,13 +19,16 @@ function App() {
         </ToastProvider>
       ),
     },
+    {
+      path: "/debounce-throttle",
+      component: <DebounceAndThrottle />,
+    },
   ];
 
   return (
-    <div>
-      <Header />
+    <HeaderWrapper>
       <CustomRouter config={routerConfig} />
-    </div>
+    </HeaderWrapper>
   );
 }
 
