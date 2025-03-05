@@ -54,4 +54,10 @@ export const questions = [
     description: `Build a demo to visualize event flow in JavaScript, showcasing event bubbling (bottom-up) and event capturing (top-down). Implement event listeners at different levels and allow users to toggle between phases to observe the propagation order. Optionally, add stopPropagation() to demonstrate its effect.`,
     path: "/event-flow",
   },
+  {
+    title: "Image Carousel",
+    description:
+      "Build an Image Carousel that automatically cycles through images at a set interval. The image transition should pause on hover and resume when the mouse leaves. Include left and right navigation buttons to manually change images.",
+    path: "/carousel",
+  },
 ];

@@ -1,4 +1,5 @@
 import { HeaderWrapper } from "./components/Header";
+import { Caraousel } from "./Pages/Caraousel/CaraouselPage";
 import { DebounceAndThrottle } from "./Pages/DebounceAndThrottle/DebounceAndThrottle";
 import { Homepage } from "./Pages/Homepage/Homepage";
 import { ToastPage } from "./Pages/Toast/ToastPage";
@@ -22,6 +23,10 @@ function App() {
     {
       path: "/debounce-throttle",
       component: <DebounceAndThrottle />,
+    },
+    {
+      path: "/carousel",
+      component: <Caraousel />,
     },
   ];
 

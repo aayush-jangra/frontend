@@ -1,34 +1,51 @@
-export const CustomRouter = ({config}) => {
-    let {pathname} = window.location;
-    if(pathname[pathname.length-1] === "/" && pathname.length>1) {
-        pathname = pathname.substring(0, pathname.length-1)
+export const CustomRouter = ({ config }) => {
+  let { pathname } = window.location;
+  if (pathname[pathname.length - 1] === "/" && pathname.length > 1) {
+    pathname = pathname.substring(0, pathname.length - 1);
+  }
+
+  const getRoute = (routes, parentPath = "") => {
+    let route = routes.find(
+      (r) => parentPath + r.path.toLowerCase() === pathname.toLowerCase()
+    );
+
+    if (route) {
+      return route;
     }
 
-    const getRoute = (routes, parentPath="") => {
-        let route = routes.find((r) => parentPath + r.path === pathname);
+    routes.forEach((r) => {
+      if (r.routes) {
+        const innerRoute = getRoute(r.routes, parentPath + r.path);
 
-        if(route) {
-            return route;
+        if (innerRoute) {
+          route = innerRoute;
         }
+      }
+    });
 
-        routes.forEach((r) => {
-            if(r.routes) {
-                const innerRoute = getRoute(r.routes, parentPath+r.path);
+    return route ?? null;
+  };
 
-                if(innerRoute) {
-                    route=innerRoute;
-                }
-            }
-        })
+  const route = getRoute(config);
 
-        return route ?? null;
-    } 
+  if (route && route.component) {
+    return route.component;
+  }
 
-    const route = getRoute(config)
-
-    if(route && route.component) {
-        return route.component;
-    }
-
-    return <div><h1>There is nothing on this path</h1></div>
-}
+  return (
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        zIndex: 1000,
+        paddingLeft: "48px",
+        background: "white",
+      }}
+    >
+      <h1>There is nothing on this path</h1>
+    </div>
+  );
+};

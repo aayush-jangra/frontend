@@ -1,0 +1,45 @@
+.carousel-image {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 5/2;
+  opacity: 1;
+  transition: opacity 0.3s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.image-hide {
+  opacity: 0;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5/2;
+}
+
+.carousel-left-button,
+.carousel-right-button {
+  background-color: gray;
+  position: absolute;
+  top: 50%;
+  width: 48px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 4px 20px black;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.carousel-left-button {
+  left: 4px;
+}
+
+.carousel-right-button {
+  right: 4px;
+}
