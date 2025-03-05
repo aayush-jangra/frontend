@@ -1,5 +1,7 @@
 import { Header } from "./components/Header";
 import { Homepage } from "./Pages/Homepage/Homepage";
+import { ToastPage } from "./Pages/Toast/ToastPage";
+import { ToastProvider } from "./Pages/Toast/ToastProvider";
 import { CustomRouter } from "./Router/CustomRouter";
 
 function App() {
@@ -7,6 +9,14 @@ function App() {
     {
       path: "/",
       component: <Homepage />,
+    },
+    {
+      path: "/toast",
+      component: (
+        <ToastProvider>
+          <ToastPage />
+        </ToastProvider>
+      ),
     },
   ];
 
