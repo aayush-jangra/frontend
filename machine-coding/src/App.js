@@ -1,18 +1,20 @@
+import { Header } from "./components/Header";
+import { Homepage } from "./Pages/Homepage/Homepage";
 import { CustomRouter } from "./Router/CustomRouter";
 
-
 function App() {
-  const routerConfig = [{
-    path: "/",
-    component: <div>Home page</div>
-  },
-  {
-    path: "/test",
-    component: <div>Test</div>,
-  }]
+  const routerConfig = [
+    {
+      path: "/",
+      component: <Homepage />,
+    },
+  ];
 
   return (
-    <div><CustomRouter config={routerConfig}/></div>
+    <div>
+      <Header />
+      <CustomRouter config={routerConfig} />
+    </div>
   );
 }
 
