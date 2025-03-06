@@ -3,6 +3,7 @@ import { AccordionPage } from "./Pages/Accordion/AccordionPage";
 import { Caraousel } from "./Pages/Caraousel/CaraouselPage";
 import { DebounceAndThrottle } from "./Pages/DebounceAndThrottle/DebounceAndThrottle";
 import { Homepage } from "./Pages/Homepage/Homepage";
+import { OtpInputPage } from "./Pages/OtpInput/OtpInputPage";
 import { ProgressBarPage } from "./Pages/ProgressBar/ProgressBarPage";
 import { ToastPage } from "./Pages/Toast/ToastPage";
 import { ToastProvider } from "./Pages/Toast/ToastProvider";
@@ -37,6 +38,10 @@ function App() {
     {
       path: "/accordion",
       component: <AccordionPage />,
+    },
+    {
+      path: "/otp-input",
+      component: <OtpInputPage />,
     },
   ];
 

@@ -11,7 +11,7 @@ export const questions = [
   },
   {
     title: "OTP Input",
-    description: `Build an OTP Input Component that allows users to enter a multi-digit OTP code. It should support keyboard navigation, automatic focus shift, backspace handling, and basic validations. Optionally, add paste support and configurable length.`,
+    description: `Build an OTP Input Component that allows users to enter a multi-digit OTP code. It should support keyboard navigation, automatic focus shift, backspace handling, and basic validations.`,
     path: "/otp-input",
   },
   {
