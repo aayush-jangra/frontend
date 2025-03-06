@@ -7,6 +7,7 @@ import { OtpInputPage } from "./Pages/OtpInput/OtpInputPage";
 import { ProgressBarPage } from "./Pages/ProgressBar/ProgressBarPage";
 import { ToastPage } from "./Pages/Toast/ToastPage";
 import { ToastProvider } from "./Pages/Toast/ToastProvider";
+import { VirtualisedListPage } from "./Pages/VirtualisedList/VirtualisedListPage";
 import { CustomRouter } from "./Router/CustomRouter";
 
 function App() {
@@ -42,6 +43,10 @@ function App() {
     {
       path: "/otp-input",
       component: <OtpInputPage />,
+    },
+    {
+      path: "/virtualised-list",
+      component: <VirtualisedListPage />,
     },
   ];
 
