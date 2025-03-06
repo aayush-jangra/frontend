@@ -78,4 +78,10 @@ export const questions = [
       "Build an Accordion Component where users can expand and collapse sections to reveal content. It should support multiple or single open sections, and default open sections.",
     path: "/accordion",
   },
+  {
+    title: "Stopwatch",
+    description:
+      "Build a Stopwatch Component with start, pause, and reset functionality. It should display elapsed time in hours, minutes, seconds, and milliseconds. Optionally, add lap tracking",
+    path: "stopwatch",
+  },
 ];

@@ -5,6 +5,7 @@ import { DebounceAndThrottle } from "./Pages/DebounceAndThrottle/DebounceAndThro
 import { Homepage } from "./Pages/Homepage/Homepage";
 import { OtpInputPage } from "./Pages/OtpInput/OtpInputPage";
 import { ProgressBarPage } from "./Pages/ProgressBar/ProgressBarPage";
+import { StopwatchPage } from "./Pages/Stopwatch/StopwatchPage";
 import { ToastPage } from "./Pages/Toast/ToastPage";
 import { ToastProvider } from "./Pages/Toast/ToastProvider";
 import { VirtualisedListPage } from "./Pages/VirtualisedList/VirtualisedListPage";
@@ -47,6 +48,10 @@ function App() {
     {
       path: "/virtualised-list",
       component: <VirtualisedListPage />,
+    },
+    {
+      path: "/stopwatch",
+      component: <StopwatchPage />,
     },
   ];
 
