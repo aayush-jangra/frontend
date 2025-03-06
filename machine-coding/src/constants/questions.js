@@ -72,4 +72,10 @@ export const questions = [
       "Build a Progress Bar Component that starts filling when a button is clicked. It should smoothly animate from 0% to 100% over time. Optionally, support pausing and resetting.",
     path: "/progress-bar",
   },
+  {
+    title: "Accordion",
+    description:
+      "Build an Accordion Component where users can expand and collapse sections to reveal content. It should support multiple or single open sections, and default open sections.",
+    path: "/accordion",
+  },
 ];

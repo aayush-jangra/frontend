@@ -1,4 +1,5 @@
 import { HeaderWrapper } from "./components/Header";
+import { AccordionPage } from "./Pages/Accordion/AccordionPage";
 import { Caraousel } from "./Pages/Caraousel/CaraouselPage";
 import { DebounceAndThrottle } from "./Pages/DebounceAndThrottle/DebounceAndThrottle";
 import { Homepage } from "./Pages/Homepage/Homepage";
@@ -32,6 +33,10 @@ function App() {
     {
       path: "/progress-bar",
       component: <ProgressBarPage />,
+    },
+    {
+      path: "/accordion",
+      component: <AccordionPage />,
     },
   ];
 
