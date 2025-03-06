@@ -1,0 +1,38 @@
+.progress-bar-container {
+  flex: 1;
+  height: 24px;
+  border-radius: 16px;
+  border: 1px solid;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 100%;
+  background-color: green;
+  transition: transform 0.3s;
+}
+
+.progress-page-container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.progress-button {
+  background-color: black;
+  border: 1px solid;
+  border-radius: 16px;
+  color: white;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.progress-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.progress-button:active {
+  background-color: gray;
+}

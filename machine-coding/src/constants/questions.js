@@ -60,4 +60,16 @@ export const questions = [
       "Build an Image Carousel that automatically cycles through images at a set interval. The image transition should pause on hover and resume when the mouse leaves. Include left and right navigation buttons to manually change images.",
     path: "/carousel",
   },
+  {
+    title: "Autocomplete",
+    description:
+      "Build an Autocomplete Component that suggests options as the user types. It should support keyboard navigation, and click selection. Optionally, add remote data fetching, highlighting of matched text.",
+    path: "/autocomplete",
+  },
+  {
+    title: "Progress Bar",
+    description:
+      "Build a Progress Bar Component that starts filling when a button is clicked. It should smoothly animate from 0% to 100% over time. Optionally, support pausing and resetting.",
+    path: "/progress-bar",
+  },
 ];
