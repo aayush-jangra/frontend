@@ -84,4 +84,10 @@ export const questions = [
       "Build a Stopwatch Component with start, pause, and reset functionality. It should display elapsed time in hours, minutes, seconds, and milliseconds. Optionally, add lap tracking",
     path: "stopwatch",
   },
+  {
+    title: "Queue Grid",
+    description:
+      "Build a 3×3 Clickable Grid where each box changes background color when clicked. Once all boxes are clicked, the grid should reset one box at a time in a FIFO (first-in, first-out) order. Optionally, add customizable grid size and support for different reset speeds.",
+    path: "/queue-grid",
+  },
 ];

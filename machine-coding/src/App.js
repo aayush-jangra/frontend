@@ -5,6 +5,7 @@ import { DebounceAndThrottle } from "./Pages/DebounceAndThrottle/DebounceAndThro
 import { Homepage } from "./Pages/Homepage/Homepage";
 import { OtpInputPage } from "./Pages/OtpInput/OtpInputPage";
 import { ProgressBarPage } from "./Pages/ProgressBar/ProgressBarPage";
+import { QueueGridPage } from "./Pages/QueueGrid/QueueGridPage";
 import { StopwatchPage } from "./Pages/Stopwatch/StopwatchPage";
 import { ToastPage } from "./Pages/Toast/ToastPage";
 import { ToastProvider } from "./Pages/Toast/ToastProvider";
@@ -52,6 +53,10 @@ function App() {
     {
       path: "/stopwatch",
       component: <StopwatchPage />,
+    },
+    {
+      path: "/queue-grid",
+      component: <QueueGridPage />,
     },
   ];
 

@@ -1,0 +1,17 @@
+.queue-grid-box {
+  width: 64px;
+  height: 64px;
+  border: 1px solid;
+}
+
+.queue-grid-box-selected {
+  background-color: lightblue;
+}
+
+.queue-boxes-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 12px;
+  width: fit-content;
+}
