@@ -41,7 +41,7 @@ export const questions = [
   },
   {
     title: "Draggable Todos",
-    description: `Build a Draggable Todo List where users can move tasks between different states (e.g., Todo, In Progress, Done) using drag-and-drop. Ensure smooth animations, state persistence, and accessibility. Optionally, support task editing and filtering.`,
+    description: `Build a Draggable Todo List where users can move tasks between different states (e.g., Todo, In Progress, Done) using drag-and-drop. Ensure smooth animations, state persistence, and accessibility. Optionally, support adding new tasks.`,
     path: "/todos",
   },
   {
@@ -101,5 +101,11 @@ export const questions = [
     description:
       "Build a Snake Game where the player controls a growing snake that moves in four directions, eats food, and avoids collisions with itself or walls. The game should track the score. Optionally increase speed as the snake grows.",
     path: "/snake-game",
+  },
+  {
+    title: "Stepper",
+    description:
+      "Build a Stepper Component that visually represents progress through multiple steps. It should support next, previous, and disabled steps, with clear indicators for active and completed steps.",
+    path: "/stepper",
   },
 ];
