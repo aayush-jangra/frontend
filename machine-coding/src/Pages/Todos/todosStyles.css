@@ -1,0 +1,81 @@
+.todos-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo-list-group {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  display: flex;
+  gap: 16px;
+}
+
+.todo-list-container {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 16px;
+  padding: 8px;
+  gap: 16px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  height: 600px;
+}
+
+.todo-item {
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid;
+  text-align: start;
+  min-height: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.todo-item-title {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.todo-item-subtitle {
+  font-style: italic;
+  color: gray;
+  text-align: end;
+}
+
+.todo-item-description {
+  flex: 1;
+  overflow: hidden;
+}
+
+.todo-create-container {
+  display: flex;
+  gap: 16px;
+}
+
+.todo-create-container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+}
+
+.todo-create-container > input {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 16px;
+  padding: 8px;
+}
+
+.todo-create-container > button {
+  background-color: black;
+  color: white;
+  border-radius: 16px;
+  padding: 8px;
+}
