@@ -96,4 +96,10 @@ export const questions = [
       "Build a Tic-Tac-Toe game where users can customize the grid size (e.g., 3×3, 4×4, etc.) before starting. The game should track turns, detect winners. Optionally, highlight the winning sequence.",
     path: "/tic-tac-toe",
   },
+  {
+    title: "Snake game",
+    description:
+      "Build a Snake Game where the player controls a growing snake that moves in four directions, eats food, and avoids collisions with itself or walls. The game should track the score. Optionally increase speed as the snake grows.",
+    path: "/snake-game",
+  },
 ];

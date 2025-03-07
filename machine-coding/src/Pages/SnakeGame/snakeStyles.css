@@ -1,0 +1,55 @@
+.snake-cell {
+  height: 30px;
+  width: 30px;
+}
+
+.snake-grid-container {
+  display: grid;
+  border: 4px solid rgb(255, 104, 104);
+  width: min-content;
+}
+
+.snake-head {
+  background-color: lightgreen;
+}
+
+.snake-body {
+  background-color: lightblue;
+}
+
+.snake-fruit-cell {
+  background-color: yellow;
+}
+
+.snake-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.snake-controls > button {
+  background-color: black;
+  color: white;
+  padding: 8px;
+  width: 128px;
+  font-size: 20px;
+  border-radius: 16px;
+  border: 0;
+}
+
+.snake-game-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 16px;
+}
+
+.snake-game-over {
+  font-size: 20px;
+  font-weight: 700;
+}

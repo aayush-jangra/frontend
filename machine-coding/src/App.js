@@ -6,6 +6,7 @@ import { Homepage } from "./Pages/Homepage/Homepage";
 import { OtpInputPage } from "./Pages/OtpInput/OtpInputPage";
 import { ProgressBarPage } from "./Pages/ProgressBar/ProgressBarPage";
 import { QueueGridPage } from "./Pages/QueueGrid/QueueGridPage";
+import { SnakeGamePage } from "./Pages/SnakeGame/SnakeGamePage";
 import { StopwatchPage } from "./Pages/Stopwatch/StopwatchPage";
 import { TicTacToePage } from "./Pages/TicTacToe/TicTacToePage";
 import { ToastPage } from "./Pages/Toast/ToastPage";
@@ -62,6 +63,10 @@ function App() {
     {
       path: "/tic-tac-toe",
       component: <TicTacToePage />,
+    },
+    {
+      path: "/snake-game",
+      component: <SnakeGamePage />,
     },
   ];
 
