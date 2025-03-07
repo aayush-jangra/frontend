@@ -9,6 +9,7 @@ import { QueueGridPage } from "./Pages/QueueGrid/QueueGridPage";
 import { SnakeGamePage } from "./Pages/SnakeGame/SnakeGamePage";
 import { StepperPage } from "./Pages/Stepper/StepperPage";
 import { StopwatchPage } from "./Pages/Stopwatch/StopwatchPage";
+import { TabsPage } from "./Pages/Tabs/TabsPage";
 import { TicTacToePage } from "./Pages/TicTacToe/TicTacToePage";
 import { ToastPage } from "./Pages/Toast/ToastPage";
 import { ToastProvider } from "./Pages/Toast/ToastProvider";
@@ -77,6 +78,10 @@ function App() {
     {
       path: "/stepper",
       component: <StepperPage />,
+    },
+    {
+      path: "/tabs",
+      component: <TabsPage />,
     },
   ];
 

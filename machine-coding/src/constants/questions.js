@@ -108,4 +108,10 @@ export const questions = [
       "Build a Stepper Component that visually represents progress through multiple steps. It should support next, previous, and disabled steps, with clear indicators for active and completed steps.",
     path: "/stepper",
   },
+  {
+    title: "Tabs",
+    description:
+      "Build a Tabs Component where users can switch between different content sections by clicking on tab headers. It should support keyboard navigation, active tab highlighting, and smooth transitions. Optionally, add lazy loading of content.",
+    path: "/tabs",
+  },
 ];
