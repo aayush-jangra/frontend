@@ -22,6 +22,10 @@ export const QueueGrid = ({ size = 3 }) => {
   };
 
   useEffect(() => {
+    if (boxes.length !== size * size) {
+      setBoxes(Array.from({ length: size * size }, () => false));
+    }
+
     if (queue.current.length === size * size) {
       setAnimating(true);
       queue.current.forEach((boxIndex, index) => {
@@ -36,14 +40,20 @@ export const QueueGrid = ({ size = 3 }) => {
           if (index === size * size - 1) {
             setAnimating(false);
           }
-        }, 1000 * (index + 1));
+        }, 500 * (index + 1));
       });
       queue.current = [];
     }
-  }, [queue.current.length, size]);
+  }, [queue.current.length, size, boxes.length]);
 
   return (
-    <div className="queue-boxes-container">
+    <div
+      style={{
+        gridTemplateColumns: `repeat(${size}, 1fr)`,
+        gridTemplateRows: `repeat(${size}, 1fr)`,
+      }}
+      className="queue-boxes-container"
+    >
       {boxes.map((selected, index) => (
         <div
           key={index}

@@ -11,8 +11,8 @@ export const TicTacToePage = () => {
   };
 
   return (
-    <div className="tic-tac-toe-page-container">
-      <label className="tic-tac-toe-label">
+    <div className="queue-grid-page-container">
+      <label className="queue-grid-label">
         Grid size (1-9):
         <input type="number" value={size} onChange={handleSizeChange} />
       </label>

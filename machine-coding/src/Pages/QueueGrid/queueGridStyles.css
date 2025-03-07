@@ -10,8 +10,28 @@
 
 .queue-boxes-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
   gap: 12px;
   width: fit-content;
+}
+
+.queue-grid-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.queue-grid-label {
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.queue-grid-label > input {
+  font-size: 18px;
+  padding: 2px 8px;
+  border-radius: 16px;
+  width: 48px;
 }
