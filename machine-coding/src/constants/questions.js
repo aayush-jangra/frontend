@@ -90,4 +90,10 @@ export const questions = [
       "Build a 3×3 Clickable Grid where each box changes background color when clicked. Once all boxes are clicked, the grid should reset one box at a time in a FIFO (first-in, first-out) order. Optionally, add customizable grid size and support for different reset speeds.",
     path: "/queue-grid",
   },
+  {
+    title: "Tic Tac Toe",
+    description:
+      "Build a Tic-Tac-Toe game where users can customize the grid size (e.g., 3×3, 4×4, etc.) before starting. The game should track turns, detect winners. Optionally, highlight the winning sequence.",
+    path: "/tic-tac-toe",
+  },
 ];
