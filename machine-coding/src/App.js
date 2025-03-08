@@ -3,6 +3,7 @@ import { AccordionPage } from "./Pages/Accordion/AccordionPage";
 import { Caraousel } from "./Pages/Caraousel/CaraouselPage";
 import { DebounceAndThrottle } from "./Pages/DebounceAndThrottle/DebounceAndThrottle";
 import { Homepage } from "./Pages/Homepage/Homepage";
+import { MemoryGamePage } from "./Pages/MemoryGame/MemoryGamePage";
 import { OtpInputPage } from "./Pages/OtpInput/OtpInputPage";
 import { ProgressBarPage } from "./Pages/ProgressBar/ProgressBarPage";
 import { QueueGridPage } from "./Pages/QueueGrid/QueueGridPage";
@@ -82,6 +83,10 @@ function App() {
     {
       path: "/tabs",
       component: <TabsPage />,
+    },
+    {
+      path: "/memory-game",
+      component: <MemoryGamePage />,
     },
   ];
 

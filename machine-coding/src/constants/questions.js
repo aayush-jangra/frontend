@@ -114,4 +114,10 @@ export const questions = [
       "Build a Tabs Component where users can switch between different content sections by clicking on tab headers. It should support keyboard navigation, active tab highlighting, and smooth transitions. Optionally, add lazy loading of content.",
     path: "/tabs",
   },
+  {
+    title: "Memory Game",
+    description:
+      "Build a Memory Game where players flip tiles to find matching pairs. Each tile has a hidden number, and when two matching tiles are revealed, they remain open; otherwise, they flip back. The game continues until all tiles are matched and removed.",
+    path: "/memory-game",
+  },
 ];
