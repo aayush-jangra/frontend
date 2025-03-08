@@ -132,4 +132,10 @@ export const questions = [
       "Build a Traffic Light Component with three lights (red, yellow, and green) that change automatically in a loop.",
     path: "traffic-light",
   },
+  {
+    title: "Modal",
+    description:
+      "Build a Modal Component that opens and closes when triggered. It should support a close button, clicking outside to close, and Escape key dismissal.",
+    path: "/modal",
+  },
 ];

@@ -4,6 +4,7 @@ import { Caraousel } from "./Pages/Caraousel/CaraouselPage";
 import { DebounceAndThrottle } from "./Pages/DebounceAndThrottle/DebounceAndThrottle";
 import { Homepage } from "./Pages/Homepage/Homepage";
 import { MemoryGamePage } from "./Pages/MemoryGame/MemoryGamePage";
+import { ModalPage } from "./Pages/Modal/ModalPage";
 import { NestedCommentsPage } from "./Pages/NestedComments/NestedCommentsPage";
 import { OtpInputPage } from "./Pages/OtpInput/OtpInputPage";
 import { ProgressBarPage } from "./Pages/ProgressBar/ProgressBarPage";
@@ -97,6 +98,10 @@ function App() {
     {
       path: "/traffic-light",
       component: <TrafficLightPage />,
+    },
+    {
+      path: "/modal",
+      component: <ModalPage />,
     },
   ];
 
