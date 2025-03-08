@@ -120,4 +120,10 @@ export const questions = [
       "Build a Memory Game where players flip tiles to find matching pairs. Each tile has a hidden number, and when two matching tiles are revealed, they remain open; otherwise, they flip back. The game continues until all tiles are matched and removed.",
     path: "/memory-game",
   },
+  {
+    title: "Nested Comments",
+    description:
+      "Build a Nested Comments Component that supports adding, replying to, and deleting comments. Each comment can have multiple levels of replies, maintaining a proper hierarchy. Optionally, do not use recursive data",
+    path: "/nested-comments",
+  },
 ];

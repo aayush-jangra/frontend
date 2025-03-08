@@ -4,6 +4,7 @@ import { Caraousel } from "./Pages/Caraousel/CaraouselPage";
 import { DebounceAndThrottle } from "./Pages/DebounceAndThrottle/DebounceAndThrottle";
 import { Homepage } from "./Pages/Homepage/Homepage";
 import { MemoryGamePage } from "./Pages/MemoryGame/MemoryGamePage";
+import { NestedCommentsPage } from "./Pages/NestedComments/NestedCommentsPage";
 import { OtpInputPage } from "./Pages/OtpInput/OtpInputPage";
 import { ProgressBarPage } from "./Pages/ProgressBar/ProgressBarPage";
 import { QueueGridPage } from "./Pages/QueueGrid/QueueGridPage";
@@ -87,6 +88,10 @@ function App() {
     {
       path: "/memory-game",
       component: <MemoryGamePage />,
+    },
+    {
+      path: "/nested-comments",
+      component: <NestedCommentsPage />,
     },
   ];
 
