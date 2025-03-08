@@ -126,4 +126,10 @@ export const questions = [
       "Build a Nested Comments Component that supports adding, replying to, and deleting comments. Each comment can have multiple levels of replies, maintaining a proper hierarchy. Optionally, do not use recursive data",
     path: "/nested-comments",
   },
+  {
+    title: "Traffic light",
+    description:
+      "Build a Traffic Light Component with three lights (red, yellow, and green) that change automatically in a loop.",
+    path: "traffic-light",
+  },
 ];

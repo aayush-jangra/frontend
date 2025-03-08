@@ -16,6 +16,7 @@ import { TicTacToePage } from "./Pages/TicTacToe/TicTacToePage";
 import { ToastPage } from "./Pages/Toast/ToastPage";
 import { ToastProvider } from "./Pages/Toast/ToastProvider";
 import { TodosPage } from "./Pages/Todos/TodosPage";
+import { TrafficLightPage } from "./Pages/TrafficLight/TrafficLightPage";
 import { VirtualisedListPage } from "./Pages/VirtualisedList/VirtualisedListPage";
 import { CustomRouter } from "./Router/CustomRouter";
 
@@ -92,6 +93,10 @@ function App() {
     {
       path: "/nested-comments",
       component: <NestedCommentsPage />,
+    },
+    {
+      path: "/traffic-light",
+      component: <TrafficLightPage />,
     },
   ];
 

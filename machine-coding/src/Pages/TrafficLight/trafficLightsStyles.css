@@ -1,0 +1,36 @@
+.traffic-lights-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 48px;
+  border: 1px solid;
+  width: min-content;
+}
+
+.traffic-light {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid black;
+  color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.green-light {
+  background-color: green;
+  color: black;
+}
+
+.red-light {
+  background-color: red;
+  color: black;
+}
+
+.yellow-light {
+  background-color: yellow;
+  color: black;
+}
