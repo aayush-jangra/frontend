@@ -1,16 +1,35 @@
 import { useState } from "react";
 import "./accordionStyles.css";
 
-export const Accordion = ({ title, content, defaultOpen }) => {
-  const [open, setOpen] = useState(!!defaultOpen);
+export const Accordion = ({ list, allowMultiple }) => {
+  const [open, setOpen] = useState([]);
+
+  const handleClick = (index) => {
+    setOpen((prev) => {
+      if (prev.includes(index)) {
+        return prev.filter((ind) => ind !== index);
+      }
+      if (allowMultiple) {
+        return [...prev, index];
+      }
+
+      return [index];
+    });
+  };
 
   return (
-    <div className="accordion">
-      <div className="accordion-title" onClick={() => setOpen((prev) => !prev)}>
-        <div>{title}</div>
-        <div>{open ? "-" : "+"}</div>
-      </div>
-      {open && <div className="accordion-content">{content}</div>}
-    </div>
+    <>
+      {list.map(({ title, content }, index) => (
+        <div key={index} className="accordion">
+          <div className="accordion-title" onClick={() => handleClick(index)}>
+            <div>{title}</div>
+            <div>{open.includes(index) ? "-" : "+"}</div>
+          </div>
+          {open.includes(index) && (
+            <div className="accordion-content">{content}</div>
+          )}
+        </div>
+      ))}
+    </>
   );
 };

@@ -24,3 +24,16 @@
 .accordion-content {
   font-size: 20px;
 }
+
+.accordion-multiple-input {
+  display: flex;
+  font-size: 20px;
+  font-weight: 700;
+  border-bottom: 1px solid;
+  padding: 12px 24px;
+  margin-bottom: 24px;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  cursor: pointer;
+}
