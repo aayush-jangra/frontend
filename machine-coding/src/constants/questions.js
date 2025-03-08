@@ -138,4 +138,10 @@ export const questions = [
       "Build a Modal Component that opens and closes when triggered. It should support a close button, clicking outside to close, and Escape key dismissal.",
     path: "/modal",
   },
+  {
+    title: "Meeting Calendar",
+    description:
+      "Build a simple alendar with 1-hour time slots, where users can add, edit, and delete events. It should display a clear timeline for the day.",
+    path: "/meeting-calendar",
+  },
 ];

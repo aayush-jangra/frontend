@@ -1,0 +1,55 @@
+.hour-slot {
+  height: 100%;
+  width: 160px;
+  border-right: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  box-sizing: border-box;
+}
+
+.hour-slots-container {
+  width: 100%;
+  border: 1px solid;
+  position: relative;
+  box-sizing: border-box;
+  height: 160px;
+}
+
+.meeting-slot {
+  width: calc(100% - 168px);
+  height: 24px;
+  position: absolute;
+  left: 164px;
+  box-sizing: border-box;
+  display: flex;
+  height: 100%;
+  gap: 8px;
+}
+
+.meeting-page-container {
+  position: relative;
+}
+
+.meetings-container {
+  flex: 1;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.meeting {
+  position: absolute;
+  flex: 1;
+  display: flex;
+  background-color: lightblue;
+  width: 100%;
+  font-size: 24px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  box-sizing: border-box;
+  border-radius: 16px;
+}

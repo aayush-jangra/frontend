@@ -3,6 +3,7 @@ import { AccordionPage } from "./Pages/Accordion/AccordionPage";
 import { Caraousel } from "./Pages/Caraousel/CaraouselPage";
 import { DebounceAndThrottle } from "./Pages/DebounceAndThrottle/DebounceAndThrottle";
 import { Homepage } from "./Pages/Homepage/Homepage";
+import { MeetingCalendarPage } from "./Pages/MeetingCalendar/MeetingCalendarPage";
 import { MemoryGamePage } from "./Pages/MemoryGame/MemoryGamePage";
 import { ModalPage } from "./Pages/Modal/ModalPage";
 import { NestedCommentsPage } from "./Pages/NestedComments/NestedCommentsPage";
@@ -102,6 +103,10 @@ function App() {
     {
       path: "/modal",
       component: <ModalPage />,
+    },
+    {
+      path: "/meeting-calendar",
+      component: <MeetingCalendarPage />,
     },
   ];
 
