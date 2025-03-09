@@ -27,8 +27,8 @@ export const MeetingSlot = ({ slot }) => {
   return (
     <div style={{ height, top }} className="meeting-slot">
       {meetingsInSlot.map((meeting) => (
-        <div className="meetings-container">
-          <Meeting key={meeting.id} meeting={meeting} parentTop={top} />
+        <div key={meeting.id} className="meetings-container">
+          <Meeting meeting={meeting} parentTop={top} />
         </div>
       ))}
     </div>

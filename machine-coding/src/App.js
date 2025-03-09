@@ -2,6 +2,7 @@ import { HeaderWrapper } from "./components/Header";
 import { AccordionPage } from "./Pages/Accordion/AccordionPage";
 import { Caraousel } from "./Pages/Caraousel/CaraouselPage";
 import { DebounceAndThrottle } from "./Pages/DebounceAndThrottle/DebounceAndThrottle";
+import { EventFlowPage } from "./Pages/EventFlow/EventFlowPage";
 import { Homepage } from "./Pages/Homepage/Homepage";
 import { MeetingCalendarPage } from "./Pages/MeetingCalendar/MeetingCalendarPage";
 import { MemoryGamePage } from "./Pages/MemoryGame/MemoryGamePage";
@@ -107,6 +108,10 @@ function App() {
     {
       path: "/meeting-calendar",
       component: <MeetingCalendarPage />,
+    },
+    {
+      path: "/event-flow",
+      component: <EventFlowPage />,
     },
   ];
 
