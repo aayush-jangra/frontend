@@ -54,6 +54,7 @@ const TrafficLightPage = React.lazy(() =>
 const VirtualisedListPage = React.lazy(() =>
   import("./Pages/VirtualisedList/VirtualisedListPage")
 );
+const RatingPage = React.lazy(() => import("./Pages/Rating/RatingPage"));
 
 function App() {
   const routerConfig = [
@@ -148,6 +149,10 @@ function App() {
     {
       path: "/infinite-scroll",
       component: <InfinitePageScroll />,
+    },
+    {
+      path: "/rating",
+      component: <RatingPage />,
     },
   ];
 

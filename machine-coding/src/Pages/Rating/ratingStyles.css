@@ -1,0 +1,10 @@
+.rating-star {
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+}
+
+.rating-container {
+  display: flex;
+  gap: 4px;
+}
