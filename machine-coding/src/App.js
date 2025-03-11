@@ -4,6 +4,7 @@ import { Caraousel } from "./Pages/Caraousel/CaraouselPage";
 import { DebounceAndThrottle } from "./Pages/DebounceAndThrottle/DebounceAndThrottle";
 import { EventFlowPage } from "./Pages/EventFlow/EventFlowPage";
 import { Homepage } from "./Pages/Homepage/Homepage";
+import { InfinitePageScroll } from "./Pages/InfiniteScroll/InfiniteScrollPage";
 import { MeetingCalendarPage } from "./Pages/MeetingCalendar/MeetingCalendarPage";
 import { MemoryGamePage } from "./Pages/MemoryGame/MemoryGamePage";
 import { ModalPage } from "./Pages/Modal/ModalPage";
@@ -112,6 +113,10 @@ function App() {
     {
       path: "/event-flow",
       component: <EventFlowPage />,
+    },
+    {
+      path: "/infinite-scroll",
+      component: <InfinitePageScroll />,
     },
   ];
 

@@ -144,4 +144,9 @@ export const questions = [
       "Build a simple alendar with 1-hour time slots, where users can add, edit, and delete events. It should display a clear timeline for the day.",
     path: "/meeting-calendar",
   },
+  {
+    title: "Infinite Scroll",
+    description: `Build an Infinite Scroll Component that dynamically loads more content as the user scrolls down. Ensure smooth performance with lazy loading and loading indicators. Optionally, support manual "Load More" and filtering options.`,
+    path: "/infinite-scroll",
+  },
 ];

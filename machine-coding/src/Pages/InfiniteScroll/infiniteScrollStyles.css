@@ -1,0 +1,47 @@
+.infinite-scroll-image {
+  min-height: 300px;
+  width: 100%;
+  aspect-ratio: 3/1;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.infinite-scroll-image-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 32px;
+  width: 100%;
+  position: relative;
+}
+
+.infinite-scroll-load-more {
+  margin: 32px;
+  padding: 16px;
+  width: 200px;
+  border: 0;
+  border: 1px solid;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 1px 1px 4px black;
+  cursor: pointer;
+}
+
+.infinite-scroll-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.infinite-scroll-image-author {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 12px;
+  font-weight: 700;
+  color: white;
+  font-size: 20px;
+  background: linear-gradient(to top right, rgba(0, 0, 0, 0.8), transparent);
+  border-bottom-left-radius: 16px;
+}
