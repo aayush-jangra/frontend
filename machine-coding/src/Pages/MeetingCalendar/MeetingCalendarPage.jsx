@@ -5,7 +5,7 @@ import { MeetingSlot } from "./MeetingSlot";
 
 const HOURS = Array.from({ length: 24 }, (_, index) => getTimeFromSlot(index));
 
-export const MeetingCalendarPage = () => {
+const MeetingCalendarPage = () => {
   const meetingSlots = getSlotsFromMeetings(meetings);
 
   return (
@@ -21,3 +21,5 @@ export const MeetingCalendarPage = () => {
     </div>
   );
 };
+
+export default MeetingCalendarPage;

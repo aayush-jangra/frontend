@@ -1,6 +1,6 @@
 import { VirtualisedList } from "./VirtualisedList";
 
-export const VirtualisedListPage = () => {
+const VirtualisedListPage = () => {
   const list = Array.from({ length: 10000 }, (_, index) => index);
 
   return (
@@ -9,3 +9,5 @@ export const VirtualisedListPage = () => {
     </div>
   );
 };
+
+export default VirtualisedListPage;

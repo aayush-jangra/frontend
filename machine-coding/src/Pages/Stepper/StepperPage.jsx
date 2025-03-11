@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Stepper } from "./Stepper";
 
-export const StepperPage = () => {
+const StepperPage = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const steps = [
     {
@@ -37,3 +37,5 @@ export const StepperPage = () => {
     </div>
   );
 };
+
+export default StepperPage;

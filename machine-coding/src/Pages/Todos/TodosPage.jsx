@@ -3,7 +3,7 @@ import { TodoList } from "./TodoList";
 import { defaultTodos, TodoStatus } from "../../constants/todos";
 import "./todosStyles.css";
 
-export const TodosPage = () => {
+const TodosPage = () => {
   const [todos, setTodos] = useState(defaultTodos);
   const [dragItem, setDragItem] = useState(null);
   const [inputs, setInputs] = useState({
@@ -95,3 +95,5 @@ export const TodosPage = () => {
     </div>
   );
 };
+
+export default TodosPage;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useToast } from "./ToastProvider";
 
-export const ToastPage = () => {
+const ToastPage = () => {
   const { createToast } = useToast();
   const [duration, setDuration] = useState(3000);
 
@@ -56,3 +56,5 @@ export const ToastPage = () => {
     </div>
   );
 };
+
+export default ToastPage;

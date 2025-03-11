@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Modal } from "./Modal";
 
-export const ModalPage = () => {
+const ModalPage = () => {
   const [open, setOpen] = useState(false);
 
   const onModalClose = () => {
@@ -21,3 +21,5 @@ export const ModalPage = () => {
     </div>
   );
 };
+
+export default ModalPage;

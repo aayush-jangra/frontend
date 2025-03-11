@@ -4,7 +4,7 @@ import "./progressBarStyles.css";
 
 const MAX_VALUE = 100;
 
-export const ProgressBarPage = () => {
+const ProgressBarPage = () => {
   const [currentValue, setCurrentValue] = useState(0);
   const interval = useRef();
 
@@ -61,3 +61,5 @@ export const ProgressBarPage = () => {
     </div>
   );
 };
+
+export default ProgressBarPage;

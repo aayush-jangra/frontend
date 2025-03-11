@@ -1,9 +1,11 @@
 import { InfiniteScroll } from "./InfiniteScroll";
 
-export const InfinitePageScroll = () => {
+const InfinitePageScroll = () => {
   return (
     <div>
       <InfiniteScroll />
     </div>
   );
 };
+
+export default InfinitePageScroll;

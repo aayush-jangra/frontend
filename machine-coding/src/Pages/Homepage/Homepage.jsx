@@ -2,7 +2,7 @@ import { ContentBox } from "../../components/ContentBox";
 import { questions } from "../../constants/questions";
 import "./homepageStyles.css";
 
-export const Homepage = () => {
+const Homepage = () => {
   return (
     <>
       <h1>
@@ -23,3 +23,4 @@ export const Homepage = () => {
     </>
   );
 };
+export default Homepage;

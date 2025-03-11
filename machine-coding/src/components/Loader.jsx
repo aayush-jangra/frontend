@@ -1,8 +1,8 @@
 import "./componentStyles.css";
 
-export const Loader = () => {
+export const Loader = ({ fullPage }) => {
   return (
-    <div>
+    <div className={fullPage ? "custom-loader-full-page" : ""}>
       <div className="custom-loader"></div>
     </div>
   );

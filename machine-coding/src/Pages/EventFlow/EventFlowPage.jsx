@@ -39,7 +39,7 @@ const EventDiv = ({ capturePreference, remainingCount, addToWorkerQueue }) => {
   );
 };
 
-export const EventFlowPage = () => {
+const EventFlowPage = () => {
   const sessionDivCount = sessionStorage.getItem(KEY_EVENT_DIV_COUNT);
   const [divCount, setDivCount] = useState(sessionDivCount ?? 3);
   const [capturePreference, setCapturePreference] = useState([
@@ -125,3 +125,5 @@ export const EventFlowPage = () => {
     </div>
   );
 };
+
+export default EventFlowPage;

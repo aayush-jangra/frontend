@@ -1,6 +1,6 @@
 import { Tabs } from "./Tabs";
 
-export const TabsPage = () => {
+const TabsPage = () => {
   const tabs = [
     {
       title: "Account",
@@ -26,3 +26,5 @@ export const TabsPage = () => {
     </div>
   );
 };
+
+export default TabsPage;

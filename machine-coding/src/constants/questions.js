@@ -45,11 +45,6 @@ export const questions = [
     path: "/todos",
   },
   {
-    title: "Comments Section",
-    description: `Build a Comments Section that supports adding comments and nested replies. Each comment should allow replying, editing, and deleting. Ensure smooth UI updates and maintain a proper hierarchy. Optionally, support lazy loading for replies and upvotes/downvotes.`,
-    path: "/comments",
-  },
-  {
     title: "Event Flow",
     description: `Build a demo to visualize event flow in JavaScript, showcasing event bubbling (bottom-up) and event capturing (top-down). Implement event listeners at different levels and allow users to toggle between phases to observe the propagation order. Optionally, add stopPropagation() to demonstrate its effect.`,
     path: "/event-flow",

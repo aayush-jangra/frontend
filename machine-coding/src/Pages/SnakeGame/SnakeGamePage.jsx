@@ -1,9 +1,11 @@
 import { SnakeGame } from "./SnakeGame";
 
-export const SnakeGamePage = () => {
+const SnakeGamePage = () => {
   return (
     <div>
       <SnakeGame size={15} />
     </div>
   );
 };
+
+export default SnakeGamePage;

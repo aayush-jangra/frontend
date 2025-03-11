@@ -1,28 +1,59 @@
+import React, { Suspense } from "react";
 import { HeaderWrapper } from "./components/Header";
-import { AccordionPage } from "./Pages/Accordion/AccordionPage";
-import { Caraousel } from "./Pages/Caraousel/CaraouselPage";
-import { DebounceAndThrottle } from "./Pages/DebounceAndThrottle/DebounceAndThrottle";
-import { EventFlowPage } from "./Pages/EventFlow/EventFlowPage";
-import { Homepage } from "./Pages/Homepage/Homepage";
-import { InfinitePageScroll } from "./Pages/InfiniteScroll/InfiniteScrollPage";
-import { MeetingCalendarPage } from "./Pages/MeetingCalendar/MeetingCalendarPage";
-import { MemoryGamePage } from "./Pages/MemoryGame/MemoryGamePage";
-import { ModalPage } from "./Pages/Modal/ModalPage";
-import { NestedCommentsPage } from "./Pages/NestedComments/NestedCommentsPage";
-import { OtpInputPage } from "./Pages/OtpInput/OtpInputPage";
-import { ProgressBarPage } from "./Pages/ProgressBar/ProgressBarPage";
-import { QueueGridPage } from "./Pages/QueueGrid/QueueGridPage";
-import { SnakeGamePage } from "./Pages/SnakeGame/SnakeGamePage";
-import { StepperPage } from "./Pages/Stepper/StepperPage";
-import { StopwatchPage } from "./Pages/Stopwatch/StopwatchPage";
-import { TabsPage } from "./Pages/Tabs/TabsPage";
-import { TicTacToePage } from "./Pages/TicTacToe/TicTacToePage";
-import { ToastPage } from "./Pages/Toast/ToastPage";
 import { ToastProvider } from "./Pages/Toast/ToastProvider";
-import { TodosPage } from "./Pages/Todos/TodosPage";
-import { TrafficLightPage } from "./Pages/TrafficLight/TrafficLightPage";
-import { VirtualisedListPage } from "./Pages/VirtualisedList/VirtualisedListPage";
+import Homepage from "./Pages/Homepage/Homepage";
 import { CustomRouter } from "./Router/CustomRouter";
+import { Loader } from "./components/Loader";
+
+const AccordionPage = React.lazy(() =>
+  import("./Pages/Accordion/AccordionPage")
+);
+const Caraousel = React.lazy(() => import("./Pages/Caraousel/CaraouselPage"));
+const DebounceAndThrottle = React.lazy(() =>
+  import("./Pages/DebounceAndThrottle/DebounceAndThrottle")
+);
+const EventFlowPage = React.lazy(() =>
+  import("./Pages/EventFlow/EventFlowPage")
+);
+const InfinitePageScroll = React.lazy(() =>
+  import("./Pages/InfiniteScroll/InfiniteScrollPage")
+);
+const MeetingCalendarPage = React.lazy(() =>
+  import("./Pages/MeetingCalendar/MeetingCalendarPage")
+);
+const MemoryGamePage = React.lazy(() =>
+  import("./Pages/MemoryGame/MemoryGamePage")
+);
+const ModalPage = React.lazy(() => import("./Pages/Modal/ModalPage"));
+const NestedCommentsPage = React.lazy(() =>
+  import("./Pages/NestedComments/NestedCommentsPage")
+);
+const OtpInputPage = React.lazy(() => import("./Pages/OtpInput/OtpInputPage"));
+const ProgressBarPage = React.lazy(() =>
+  import("./Pages/ProgressBar/ProgressBarPage")
+);
+const QueueGridPage = React.lazy(() =>
+  import("./Pages/QueueGrid/QueueGridPage")
+);
+const SnakeGamePage = React.lazy(() =>
+  import("./Pages/SnakeGame/SnakeGamePage")
+);
+const StepperPage = React.lazy(() => import("./Pages/Stepper/StepperPage"));
+const StopwatchPage = React.lazy(() =>
+  import("./Pages/Stopwatch/StopwatchPage")
+);
+const TabsPage = React.lazy(() => import("./Pages/Tabs/TabsPage"));
+const TicTacToePage = React.lazy(() =>
+  import("./Pages/TicTacToe/TicTacToePage")
+);
+const ToastPage = React.lazy(() => import("./Pages/Toast/ToastPage"));
+const TodosPage = React.lazy(() => import("./Pages/Todos/TodosPage"));
+const TrafficLightPage = React.lazy(() =>
+  import("./Pages/TrafficLight/TrafficLightPage")
+);
+const VirtualisedListPage = React.lazy(() =>
+  import("./Pages/VirtualisedList/VirtualisedListPage")
+);
 
 function App() {
   const routerConfig = [
@@ -122,7 +153,9 @@ function App() {
 
   return (
     <HeaderWrapper>
-      <CustomRouter config={routerConfig} />
+      <Suspense fallback={<Loader fullPage />}>
+        <CustomRouter config={routerConfig} />
+      </Suspense>
     </HeaderWrapper>
   );
 }

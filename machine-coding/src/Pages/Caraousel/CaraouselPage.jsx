@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { images } from "../../constants/images";
 import "./carouselStyles.css";
 
-export const Caraousel = () => {
+const Caraousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
   const interval = useRef();
@@ -65,3 +65,5 @@ export const Caraousel = () => {
     </div>
   );
 };
+
+export default Caraousel;

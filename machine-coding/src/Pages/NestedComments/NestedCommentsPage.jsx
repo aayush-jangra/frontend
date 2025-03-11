@@ -3,7 +3,7 @@ import { defaultComments } from "../../constants/comments";
 import { Comment } from "./NestedComments";
 import "./nestedCommentsStyles.css";
 
-export const NestedCommentsPage = () => {
+const NestedCommentsPage = () => {
   const [comments, setComments] = useState(defaultComments);
 
   const rootComments = Object.values(comments).filter(
@@ -66,3 +66,5 @@ export const NestedCommentsPage = () => {
     </div>
   );
 };
+
+export default NestedCommentsPage;

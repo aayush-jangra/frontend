@@ -11,7 +11,7 @@ const Container = ({ children, title }) => {
   );
 };
 
-export const DebounceAndThrottle = () => {
+const DebounceAndThrottle = () => {
   return (
     <div className="dt-page-container">
       <Container title={"Debounce"}>
@@ -23,3 +23,5 @@ export const DebounceAndThrottle = () => {
     </div>
   );
 };
+
+export default DebounceAndThrottle;

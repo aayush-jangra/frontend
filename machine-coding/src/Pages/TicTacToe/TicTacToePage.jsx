@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { TicTacToe } from "./TicTacToe";
 
-export const TicTacToePage = () => {
+const TicTacToePage = () => {
   const [size, setSize] = useState(3);
 
   const handleSizeChange = (e) => {
@@ -20,3 +20,5 @@ export const TicTacToePage = () => {
     </div>
   );
 };
+
+export default TicTacToePage;

@@ -1,9 +1,11 @@
 import { Stopwatch } from "./Stopwatch";
 
-export const StopwatchPage = () => {
+const StopwatchPage = () => {
   return (
     <div>
       <Stopwatch />
     </div>
   );
 };
+
+export default StopwatchPage;

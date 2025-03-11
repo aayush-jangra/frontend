@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { QueueGrid } from "./QueueGrid";
 
-export const QueueGridPage = () => {
+const QueueGridPage = () => {
   const [size, setSize] = useState(3);
 
   const handleSizeChange = (e) => {
@@ -20,3 +20,5 @@ export const QueueGridPage = () => {
     </div>
   );
 };
+
+export default QueueGridPage;

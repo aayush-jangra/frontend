@@ -1,5 +1,7 @@
 import { MemoryGame } from "./MemoryGame";
 
-export const MemoryGamePage = () => {
+const MemoryGamePage = () => {
   return <MemoryGame size={6} />;
 };
+
+export default MemoryGamePage;

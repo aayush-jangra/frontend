@@ -1,6 +1,6 @@
 import { OtpInput } from "./OtpInput";
 
-export const OtpInputPage = () => {
+const OtpInputPage = () => {
   return (
     <div>
       <h2>Correct Value: 123456</h2>
@@ -8,3 +8,5 @@ export const OtpInputPage = () => {
     </div>
   );
 };
+
+export default OtpInputPage;

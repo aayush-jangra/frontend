@@ -3,7 +3,7 @@ import { Accordion } from "./Accordion";
 import "./accordionStyles.css";
 import { CustomSwitch } from "../../components/CustomSwitch";
 
-export const AccordionPage = () => {
+const AccordionPage = () => {
   const [allowMultiple, setAllowMultiple] = useState(false);
 
   const accordionData = [
@@ -40,3 +40,5 @@ export const AccordionPage = () => {
     </div>
   );
 };
+
+export default AccordionPage;
