@@ -52,20 +52,36 @@
   min-height: fit-content;
   display: flex;
   align-items: center;
+  gap: 24px;
 }
 
-.header-home {
+.header-button {
   font-size: 24px;
   font-weight: 700;
   color: white;
   cursor: pointer;
   border-radius: 16px;
   padding: 16px;
-  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, transform 0.3s;
+  background-color: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
-.header-home:hover {
+.header-button:hover:active {
+  transform: none;
+  box-shadow: none;
+}
+
+.header-button:hover {
+  transform: translate(-4px, -4px);
   box-shadow: 4px 4px white, -1px -1px 8px white;
+}
+
+.header-code-link {
+  text-decoration: none;
 }
 
 .header-children {
