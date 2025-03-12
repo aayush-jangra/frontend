@@ -3,3 +3,20 @@
   flex-wrap: wrap;
   gap: 24px;
 }
+
+.homepage-search-input {
+  background-color: transparent;
+  padding: 8px 12px;
+  border: 1px solid black;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  align-self: flex-end;
+  font-size: 20px;
+}
+
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
