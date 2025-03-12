@@ -25,11 +25,6 @@ export const questions = [
     path: "/rating",
   },
   {
-    title: "Custom useQuery hook",
-    description: `Build a custom useQuery hook to fetch and cache data efficiently. It should handle loading, error states, and automatic refetching on demand. Optionally, support polling, retries, and stale data management.`,
-    path: "/use-query",
-  },
-  {
     title: "Pagination",
     description: `Build a Pagination Component to navigate through a list of items efficiently. It should support page navigation, dynamic page sizes, and disable previous/next buttons when needed. Optionally, add infinite scrolling and server-side pagination support.`,
     path: "/pagination",
