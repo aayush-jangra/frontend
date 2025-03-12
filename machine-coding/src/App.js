@@ -55,6 +55,9 @@ const VirtualisedListPage = React.lazy(() =>
   import("./Pages/VirtualisedList/VirtualisedListPage")
 );
 const RatingPage = React.lazy(() => import("./Pages/Rating/RatingPage"));
+const PaginationPage = React.lazy(() =>
+  import("./Pages/Pagination/PaginationPage")
+);
 
 function App() {
   const routerConfig = [
@@ -153,6 +156,10 @@ function App() {
     {
       path: "/rating",
       component: <RatingPage />,
+    },
+    {
+      path: "/pagination",
+      component: <PaginationPage />,
     },
   ];
 

@@ -13,6 +13,7 @@ const Star = ({ selected, onClick, onHover }) => {
         stroke-linecap="round"
         stroke-linejoin="round"
         fill={selected ? "gold" : "white"}
+        style={{ cursor: "pointer" }}
       >
         <polygon points="12 2 15 10 23 10 17 14 19 22 12 17 5 22 7 14 1 10 9 10" />
       </svg>
