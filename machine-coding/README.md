@@ -1,11 +1,6 @@
----
-title: "Learning by Coding"
-description: "A collection of mini frontend challenges built to enhance my React and JavaScript skills."
----
+# 🚀 Machine Coding
 
-# 🚀 Learning by Coding
-
-This project is a collection of **mini frontend challenges** I built as part of my **learning by coding** journey. Each component or feature is designed to improve my understanding of **React, JavaScript, UI/UX, and performance optimization**.
+This project is a collection of **mini frontend challenges** I built as part of my **learning by coding** journey. Many of these challenges are commonly asked in **machine coding interview rounds**. Each component or feature is designed to improve my understanding of **React, JavaScript, UI/UX, and performance optimization**.
 
 🔗 **Live Demo:** [Click Here](https://frontend-nine-rho-52.vercel.app/)
 🔗 **Theme:** [Click Here](https://goodpalette.io/14bacc-d92916-bec4c4)
@@ -30,13 +25,11 @@ This project is a collection of **mini frontend challenges** I built as part of 
 
 ### 🕒 Time-Based Components
 
-- **Stopwatch** (Start, pause, reset, and lap tracking)
 - **Timer** (Count up/down with start/pause/reset)
 - **Progress Bar** (Fills when a button is clicked)
 
 ### 📅 Calendars & Scheduling
 
-- **Today's Calendar** (1-hour slots for daily scheduling)
 - **Meeting Calendar** (Schedule, edit, and delete meetings)
 
 ### 📜 Lists & Data Handling
@@ -54,7 +47,6 @@ This project is a collection of **mini frontend challenges** I built as part of 
 ### 🎯 Drag & Drop
 
 - **Draggable Todos** (Reorder tasks with smooth drag-and-drop)
-- **Kanban-style Todos** (Move tasks between different states)
 
 ### 💬 Comments & Threads
 
@@ -63,7 +55,6 @@ This project is a collection of **mini frontend challenges** I built as part of 
 ### 🚦 Visual Feedback
 
 - **Traffic Light** (Auto-changing red-yellow-green sequence)
-- **Simple Red Light** (Single light toggle)
 
 ### 🖼️ Image & Media
 
@@ -83,8 +74,8 @@ This project is a collection of **mini frontend challenges** I built as part of 
 ## 🛠️ Technologies Used
 
 - **React**
-- **TypeScript/JavaScript**
-- **CSS/Tailwind**
+- **JavaScript**
+- **CSS**
 - **React Hooks** (State, Effect, Context)
 
-This project is an evolving collection of components that help me grow as a frontend developer. Contributions and suggestions are always welcome! 🚀
+This project is an evolving collection of components that help me grow as a frontend developer. Suggestions are always welcome! 🚀
