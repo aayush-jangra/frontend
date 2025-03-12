@@ -55,7 +55,7 @@ export const questions = [
     path: "/carousel",
   },
   {
-    folderName: "",
+    folderName: "AutoComplete",
     title: "Autocomplete",
     description:
       "Build an Autocomplete Component that suggests options as the user types. It should support keyboard navigation, and click selection. Optionally, add remote data fetching, highlighting of matched text.",

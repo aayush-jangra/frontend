@@ -58,6 +58,9 @@ const RatingPage = React.lazy(() => import("./Pages/Rating/RatingPage"));
 const PaginationPage = React.lazy(() =>
   import("./Pages/Pagination/PaginationPage")
 );
+const AutoCompletePage = React.lazy(() =>
+  import("./Pages/AutoComplete/AutoCompletePage")
+);
 
 function App() {
   const routerConfig = [
@@ -160,6 +163,10 @@ function App() {
     {
       path: "/pagination",
       component: <PaginationPage />,
+    },
+    {
+      path: "/autocomplete",
+      component: <AutoCompletePage />,
     },
   ];
 
