@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import "./stopwatchStyles.css";
+import "./timerStyles.css";
 
-export const Stopwatch = () => {
-  const [time, setTime] = useState({ hour: 0, min: 0, sec: 0 });
+export const Timer = () => {
+  const [time, setTime] = useState({ hour: 0, min: 0, sec: 10 });
   const [intervalRunning, setIntervalRunning] = useState(false);
   const timerEnd = useRef();
   const intervalRef = useRef();
@@ -74,7 +74,9 @@ export const Stopwatch = () => {
   };
 
   useEffect(() => {
-    resetTimer();
+    return () => {
+      resetTimer();
+    };
   }, []);
 
   return (

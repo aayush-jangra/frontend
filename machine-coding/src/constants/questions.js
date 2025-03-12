@@ -76,11 +76,11 @@ export const questions = [
     path: "/accordion",
   },
   {
-    folderName: "Stopwatch",
-    title: "Stopwatch",
+    folderName: "Timer",
+    title: "Timer",
     description:
-      "Build a Stopwatch Component with start, pause, and reset functionality. It should display elapsed time in hours, minutes, seconds, and milliseconds. Optionally, add lap tracking",
-    path: "stopwatch",
+      "Build a Timer Component that counts up or down from a specified time. It should support start, pause, and reset functionality.",
+    path: "/timer",
   },
   {
     folderName: "QueueGrid",

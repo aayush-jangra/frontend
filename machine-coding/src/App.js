@@ -39,9 +39,7 @@ const SnakeGamePage = React.lazy(() =>
   import("./Pages/SnakeGame/SnakeGamePage")
 );
 const StepperPage = React.lazy(() => import("./Pages/Stepper/StepperPage"));
-const StopwatchPage = React.lazy(() =>
-  import("./Pages/Stopwatch/StopwatchPage")
-);
+const TimerPage = React.lazy(() => import("./Pages/Timer/TimerPage"));
 const TabsPage = React.lazy(() => import("./Pages/Tabs/TabsPage"));
 const TicTacToePage = React.lazy(() =>
   import("./Pages/TicTacToe/TicTacToePage")
@@ -101,8 +99,8 @@ function App() {
       component: <VirtualisedListPage />,
     },
     {
-      path: "/stopwatch",
-      component: <StopwatchPage />,
+      path: "/timer",
+      component: <TimerPage />,
     },
     {
       path: "/queue-grid",

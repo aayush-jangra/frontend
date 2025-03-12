@@ -1,9 +1,9 @@
-import { Stopwatch } from "./Stopwatch";
+import { Timer } from "./Timer";
 
 const StopwatchPage = () => {
   return (
     <div>
-      <Stopwatch />
+      <Timer />
     </div>
   );
 };
