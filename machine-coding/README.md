@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+---
+title: "Learning by Coding"
+description: "A collection of mini frontend challenges built to enhance my React and JavaScript skills."
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🚀 Learning by Coding
 
-## Available Scripts
+This project is a collection of **mini frontend challenges** I built as part of my **learning by coding** journey. Each component or feature is designed to improve my understanding of **React, JavaScript, UI/UX, and performance optimization**.
 
-In the project directory, you can run:
+🔗 **Live Demo:** [Click Here](https://frontend-nine-rho-52.vercel.app/)
+🔗 **Theme:** [Click Here](https://goodpalette.io/14bacc-d92916-bec4c4)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📌 Features Built
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🔔 UI Components
 
-### `npm test`
+- **Notification Toast** (Success, Warning, Info, Error)
+- **Modal** (Open/Close with overlay click and Escape key)
+- **Tabs** (Switch between different content sections)
+- **Accordion** (Expandable/collapsible sections)
+- **Stepper** (Multi-step process visualization)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🎮 Interactive Widgets
 
-### `npm run build`
+- **Tic-Tac-Toe** (Customizable grid size)
+- **Memory Game** (Flip matching tiles)
+- **Snake Game** (Classic snake with score tracking)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🕒 Time-Based Components
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Stopwatch** (Start, pause, reset, and lap tracking)
+- **Timer** (Count up/down with start/pause/reset)
+- **Progress Bar** (Fills when a button is clicked)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 📅 Calendars & Scheduling
 
-### `npm run eject`
+- **Today's Calendar** (1-hour slots for daily scheduling)
+- **Meeting Calendar** (Schedule, edit, and delete meetings)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 📜 Lists & Data Handling
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Virtualized List** (Efficiently render large datasets)
+- **Pagination** (Navigate through list pages)
+- **Infinite Scroll** (Load more items dynamically)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 🎭 Forms & Input Components
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **OTP Input** (Auto-focus, backspace handling, and validation)
+- **Autocomplete** (Suggest options as user types)
+- **Custom `useQuery` Hook** (Fetch and cache data efficiently)
 
-## Learn More
+### 🎯 Drag & Drop
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Draggable Todos** (Reorder tasks with smooth drag-and-drop)
+- **Kanban-style Todos** (Move tasks between different states)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 💬 Comments & Threads
 
-### Code Splitting
+- **Nested Comments** (Reply, edit, and delete comments)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 🚦 Visual Feedback
 
-### Analyzing the Bundle Size
+- **Traffic Light** (Auto-changing red-yellow-green sequence)
+- **Simple Red Light** (Single light toggle)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 🖼️ Image & Media
 
-### Making a Progressive Web App
+- **Image Carousel** (Auto-rotating, pause on hover, manual navigation)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 🎯 Event Handling
 
-### Advanced Configuration
+- **Event Flow (Bubbling & Capturing)** (Visualizing event propagation)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 📊 Algorithm-Based Features
 
-### Deployment
+- **Debounce & Throttle** (Efficient event handling demo)
+- **Clickable Grid (FIFO Reset)** (Boxes reset in a queue order)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 🛠️ Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **React**
+- **TypeScript/JavaScript**
+- **CSS/Tailwind**
+- **React Hooks** (State, Effect, Context)
+
+This project is an evolving collection of components that help me grow as a frontend developer. Contributions and suggestions are always welcome! 🚀
