@@ -8,7 +8,7 @@ const Homepage = () => {
       <h1>
         Welcome and explore the frequently asked machine coding round questions
       </h1>
-      <div className="questions">
+      <div className="homepage-questions">
         {questions.map((ques) => (
           <ContentBox
             key={ques.path}
