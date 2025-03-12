@@ -2,6 +2,7 @@ import { questions } from "../constants/questions";
 import "./componentStyles.css";
 import HomeIcon from "../assets/Icons/home.svg";
 import LinkIcon from "../assets/Icons/link.svg";
+import { AllQuestionsMenu } from "./AllQuestionsMenu";
 
 const GITHUB_PATH =
   "https://github.com/aayush-jangra/frontend/tree/main/machine-coding/src/Pages";
@@ -16,6 +17,7 @@ export const HeaderWrapper = ({ children }) => {
   return (
     <div className="app-container">
       <div className="header-container">
+        <AllQuestionsMenu />
         <button
           className="header-button"
           onClick={() => {
