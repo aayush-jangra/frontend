@@ -1,7 +1,9 @@
 .queue-grid-box {
-  width: 64px;
-  height: 64px;
+  width: 100%;
+  max-width: 64px;
+  aspect-ratio: 1/1;
   border: 1px solid;
+  box-sizing: border-box;
 }
 
 .queue-grid-box-selected {
@@ -11,7 +13,7 @@
 .queue-boxes-container {
   display: grid;
   gap: 12px;
-  width: fit-content;
+  width: 100%;
 }
 
 .queue-grid-page-container {

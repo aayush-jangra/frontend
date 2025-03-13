@@ -13,7 +13,9 @@ export const TicTacToe = ({ size }) => {
   const performValidation = useTicTacToeValidation(size);
 
   const markCell = (ri, ci) => {
-    setGrid((prev) => {
+    if (grid[ri][ci] !== "") return;
+
+    setGrid((_) => {
       const gridCopy = [...grid.map((row) => [...row])];
 
       gridCopy[ri][ci] = turn;
@@ -57,6 +59,7 @@ export const TicTacToe = ({ size }) => {
         style={{
           gridTemplateRows: `repeat(${size}, 1fr)`,
           gridTemplateColumns: `repeat(${size}, 1fr)`,
+          maxWidth: `${size * 64}px`,
         }}
         className="tic-tac-toe-grid-container"
       >
@@ -68,7 +71,7 @@ export const TicTacToe = ({ size }) => {
                   cell === "X" ? "lightBlue" : cell === "O" ? "lightGreen" : "",
               }}
               key={`${size}-${rowIdx}-${colIdx}`}
-              className="cell"
+              className="tic-tac-toe-cell"
               onClick={!!winner ? undefined : () => markCell(rowIdx, colIdx)}
             >
               {cell}

@@ -1,7 +1,6 @@
 .tic-tac-toe-grid-container {
   display: grid;
-  gap: 16px;
-  width: min-content;
+  width: 100%;
 }
 
 .tic-tac-toe-container {
@@ -9,6 +8,8 @@
   flex-direction: column;
   gap: 48px;
   align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .tic-tac-toe-reset-button {
@@ -16,6 +17,7 @@
   border: 1px solid black;
   border-radius: 24px;
   width: 100%;
+  max-width: 200px;
   height: 48px;
   font-size: 20px;
   font-weight: 700;
@@ -35,13 +37,15 @@
   align-items: center;
 }
 
-.cell {
-  height: 48px;
-  width: 48px;
+.tic-tac-toe-cell {
+  max-width: 64px;
+  aspect-ratio: 1/1;
+  width: 100%;
   border: 1px solid;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .tic-tac-toe-label {

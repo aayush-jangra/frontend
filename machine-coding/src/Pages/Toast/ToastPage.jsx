@@ -43,15 +43,14 @@ const ToastPage = () => {
       >
         Error
       </button>
-      <label className="duration">
-        Duration:
+      <label className="duration-label">
+        Duration (ms):
         <input
           className="duration-input"
           type="number"
           value={duration}
           onChange={handleChange}
         />
-        ms
       </label>
     </div>
   );

@@ -5,8 +5,8 @@ const Star = ({ selected, onClick, onHover }) => {
   return (
     <div onMouseEnter={onHover} onClick={onClick}>
       <svg
-        width="100"
-        height="100"
+        width="24"
+        height="24"
         viewBox="0 0 24 24"
         stroke="black"
         stroke-width="1"

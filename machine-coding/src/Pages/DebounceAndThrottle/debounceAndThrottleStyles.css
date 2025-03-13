@@ -5,12 +5,12 @@
   justify-content: center;
 }
 
-.container {
+.debounce-throttle-container {
   padding: 12px 24px;
   border: 1px solid;
   border-radius: 16px;
   width: 40%;
-  min-width: 400px;
+  min-width: 300px;
   height: fit-content;
 }
 
@@ -25,6 +25,7 @@
   padding: 4px 8px;
   font-size: 20px;
   border-radius: 16px;
+  width: 60%;
 }
 
 .searched-container {

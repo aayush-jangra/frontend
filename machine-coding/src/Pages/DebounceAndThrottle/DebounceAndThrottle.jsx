@@ -4,7 +4,7 @@ import { Throttle } from "./Throttle";
 
 const Container = ({ children, title }) => {
   return (
-    <div className="container">
+    <div className="debounce-throttle-container">
       <h3>{title}</h3>
       {children}
     </div>

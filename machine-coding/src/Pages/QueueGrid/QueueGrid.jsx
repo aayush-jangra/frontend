@@ -51,6 +51,7 @@ export const QueueGrid = ({ size = 3 }) => {
       style={{
         gridTemplateColumns: `repeat(${size}, 1fr)`,
         gridTemplateRows: `repeat(${size}, 1fr)`,
+        maxWidth: `${size * 64}px`,
       }}
       className="queue-boxes-container"
     >
