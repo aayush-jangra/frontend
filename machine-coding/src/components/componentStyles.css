@@ -195,7 +195,7 @@
   gap: 16px;
   justify-content: center;
   overflow-y: auto;
-  max-height: calc(90vh - 72px);
+  max-height: calc(90vh - 80px);
   padding: 16px;
 }
 
@@ -207,6 +207,25 @@
   border-radius: 16px;
   cursor: pointer;
   font-weight: 700;
+}
+
+.desktop-checker-mobile-view {
+  display: none;
+  font-size: 24px;
+}
+
+.desktop-checker-desktop-view {
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .desktop-checker-mobile-view {
+    display: block;
+  }
+
+  .desktop-checker-desktop-view {
+    display: none;
+  }
 }
 
 /*

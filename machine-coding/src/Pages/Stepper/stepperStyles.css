@@ -4,11 +4,13 @@
   gap: 16px;
   font-size: 20px;
   position: relative;
+  height: fit-content;
 }
 
 .step-circle {
   width: 48px;
   height: 48px;
+  min-width: 48px;
   border-radius: 50%;
   z-index: 2;
   background-color: gray;
@@ -46,6 +48,7 @@
 .stepper-page-container {
   display: flex;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 .stepper-component {
@@ -57,4 +60,5 @@
   font-size: 48px;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }

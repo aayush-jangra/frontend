@@ -1,6 +1,27 @@
 import { useRef, useState } from "react";
 import "./memoryGameStyles.css";
 
+const EMOJIS = [
+  "🐶",
+  "🐱",
+  "🦊",
+  "🐻",
+  "🐼",
+  "🦁",
+  "🐵",
+  "🐸",
+  "🦉",
+  "🐢",
+  "🐙",
+  "🦄",
+  "🐧",
+  "🦀",
+  "🐨",
+  "🦕",
+  "🦖",
+  "🐝",
+];
+
 const generateRandomGrid = (size) => {
   const randomGrid = Array.from({ length: size }, () =>
     Array.from({ length: size }, () => "")
@@ -8,8 +29,8 @@ const generateRandomGrid = (size) => {
 
   const maxSize = (size * size) / 2;
   const remainingElements = [
-    ...Array.from({ length: maxSize }, (_, index) => index + 1),
-    ...Array.from({ length: maxSize }, (_, index) => index + 1),
+    ...Array.from({ length: maxSize }, (_, index) => EMOJIS[index]),
+    ...Array.from({ length: maxSize }, (_, index) => EMOJIS[index]),
   ];
 
   for (let i = 0; i < size; i++) {
@@ -89,6 +110,7 @@ export const MemoryGame = ({ size }) => {
       <div
         className="memory-grid-container"
         style={{
+          maxWidth: `${size * 64}px`,
           gridTemplateRows: `repeat(${size}, 1fr)`,
           gridTemplateColumns: `repeat(${size}, 1fr)`,
         }}
@@ -107,7 +129,7 @@ export const MemoryGame = ({ size }) => {
           ))
         )}
       </div>
-      <div>
+      <div className="memory-game-turns-container">
         <div>Turns: {turns}</div>
         <button className="memory-reset-button" onClick={resetGame}>
           Reset

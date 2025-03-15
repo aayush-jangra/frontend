@@ -59,6 +59,7 @@ const PaginationPage = React.lazy(() =>
 const AutoCompletePage = React.lazy(() =>
   import("./Pages/AutoComplete/AutoCompletePage")
 );
+const DesktopChecker = React.lazy(() => import("./components/DesktopChecker"));
 
 function App() {
   const routerConfig = [
@@ -112,7 +113,11 @@ function App() {
     },
     {
       path: "/snake-game",
-      component: <SnakeGamePage />,
+      component: (
+        <DesktopChecker>
+          <SnakeGamePage />
+        </DesktopChecker>
+      ),
     },
     {
       path: "/todos",
@@ -124,7 +129,11 @@ function App() {
     },
     {
       path: "/tabs",
-      component: <TabsPage />,
+      component: (
+        <DesktopChecker>
+          <TabsPage />
+        </DesktopChecker>
+      ),
     },
     {
       path: "/memory-game",
@@ -144,7 +153,11 @@ function App() {
     },
     {
       path: "/meeting-calendar",
-      component: <MeetingCalendarPage />,
+      component: (
+        <DesktopChecker>
+          <MeetingCalendarPage />
+        </DesktopChecker>
+      ),
     },
     {
       path: "/event-flow",
