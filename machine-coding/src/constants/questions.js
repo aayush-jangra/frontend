@@ -158,4 +158,11 @@ export const questions = [
     description: `Build an Infinite Scroll Component that dynamically loads more content as the user scrolls down. Ensure smooth performance with lazy loading and loading indicators. Optionally, support manual "Load More" and filtering options.`,
     path: "/infinite-scroll",
   },
+  {
+    folderName: "PollWidget",
+    title: "Poll Widget",
+    description:
+      "Build a simple poll widget where users can vote on a given question with multiple choices. Once a user selects an option, display the updated vote count and percentage for each choice.",
+    path: "/poll-widget",
+  },
 ];

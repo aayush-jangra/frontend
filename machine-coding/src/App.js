@@ -60,6 +60,9 @@ const AutoCompletePage = React.lazy(() =>
   import("./Pages/AutoComplete/AutoCompletePage")
 );
 const DesktopChecker = React.lazy(() => import("./components/DesktopChecker"));
+const PollWidgetPage = React.lazy(() =>
+  import("./Pages/PollWidget/PollWidgetPage")
+);
 
 function App() {
   const routerConfig = [
@@ -178,6 +181,10 @@ function App() {
     {
       path: "/autocomplete",
       component: <AutoCompletePage />,
+    },
+    {
+      path: "/poll-widget",
+      component: <PollWidgetPage />,
     },
   ];
 

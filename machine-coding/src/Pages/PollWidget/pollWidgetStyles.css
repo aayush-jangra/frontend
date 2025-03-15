@@ -1,0 +1,72 @@
+.poll-widget-container {
+  border: 1px solid;
+  padding: 24px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.poll-widget-question {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.poll-widget-option-label {
+  font-size: 20px;
+  display: flex;
+  gap: 8px;
+}
+
+.poll-widet-option-conatiner {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.poll-widet-option-label-conatiner {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.poll-widget-percentage-bar-outer {
+  border-radius: 16px;
+  border: 1px solid;
+  height: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.poll-widget-percentage-bar-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 119, 230);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.poll-widget-remove-vote {
+  background-color: rgb(255, 54, 54);
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 12px 24px;
+  width: 100%;
+  max-width: 200px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 1px 1px 4px black;
+  transition: all 0.3s;
+}
+
+.poll-widget-remove-vote:disabled {
+  cursor: not-allowed;
+  background-color: lightgray;
+  box-shadow: none;
+}
