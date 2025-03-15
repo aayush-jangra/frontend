@@ -178,12 +178,13 @@
   background-color: #14bacc;
   overflow: hidden;
   z-index: 100;
+  max-width: 632px;
 }
 
 .all-questions-content:hover {
   background-color: #027977;
   height: 90vh;
-  width: 50vw;
+  width: 80vw;
   box-shadow: 4px 4px 20px black;
   transform: translate(-4px, -4px);
 }
@@ -191,7 +192,8 @@
 .question-items-container {
   display: flex;
   flex-wrap: wrap;
-  width: calc(50vw - 32px);
+  width: calc(80vw - 32px);
+  max-width: 600px;
   gap: 16px;
   justify-content: center;
   overflow-y: auto;
