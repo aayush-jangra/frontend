@@ -42,7 +42,7 @@ export const CustomRouter = ({ config }) => {
         height: "100vh",
         zIndex: 1000,
         paddingLeft: "48px",
-        background: "white",
+        background: "var(--background-primary)",
       }}
     >
       <h1>There is nothing on this path</h1>

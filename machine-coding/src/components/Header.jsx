@@ -3,6 +3,7 @@ import "./componentStyles.css";
 import HomeIcon from "../assets/Icons/home.svg";
 import LinkIcon from "../assets/Icons/link.svg";
 import { AllQuestionsMenu } from "./AllQuestionsMenu";
+import { ThemeToggle } from "./ThemeToggle";
 
 const GITHUB_PATH =
   "https://github.com/aayush-jangra/frontend/tree/main/machine-coding/src/Pages";
@@ -44,6 +45,16 @@ export const HeaderWrapper = ({ children }) => {
           />
           Code
         </a>
+        <div
+          style={{
+            display: "flex",
+            flex: 1,
+            justifyContent: "flex-end",
+            paddingRight: "16px",
+          }}
+        >
+          <ThemeToggle />
+        </div>
       </div>
       <div className="header-children">{children}</div>
     </div>

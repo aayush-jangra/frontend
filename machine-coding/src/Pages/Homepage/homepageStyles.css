@@ -7,13 +7,18 @@
 .homepage-search-input {
   background-color: transparent;
   padding: 8px 12px;
-  border: 1px solid black;
+  border: 1px solid var(--border-primary);
   border-radius: 16px;
   width: 100%;
   max-width: 400px;
   align-self: flex-end;
   font-size: 20px;
   box-sizing: border-box;
+  color: var(--text-primary);
+}
+
+.homepage-search-input::placeholder {
+  color: var(--text-secondary);
 }
 
 .homepage-container {

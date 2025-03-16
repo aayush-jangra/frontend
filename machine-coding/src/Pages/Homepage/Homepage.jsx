@@ -23,7 +23,7 @@ const Homepage = () => {
 
   return (
     <div className="homepage-container">
-      <h1>
+      <h1 style={{ color: "var(--text-primary)" }}>
         Welcome and explore the frequently asked machine coding round questions
       </h1>
       <input
