@@ -69,6 +69,9 @@ const PasswordGeneratorPage = React.lazy(() =>
 const MultiSelectPage = React.lazy(() =>
   import("./Pages/MulitSelect/MultiSelectPage")
 );
+const SelectableGridPage = React.lazy(() =>
+  import("./Pages/SelectableGrid/SelectableGridPage")
+);
 
 function App() {
   const routerConfig = [
@@ -199,6 +202,10 @@ function App() {
     {
       path: "/multi-select",
       component: <MultiSelectPage />,
+    },
+    {
+      path: "/selectable-grid",
+      component: <SelectableGridPage />,
     },
   ];
 

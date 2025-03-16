@@ -179,4 +179,11 @@ export const questions = [
       "Build a multi-select dropdown where users can choose multiple options from a list. Selected options should be displayed as removable tags. The dropdown should support searching, keyboard navigation, and the ability to clear all selections at once.",
     path: "/multi-select",
   },
+  {
+    folderName: "SelectableGrid",
+    title: "Selectable Grid",
+    description:
+      "Build a grid where users can select multiple cells by either clicking or dragging the mouse over them. Selected cells should be visually highlighted, and users should be able to toggle selection by dragging again.",
+    path: "/selectable-grid",
+  },
 ];
