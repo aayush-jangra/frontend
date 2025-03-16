@@ -18,13 +18,13 @@
   gap: 8px;
 }
 
-.poll-widet-option-conatiner {
+.poll-widget-option-conatiner {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.poll-widet-option-label-conatiner {
+.poll-widget-option-label-conatiner {
   display: flex;
   justify-content: space-between;
   gap: 16px;

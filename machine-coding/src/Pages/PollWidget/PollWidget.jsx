@@ -36,8 +36,8 @@ export const PollWidget = ({ question, options }) => {
       {options.map(({ option }, index) => {
         const { percentage, votes } = getPollDetails(index);
         return (
-          <div className="poll-widet-option-conatiner" key={index}>
-            <div className="poll-widet-option-label-conatiner">
+          <div className="poll-widget-option-conatiner" key={index}>
+            <div className="poll-widget-option-label-conatiner">
               <label className="poll-widget-option-label">
                 <input
                   radioGroup="poll"
@@ -47,7 +47,11 @@ export const PollWidget = ({ question, options }) => {
                 />
                 {option}
               </label>
-              {selected !== null && `${votes} votes (${percentage}%)`}
+              {selected !== null && (
+                <div style={{ textAlign: "end" }}>
+                  {votes} votes ({percentage}%)
+                </div>
+              )}
             </div>
             {selected !== null && (
               <div className="poll-widget-percentage-bar-outer">

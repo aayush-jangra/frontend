@@ -63,6 +63,9 @@ const DesktopChecker = React.lazy(() => import("./components/DesktopChecker"));
 const PollWidgetPage = React.lazy(() =>
   import("./Pages/PollWidget/PollWidgetPage")
 );
+const PasswordGeneratorPage = React.lazy(() =>
+  import("./Pages/PasswordGenerator/PasswordGeneratorPage")
+);
 
 function App() {
   const routerConfig = [
@@ -185,6 +188,10 @@ function App() {
     {
       path: "/poll-widget",
       component: <PollWidgetPage />,
+    },
+    {
+      path: "/password-generator",
+      component: <PasswordGeneratorPage />,
     },
   ];
 

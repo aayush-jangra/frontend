@@ -165,4 +165,11 @@ export const questions = [
       "Build a simple poll widget where users can vote on a given question with multiple choices. Once a user selects an option, display the updated vote count and percentage for each choice.",
     path: "/poll-widget",
   },
+  {
+    folderName: "PasswordGenerator",
+    title: "Password Generator",
+    description:
+      "Build a password generator that creates a random password based on user-selected criteria. Users should be able to specify the password length and include/exclude uppercase letters, lowercase letters, numbers, and special characters. The generated password should be easily copyable.",
+    path: "/password-generator",
+  },
 ];
