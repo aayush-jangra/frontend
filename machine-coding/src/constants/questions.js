@@ -172,4 +172,11 @@ export const questions = [
       "Build a password generator that creates a random password based on user-selected criteria. Users should be able to specify the password length and include/exclude uppercase letters, lowercase letters, numbers, and special characters. The generated password should be easily copyable.",
     path: "/password-generator",
   },
+  {
+    folderName: "MultiSelect",
+    title: "Multi Select",
+    description:
+      "Build a multi-select dropdown where users can choose multiple options from a list. Selected options should be displayed as removable tags. The dropdown should support searching, keyboard navigation, and the ability to clear all selections at once.",
+    path: "/multi-select",
+  },
 ];

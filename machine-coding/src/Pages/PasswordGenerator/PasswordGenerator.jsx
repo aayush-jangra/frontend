@@ -5,7 +5,7 @@ import { useGeneratePassword } from "./useGeneratePassword";
 
 export const PasswordGenerator = () => {
   const [password, setPassword] = useState(null);
-  const [passwordLength, setPasswordLength] = useState(4);
+  const [passwordLength, setPasswordLength] = useState(8);
   const [config, setConfig] = useState({
     uppercase: false,
     lowercase: true,

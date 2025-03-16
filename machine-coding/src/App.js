@@ -66,6 +66,9 @@ const PollWidgetPage = React.lazy(() =>
 const PasswordGeneratorPage = React.lazy(() =>
   import("./Pages/PasswordGenerator/PasswordGeneratorPage")
 );
+const MultiSelectPage = React.lazy(() =>
+  import("./Pages/MulitSelect/MultiSelectPage")
+);
 
 function App() {
   const routerConfig = [
@@ -192,6 +195,10 @@ function App() {
     {
       path: "/password-generator",
       component: <PasswordGeneratorPage />,
+    },
+    {
+      path: "/multi-select",
+      component: <MultiSelectPage />,
     },
   ];
 
