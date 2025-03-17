@@ -21,11 +21,11 @@ export const useTheme = () => {
       );
       document.documentElement.style.setProperty(
         "--alternate-primary-color",
-        "#027977"
+        "#800202"
       );
       document.documentElement.style.setProperty(
         "--alternate-secondary-color",
-        "#83DFF9"
+        "#EF654B"
       );
       document.documentElement.style.setProperty("--canvas-color", "#00504A");
       document.documentElement.style.setProperty("--text-primary", "white");
@@ -37,11 +37,11 @@ export const useTheme = () => {
       document.documentElement.style.setProperty("--text-inverse", "black");
       document.documentElement.style.setProperty(
         "--background-primary",
-        "white"
+        "black"
       );
       document.documentElement.style.setProperty(
         "--background-secondary",
-        "black"
+        "white"
       );
       document.documentElement.style.setProperty("--shadow-primary", "white");
       document.documentElement.style.setProperty("--shadow-secondary", "black");
@@ -56,11 +56,11 @@ export const useTheme = () => {
       );
       document.documentElement.style.setProperty(
         "--alternate-primary-color",
-        "#83DFF9"
+        "#EF654B"
       );
       document.documentElement.style.setProperty(
         "--alternate-secondary-color",
-        "#027977"
+        "#800202"
       );
       document.documentElement.style.setProperty("--canvas-color", "#f2fbff");
       document.documentElement.style.setProperty("--text-primary", "black");

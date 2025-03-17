@@ -8,6 +8,7 @@
   height: max-content;
   outline: none;
   background-color: transparent;
+  color: var(--text-primary);
 }
 
 .auto-complete-menu {
@@ -22,7 +23,7 @@
 }
 
 .auto-complete-container {
-  border: 1px solid;
+  border: 1px solid var(--border-primary);
   border-radius: 16px;
 }
 
@@ -35,16 +36,17 @@
   background-color: transparent;
   border: 0;
   font-size: 20px;
+  color: var(--text-primary);
 }
 
 .auto-complete-menu-item:hover {
-  background: rgb(210, 235, 255);
+  background: var(--primary-color);
 }
 
 .divider {
   height: 1px;
   width: 100%;
-  background-color: black;
+  background-color: var(--background-secondary);
   align-self: center;
   justify-self: center;
   margin-bottom: 8px;

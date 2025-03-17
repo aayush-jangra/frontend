@@ -2,7 +2,7 @@
   flex: 1;
   height: 24px;
   border-radius: 16px;
-  border: 1px solid;
+  border: 1px solid var(--border-primary);
   overflow: hidden;
   min-width: 300px;
 }
@@ -10,7 +10,7 @@
 .progress-bar {
   height: 100%;
   width: 100%;
-  background-color: green;
+  background-color: var(--secondary-color);
   transition: transform 0.3s;
 }
 

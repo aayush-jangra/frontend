@@ -31,6 +31,7 @@
 
 .meeting-page-container {
   position: relative;
+  color: var(--text-primary);
 }
 
 .meetings-container {
@@ -49,7 +50,8 @@
   font-size: 24px;
   align-items: center;
   justify-content: center;
-  border: 1px solid;
+  border: 1px solid black;
   box-sizing: border-box;
   border-radius: 16px;
+  color: black;
 }

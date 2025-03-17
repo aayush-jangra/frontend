@@ -205,7 +205,11 @@ function App() {
     },
     {
       path: "/selectable-grid",
-      component: <SelectableGridPage />,
+      component: (
+        <DesktopChecker>
+          <SelectableGridPage />
+        </DesktopChecker>
+      ),
     },
   ];
 

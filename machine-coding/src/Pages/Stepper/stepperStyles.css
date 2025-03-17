@@ -18,7 +18,7 @@
 }
 
 .step-done {
-  background-color: lightblue;
+  background-color: var(--alternate-secondary-color);
 }
 
 .stepper-step {
@@ -40,7 +40,7 @@
 
 .stepper-progress-bar {
   transition: transform 1s;
-  background: lightblue;
+  background: var(--alternate-secondary-color);
   height: 100%;
   width: 100%;
 }
@@ -49,16 +49,18 @@
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  color: var(--text-primary);
 }
 
 .stepper-component {
   display: flex;
   height: 400px;
   flex: 1;
-  background-color: lightblue;
+  background: var(--alternate-secondary-color);
   border-radius: 16px;
   font-size: 48px;
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: white;
 }

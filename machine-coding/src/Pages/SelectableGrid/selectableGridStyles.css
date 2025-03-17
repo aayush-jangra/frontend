@@ -1,6 +1,7 @@
 .selectable-grid {
   display: grid;
   width: 100%;
+  color: var(--text-primary);
 }
 
 .selectable-grid-item {
@@ -15,4 +16,5 @@
 
 .selectable-grid-item-selected {
   background-color: lightblue;
+  color: black;
 }

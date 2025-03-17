@@ -60,7 +60,13 @@ export const InfiniteScroll = () => {
 
   return (
     <div className="infinite-scroll-container">
-      <label style={{ display: "flex", alignItems: "center" }}>
+      <label
+        style={{
+          color: "var(--text-primary)",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
         Auto Load:{" "}
         <CustomSwitch
           checked={autoLoad}

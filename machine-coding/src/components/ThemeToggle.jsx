@@ -9,12 +9,14 @@ export const ThemeToggle = () => {
       style={
         theme === "light"
           ? { boxShadow: "3px 3px 4px black" }
-          : { boxShadow: "-3px 3px 4px white" }
+          : { boxShadow: "-3px 3px white" }
       }
       className="theme-toggle-container"
     >
       <div
-        style={theme === "light" ? {} : { backgroundColor: "rgb(78, 78, 78)" }}
+        style={
+          theme === "light" ? {} : { backgroundColor: "rgb(218, 218, 218)" }
+        }
         className="theme-toggle-before"
       ></div>
       <div

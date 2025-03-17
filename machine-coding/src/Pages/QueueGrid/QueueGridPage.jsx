@@ -14,7 +14,13 @@ const QueueGridPage = () => {
     <div className="queue-grid-page-container">
       <label className=".queue-grid-label">
         Grid size (1-9):
-        <input type="number" value={size} onChange={handleSizeChange} />
+        <input
+          type="range"
+          min={1}
+          max={9}
+          value={size}
+          onChange={handleSizeChange}
+        />
       </label>
       <QueueGrid size={size || 1} />
     </div>

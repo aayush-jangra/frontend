@@ -5,6 +5,7 @@
   padding: 48px;
   border: 1px solid;
   width: min-content;
+  color: var(--text-primary);
 }
 
 .traffic-light {
@@ -22,15 +23,15 @@
 
 .green-light {
   background-color: green;
-  color: black;
+  color: var(--text-primary);
 }
 
 .red-light {
   background-color: red;
-  color: black;
+  color: var(--text-primary);
 }
 
 .yellow-light {
   background-color: yellow;
-  color: black;
+  color: var(--text-primary);
 }

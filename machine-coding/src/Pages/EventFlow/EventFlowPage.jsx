@@ -7,7 +7,7 @@ const MIN_DIV_COUNT = 1,
   MAX_DIV_COUNT = 5;
 
 const EventDiv = ({ capturePreference, remainingCount, addToWorkerQueue }) => {
-  const [bgColor, setBgColor] = useState("white");
+  const [bgColor, setBgColor] = useState("var(--background-primary)");
 
   if (!remainingCount) return null;
 
@@ -15,7 +15,7 @@ const EventDiv = ({ capturePreference, remainingCount, addToWorkerQueue }) => {
     addToWorkerQueue(() => {
       setBgColor(color);
       setTimeout(() => {
-        setBgColor("white");
+        setBgColor("var(--background-primary)");
       }, 1000);
     });
   };

@@ -10,7 +10,7 @@
 }
 
 .snake-head {
-  background-color: lightgreen;
+  background-color: var(--secondary-color);
 }
 
 .snake-body {
@@ -19,6 +19,8 @@
 
 .snake-fruit-cell {
   background-color: yellow;
+  border: 1px solid black;
+  box-sizing: border-box;
   border-radius: 50%;
 }
 
@@ -48,6 +50,7 @@
   justify-content: space-around;
   align-items: center;
   gap: 16px;
+  color: var(--text-primary);
 }
 
 .snake-game-over {

@@ -1,5 +1,5 @@
 .event-div {
-  border: 1px solid;
+  border: 1px solid var(--border-primary);
   padding: 24px;
   transition: background-color 0.3s;
 }
@@ -15,6 +15,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  background-color: var(--primary-color);
+  border-radius: 16px;
+  padding: 4px 12px;
+  color: var(--text-primary);
 }
 
 .event-page-container {
@@ -23,6 +27,7 @@
   flex-direction: column;
   gap: 32px;
   align-items: center;
+  color: var(--text-primary);
 }
 
 .capture-preference-label {
