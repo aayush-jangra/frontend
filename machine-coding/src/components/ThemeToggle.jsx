@@ -9,7 +9,7 @@ export const ThemeToggle = () => {
       style={
         theme === "light"
           ? { boxShadow: "3px 3px 4px black" }
-          : { boxShadow: "-3px 3px white" }
+          : { boxShadow: "-3px 3px 4px black" }
       }
       className="theme-toggle-container"
     >
