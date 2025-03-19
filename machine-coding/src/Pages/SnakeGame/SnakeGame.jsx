@@ -45,9 +45,10 @@ export const SnakeGame = ({ size }) => {
         newPos = { x: r + 1, y: c };
       }
 
-      const isBody = gridCopy[newPos.x][newPos.y] === "body";
-
-      if (isBody || outOfBounds(newPos.x, newPos.y)) {
+      if (
+        outOfBounds(newPos.x, newPos.y) ||
+        gridCopy[newPos.x][newPos.y] === "body"
+      ) {
         setGameOver(true);
         changeStart();
         return gridCopy;

@@ -12,7 +12,7 @@ export const SelectableGrid = ({ rows, columns }) => {
   const startBox = useRef(null);
 
   const updateSelection = useCallback(
-    (forced) => {
+    (forced = false) => {
       if (pressed || forced) {
         setSelected((prev) => {
           const copy = [...prev.map((v) => v)];

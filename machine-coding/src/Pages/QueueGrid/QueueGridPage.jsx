@@ -12,9 +12,10 @@ const QueueGridPage = () => {
 
   return (
     <div className="queue-grid-page-container">
-      <label className=".queue-grid-label">
+      <label className="queue-grid-label">
         Grid size (1-9):
         <input
+          style={{ minWidth: 200, padding: 0 }}
           type="range"
           min={1}
           max={9}

@@ -54,7 +54,7 @@
   min-height: fit-content;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 24px;
   flex-wrap: wrap;
 }
 
@@ -110,7 +110,6 @@
   background-color: white;
   cursor: pointer;
   transition: all 0.3s;
-  overflow: visible;
 }
 
 .custom-switch::after {
@@ -270,6 +269,10 @@
   .theme-toggle-container {
     height: 24px;
     width: 24px;
+  }
+
+  .header-container {
+    gap: 8px;
   }
 }
 

@@ -24,6 +24,7 @@ export const QueueGrid = ({ size = 3 }) => {
   useEffect(() => {
     if (boxes.length !== size * size) {
       setBoxes(Array.from({ length: size * size }, () => false));
+      queue.current = [];
     }
 
     if (queue.current.length === size * size) {

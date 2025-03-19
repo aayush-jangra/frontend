@@ -18,7 +18,7 @@ export const VirtualisedList = ({ list, height = 400, itemHeight = 50 }) => {
 
   return (
     <div>
-      <div onScroll={handleScroll} style={{ height, overflow: "scroll" }}>
+      <div onScroll={handleScroll} style={{ height, overflowY: "scroll" }}>
         <div
           className="virtualised-container"
           style={{ height: completeHeight }}
