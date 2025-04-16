@@ -186,4 +186,11 @@ export const questions = [
       "Build a grid where users can select multiple cells by either clicking or dragging the mouse over them. Selected cells should be visually highlighted, and users should be able to toggle selection by dragging again.",
     path: "/selectable-grid",
   },
+  {
+    folderName: "TypeWriter",
+    title: "Typewriter",
+    description:
+      "Simulate a typewriter effect that takes a string or an array of strings and renders them one character at a time, mimicking the behavior of a typewriter. Each string should appear with a typing animation, and if multiple strings are provided, they should be rendered sequentially with a short delay in between.",
+    path: "/typewriter",
+  },
 ];

@@ -1,0 +1,20 @@
+.typewriter-container {
+  padding: 16px;
+  border: 1px solid var(--border-primary);
+  border-radius: 16px;
+  margin-bottom: 40px;
+}
+
+.typewriter-slash {
+  padding-left: 2px;
+  animation: typewriterEffect 1s linear infinite;
+}
+
+@keyframes typewriterEffect {
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 0%;
+  }
+}

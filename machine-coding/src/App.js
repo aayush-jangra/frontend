@@ -72,6 +72,9 @@ const MultiSelectPage = React.lazy(() =>
 const SelectableGridPage = React.lazy(() =>
   import("./Pages/SelectableGrid/SelectableGridPage")
 );
+const TypeWriterPage = React.lazy(() =>
+  import("./Pages/TypeWriter/TypeWriterPage")
+);
 
 function App() {
   const routerConfig = [
@@ -210,6 +213,10 @@ function App() {
           <SelectableGridPage />
         </DesktopChecker>
       ),
+    },
+    {
+      path: "/typewriter",
+      component: <TypeWriterPage />,
     },
   ];
 
