@@ -75,6 +75,9 @@ const SelectableGridPage = React.lazy(() =>
 const TypeWriterPage = React.lazy(() =>
   import("./Pages/TypeWriter/TypeWriterPage")
 );
+const FileUploadPage = React.lazy(() =>
+  import("./Pages/FileUpload/FileUploadPage")
+);
 
 function App() {
   const routerConfig = [
@@ -217,6 +220,10 @@ function App() {
     {
       path: "/typewriter",
       component: <TypeWriterPage />,
+    },
+    {
+      path: "/file-upload",
+      component: <FileUploadPage />,
     },
   ];
 

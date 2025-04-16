@@ -193,4 +193,11 @@ export const questions = [
       "Simulate a typewriter effect that takes a string or an array of strings and renders them one character at a time, mimicking the behavior of a typewriter. Each string should appear with a typing animation, and if multiple strings are provided, they should be rendered sequentially with a short delay in between.",
     path: "/typewriter",
   },
+  {
+    folderName: "FileUpload",
+    title: "File Upload",
+    description:
+      "Build a file upload component that allows users to select one or more files and upload them. Display the selected file names in a list, and simulate the upload process with a visual progress indicator for each file. Include basic validations such as file size and type. The component should also support drag-and-drop file selection.",
+    path: "/file-upload",
+  },
 ];
