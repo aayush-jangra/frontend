@@ -78,6 +78,9 @@ const TypeWriterPage = React.lazy(() =>
 const FileUploadPage = React.lazy(() =>
   import("./Pages/FileUpload/FileUploadPage")
 );
+const GraphCoordinatesPage = React.lazy(() =>
+  import("./Pages/GraphCoordinates/GraphCoordinatesPage")
+);
 
 function App() {
   const routerConfig = [
@@ -224,6 +227,10 @@ function App() {
     {
       path: "/file-upload",
       component: <FileUploadPage />,
+    },
+    {
+      path: "/graph-coordinates",
+      component: <GraphCoordinatesPage />,
     },
   ];
 

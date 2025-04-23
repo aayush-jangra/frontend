@@ -200,4 +200,11 @@ export const questions = [
       "Build a file upload component that allows users to select one or more files and upload them. Display the selected file names in a list, and simulate the upload process with a visual progress indicator for each file. Include basic validations such as file size and type. The component should also support drag-and-drop file selection.",
     path: "/file-upload",
   },
+  {
+    folderName: "GraphCoordinates",
+    title: "Graph Coordinates",
+    description:
+      "Build a component that allows users to input a list of 2D coordinates and visually plot them on a grid. The grid should display both X and Y axes. Each point must be plotted correctly according to its (x, y) position, and hovering over a point should show its coordinate. Include validation for input format and limit the coordinate values to a certain range (e.g., -10 to 10). Add optional features like resetting the grid.",
+    path: "/graph-coordinates",
+  },
 ];
